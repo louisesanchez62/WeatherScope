@@ -1,0 +1,109 @@
+\documentclass[12pt]{article} 
+\usepackage{minted}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{appendix}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{geometry}
+\usepackage{csquotes}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[table]{xcolor}
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+
+\geometry{hmargin=2.5cm, vmargin=2.5cm}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\setlength{\headheight}{15pt}
+\addtolength{\topmargin}{-3pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyheadoffset{0pt}
+\fancyfootoffset{0pt}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{}
+\fancyfoot[C]{\thepage}
+\begin{document}
+\begin{titlepage}
+  \noindent
+  \includegraphics[width=0.35\textwidth]{assets/logo-ligne-simple-couleur-master.png}\hfill
+  \includegraphics[width=0.35\textwidth]{assets/univ.jpg}
+
+  \vfill
+
+\begin{center}
+  {\fontfamily{qpl} \Large {Rapport de Projet}}
+\end{center}
+
+  \noindent\rule{\textwidth}{0.6pt}
+  \begin{center}
+    {\LARGE \textbf{WeatherScope}}\par
+  \end{center}
+  \noindent\rule{\textwidth}{0.6pt}
+
+\begin{center}
+  {\large Big Data and NoSQL}
+\end{center}
+
+  \vspace{1.2cm}
+
+  \noindent
+  \makebox[0.5\textwidth][l]{\large Réalisé par}%
+  \makebox[0.5\textwidth][r]{\large Encadré par}\par
+  \vspace{0.2cm}
+  \noindent
+  \makebox[0.5\textwidth][l]{\large DITER Justin \& SANCHEZ Louise}%
+  \makebox[0.5\textwidth][r]{\large Mme. AKID-ZEKRI Hajer}
+
+  \vfill
+
+  \begin{center}
+    {\large \textit{Master 2 Informatique Parcours Systèmes Logiciels et Calculs Distribués}}\par
+    \vspace{0.2cm}
+    {\large \textit{Université Côte d'Azur - Année 2026-2027}}
+  \end{center}
+\end{titlepage}
+
+\input{sections/resume.tex}
+\input{sections/abstract.tex}
+
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+\input{sections/introduction.tex}
+\input{sections/section01.tex}
+\input{sections/section02.tex}
+\input{sections/conclusion.tex}
+
+
+\newpage
+\thispagestyle{empty}
+%\listoffigures
+
+\newpage
+\thispagestyle{empty}
+\begin{thebibliography}{9}
+
+\end{thebibliography}
+
+\appendix
+
+\end{document}
