@@ -23,7 +23,7 @@ from bson import json_util
 from pymongo import MongoClient
 from pymongo.errors import WriteError
 
-from init_db import ROOT, init_db
+from scripts.local.init_db import ROOT, init_db
 
 EXAMPLES = ROOT / "schema" / "examples"
 CHECK_DB = "weatherscope_schema_check"

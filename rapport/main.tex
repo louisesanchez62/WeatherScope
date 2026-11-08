@@ -5,6 +5,9 @@
 \usepackage[english]{babel} % french.ldf absent ici : sudo apt install texlive-lang-french pour passer en [french]
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
 \usepackage{url}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -23,6 +26,7 @@
   commentstyle=\color{red},
   keywordstyle=\color{blue}
 }
+\newcommand{\cd}[1]{\texttt{#1}}
 
 \geometry{hmargin=2.5cm, vmargin=2.5cm}
 
@@ -98,6 +102,7 @@
 \input{sections/introduction.tex}
 \input{sections/section01.tex}
 \input{sections/section02.tex}
+\input{sections/distributed_prototype.tex}
 \input{sections/resultats.tex}
 \input{sections/conclusion.tex}
 

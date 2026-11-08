@@ -27,7 +27,7 @@ import pathlib
 
 from matplotlib.path import Path
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 META = ROOT / "data" / "raw" / "metadata"
 OUT = ROOT / "data" / "scope"
 

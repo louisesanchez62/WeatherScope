@@ -15,7 +15,7 @@ import pathlib
 
 from pymongo import MongoClient
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 SCHEMA = ROOT / "schema"
 COLLECTIONS = ("stations", "observations", "history", "batches")
 
