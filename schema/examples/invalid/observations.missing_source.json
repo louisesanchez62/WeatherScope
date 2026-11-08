@@ -1,0 +1,6 @@
+{
+  "_id": "USW00094847:2014-01-06:TMIN",
+  "station": "USW00094847", "area": "michigan",
+  "date": { "$date": "2014-01-06T00:00:00Z" }, "element": "TMIN",
+  "raw": -255, "value": -25.5, "mflag": null, "qflag": null, "sflag": "W", "obs_time": "2400"
+}

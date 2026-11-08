@@ -1,0 +1,14 @@
+{
+  "_id": "USW00094847:2014-01-05:SNOW",
+  "station": "USW00094847",
+  "area": "michigan",
+  "date": { "$date": "2014-01-05T00:00:00Z" },
+  "element": "SNOW",
+  "raw": 259,
+  "value": 259.0,
+  "mflag": null,
+  "qflag": null,
+  "sflag": "W",
+  "obs_time": null,
+  "source": { "file": "USW00094847.csv.gz", "batch": "2026-11-09-initial" }
+}

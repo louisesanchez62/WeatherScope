@@ -1,0 +1,45 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "station",
+    "description": "One GHCN station in our scope, built from data/scope/stations.csv.",
+    "required": ["_id", "name", "area", "region", "location", "elev_m", "network",
+                 "long_record", "reference_record", "elements"],
+    "additionalProperties": false,
+    "properties": {
+      "_id": { "bsonType": "string", "pattern": "^[A-Z0-9]{11}$", "description": "GHCN station ID." },
+      "name": { "bsonType": "string" },
+      "area": { "enum": ["michigan", "southern_germany"] },
+      "region": { "enum": ["Michigan", "Bavaria", "Baden-Wuerttemberg"] },
+      "location": {
+        "bsonType": "object",
+        "description": "GeoJSON point, longitude first. Indexed with 2dsphere.",
+        "required": ["type", "coordinates"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "enum": ["Point"] },
+          "coordinates": {
+            "bsonType": "array", "minItems": 2, "maxItems": 2,
+            "items": { "bsonType": "double", "minimum": -180, "maximum": 180 }
+          }
+        }
+      },
+      "elev_m": { "bsonType": ["double", "null"], "description": "Elevation in metres, null when NOAA gives -999.9." },
+      "network": { "bsonType": "string", "minLength": 1, "maxLength": 1, "description": "Third character of the ID (1 = CoCoRaHS, C = COOP, W = WBAN, E = ECA&D, ...)." },
+      "long_record": { "bsonType": "bool", "description": "TMAX, TMIN or PRCP spans all of 1991-2020 in the inventory." },
+      "reference_record": { "bsonType": "bool", "description": "TMAX, TMIN or PRCP spans all of 1961-1990 in the inventory." },
+      "elements": {
+        "bsonType": "object",
+        "description": "First and last year per element, from ghcnd-inventory.txt. Absent elements are omitted.",
+        "additionalProperties": false,
+        "properties": {
+          "TMAX": { "bsonType": "object", "required": ["first", "last"], "additionalProperties": false, "properties": { "first": { "bsonType": "int" }, "last": { "bsonType": "int" } } },
+          "TMIN": { "bsonType": "object", "required": ["first", "last"], "additionalProperties": false, "properties": { "first": { "bsonType": "int" }, "last": { "bsonType": "int" } } },
+          "PRCP": { "bsonType": "object", "required": ["first", "last"], "additionalProperties": false, "properties": { "first": { "bsonType": "int" }, "last": { "bsonType": "int" } } },
+          "SNOW": { "bsonType": "object", "required": ["first", "last"], "additionalProperties": false, "properties": { "first": { "bsonType": "int" }, "last": { "bsonType": "int" } } },
+          "SNWD": { "bsonType": "object", "required": ["first", "last"], "additionalProperties": false, "properties": { "first": { "bsonType": "int" }, "last": { "bsonType": "int" } } }
+        }
+      }
+    }
+  }
+}

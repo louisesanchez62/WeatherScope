@@ -1,0 +1,67 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "observation",
+    "description": "One GHCN-Daily value: one station, one date, one element.",
+    "required": ["_id", "station", "area", "date", "element", "raw", "value",
+                 "mflag", "qflag", "sflag", "obs_time", "source"],
+    "additionalProperties": false,
+    "properties": {
+      "_id": {
+        "bsonType": "string",
+        "pattern": "^[A-Z0-9]{11}:[0-9]{4}-[0-9]{2}-[0-9]{2}:(TMAX|TMIN|PRCP|SNOW|SNWD)$",
+        "description": "Identity of the observation: <station>:<YYYY-MM-DD>:<element>."
+      },
+      "station": {
+        "bsonType": "string",
+        "pattern": "^[A-Z0-9]{11}$",
+        "description": "GHCN station ID, same as stations._id."
+      },
+      "area": {
+        "enum": ["michigan", "southern_germany"],
+        "description": "Copied from the station so area queries need no lookup."
+      },
+      "date": {
+        "bsonType": "date",
+        "description": "Calendar date of the observation, stored as midnight UTC."
+      },
+      "element": {
+        "enum": ["TMAX", "TMIN", "PRCP", "SNOW", "SNWD"]
+      },
+      "raw": {
+        "bsonType": "int",
+        "description": "Value exactly as in the NOAA file: tenths of degC (TMAX, TMIN), tenths of mm (PRCP), mm (SNOW, SNWD)."
+      },
+      "value": {
+        "bsonType": "double",
+        "description": "Converted value: degC for TMAX/TMIN, mm for PRCP/SNOW/SNWD."
+      },
+      "mflag": {
+        "bsonType": ["string", "null"], "minLength": 1, "maxLength": 1,
+        "description": "Measurement flag, null when blank. P and T must not be read as ordinary zeros."
+      },
+      "qflag": {
+        "bsonType": ["string", "null"], "minLength": 1, "maxLength": 1,
+        "description": "Quality flag, null when blank. A non-null value means the value failed a NOAA check."
+      },
+      "sflag": {
+        "bsonType": ["string", "null"], "minLength": 1, "maxLength": 1,
+        "description": "Source flag, null when blank."
+      },
+      "obs_time": {
+        "bsonType": ["string", "null"],
+        "pattern": "^[0-9]{4}$",
+        "description": "Observation time HHMM, null when blank."
+      },
+      "source": {
+        "bsonType": "object",
+        "required": ["file", "batch"],
+        "additionalProperties": false,
+        "properties": {
+          "file": { "bsonType": "string", "description": "NOAA file the row came from." },
+          "batch": { "bsonType": "string", "description": "batches._id of the import that wrote this version." }
+        }
+      }
+    }
+  }
+}

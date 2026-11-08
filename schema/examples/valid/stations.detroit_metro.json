@@ -1,0 +1,18 @@
+{
+  "_id": "USW00094847",
+  "name": "DETROIT METRO AP",
+  "area": "michigan",
+  "region": "Michigan",
+  "location": { "type": "Point", "coordinates": [-83.3311, 42.2311] },
+  "elev_m": 192.0,
+  "network": "W",
+  "long_record": true,
+  "reference_record": true,
+  "elements": {
+    "TMAX": { "first": 1958, "last": 2026 },
+    "TMIN": { "first": 1959, "last": 2026 },
+    "PRCP": { "first": 1958, "last": 2026 },
+    "SNOW": { "first": 1958, "last": 2026 },
+    "SNWD": { "first": 1958, "last": 2026 }
+  }
+}
