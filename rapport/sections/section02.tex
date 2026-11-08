@@ -1,3 +1,17 @@
 \section{Architecture Système \& Implémentation des Services}
 \label{sec:architecture}
 
+\subsection{Modèle de données}
+Les données sont dans MongoDB, avec un document par observation~: une station, une date, un élément. L'identifiant \texttt{station:date:élément} sert à la fois de clé d'unicité pour les imports (F5) et de référence pour la traçabilité. Quatre collections suffisent~: \texttt{observations} (31,6 millions de documents), \texttt{stations} (avec un point GeoJSON), \texttt{history} (versions remplacées par un import) et \texttt{batches} (un document par import, avec ses fichiers et leurs SHA-256). Des validateurs \texttt{\$jsonSchema} refusent tout document mal formé~; le détail des champs est dans \texttt{schema/README.md}. Trois index couvrent les accès~: (station, élément, date) pour une station~; (zone, élément, date) pour les analyses régionales~; un index 2dsphere sur les stations pour les recherches géographiques.
+% TODO : justification du choix de MongoDB et conception alternative mesurée (un document par station et par mois).
+
+\subsection{Services}
+Les services sont regroupés dans un outil en ligne de commande, \texttt{python3 -m weatherscope}. Leurs entrées, sorties et exemples détaillés sont en annexe~\ref{annexe:services}~; nous ne reprenons ici que les choix qui comptent.
+
+\paragraph{F1, explorer une station.} Une agrégation par station et par période (mois, année, hiver) donne, à côté de chaque total, la part de jours renseignés et la validité du mois. Un cumul de pluie sur 17~\% des jours n'a pas de sens~: F1 le dit au lieu de le cacher.
+
+\paragraph{Traçabilité.} Tout résultat renvoie à ses relevés~: la commande \texttt{trace} affiche, pour une station et une période ou une liste d'identifiants, la ligne NOAA d'origine avec ses drapeaux, son fichier et son lot d'import.
+
+\paragraph{F2, épisodes prolongés.} MongoDB ne renvoie que les jours qui satisfont la règle et dont la valeur est utilisable~; Python relie les jours consécutifs. Un jour absent ou signalé n'est jamais renvoyé, donc il coupe l'épisode au lieu de le prolonger, et chaque épisode dit pourquoi il s'arrête. Les épisodes suivent la suite des dates, pas l'année civile~: la vague de froid du 30 décembre 2013 au 9 janvier 2014 à Détroit reste un seul épisode. La règle peut être un seuil fixe ou un percentile du climat de la station, parce que 30~°C n'a pas le même sens à Munich et à Marquette.
+
+\paragraph{F3, mois anormaux.} Chaque mois valide d'une station est comparé à sa normale 1961--1990, la normale précédente, de 30 ans comme le veut la convention~\cite{wmo2017} et indépendante de la période étudiée~; ses 13,5 millions d'observations sont comptées à part. Une station n'a de normale qu'avec 24 années valides sur 30. Pour que les grappes de stations autour de Détroit ne pèsent pas plus que tout le nord du Michigan, les anomalies sont moyennées par case de 1°, puis les cases entre elles selon leur surface~; deux stations à moins d'un kilomètre comptent pour une. F3 retrouve les mois attendus~: mars 2012 au Michigan, août et juin 2003 en Allemagne. Une requête sur les deux zones et 60 ans prend environ 2 minutes~: c'est la requête lourde de notre charge, et elle guide la suite de l'architecture.

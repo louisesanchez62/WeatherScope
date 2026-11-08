@@ -1,0 +1,664 @@
+{
+  "generated_utc": "2026-11-08T19:53:39+00:00",
+  "persistence_michigan": {
+    "1961-1990": {
+      "stations": 38,
+      "mean_snowfall_mm_per_winter": 1545,
+      "mean_cover_days_per_winter": 72.9,
+      "mean_cover_days_per_10cm": 5.28
+    },
+    "1991-2020": {
+      "stations": 38,
+      "mean_snowfall_mm_per_winter": 1554,
+      "mean_cover_days_per_winter": 67.3,
+      "mean_cover_days_per_10cm": 4.75
+    },
+    "stations_lower_persistence": 27,
+    "per_station": [
+      {
+        "station": "USC00200146",
+        "name": "ALMA",
+        "1961-1990": {
+          "winters": 27,
+          "snowfall_mm": 19111,
+          "cover_days": 1708,
+          "days_per_10cm": 8.94
+        },
+        "1991-2020": {
+          "winters": 28,
+          "snowfall_mm": 21203,
+          "cover_days": 1636,
+          "days_per_10cm": 7.72
+        }
+      },
+      {
+        "station": "USC00200230",
+        "name": "ANN ARBOR U OF MICH",
+        "1961-1990": {
+          "winters": 23,
+          "snowfall_mm": 19724,
+          "cover_days": 1255,
+          "days_per_10cm": 6.36
+        },
+        "1991-2020": {
+          "winters": 30,
+          "snowfall_mm": 35502,
+          "cover_days": 1491,
+          "days_per_10cm": 4.2
+        }
+      },
+      {
+        "station": "USC00200552",
+        "name": "BATTLE CREEK 5NW",
+        "1961-1990": {
+          "winters": 27,
+          "snowfall_mm": 25393,
+          "cover_days": 1605,
+          "days_per_10cm": 6.32
+        },
+        "1991-2020": {
+          "winters": 24,
+          "snowfall_mm": 30992,
+          "cover_days": 1222,
+          "days_per_10cm": 3.94
+        }
+      },
+      {
+        "station": "USC00200710",
+        "name": "BENTON HARBOR AP",
+        "1961-1990": {
+          "winters": 20,
+          "snowfall_mm": 35503,
+          "cover_days": 995,
+          "days_per_10cm": 2.8
+        },
+        "1991-2020": {
+          "winters": 21,
+          "snowfall_mm": 34067,
+          "cover_days": 730,
+          "days_per_10cm": 2.14
+        }
+      },
+      {
+        "station": "USC00200718",
+        "name": "BERGLAND DAM",
+        "1961-1990": {
+          "winters": 23,
+          "snowfall_mm": 64523,
+          "cover_days": 2051,
+          "days_per_10cm": 3.18
+        },
+        "1991-2020": {
+          "winters": 24,
+          "snowfall_mm": 67344,
+          "cover_days": 2112,
+          "days_per_10cm": 3.14
+        }
+      },
+      {
+        "station": "USC00200779",
+        "name": "BIG RAPIDS WTP",
+        "1961-1990": {
+          "winters": 27,
+          "snowfall_mm": 35381,
+          "cover_days": 2039,
+          "days_per_10cm": 5.76
+        },
+        "1991-2020": {
+          "winters": 28,
+          "snowfall_mm": 30926,
+          "cover_days": 1819,
+          "days_per_10cm": 5.88
+        }
+      },
+      {
+        "station": "USC00200925",
+        "name": "BOYNE FALLS",
+        "1961-1990": {
+          "winters": 28,
+          "snowfall_mm": 62046,
+          "cover_days": 2313,
+          "days_per_10cm": 3.73
+        },
+        "1991-2020": {
+          "winters": 30,
+          "snowfall_mm": 63360,
+          "cover_days": 2319,
+          "days_per_10cm": 3.66
+        }
+      },
+      {
+        "station": "USC00201468",
+        "name": "CHARLEVOIX",
+        "1961-1990": {
+          "winters": 28,
+          "snowfall_mm": 55741,
+          "cover_days": 2251,
+          "days_per_10cm": 4.04
+        },
+        "1991-2020": {
+          "winters": 21,
+          "snowfall_mm": 41593,
+          "cover_days": 1548,
+          "days_per_10cm": 3.72
+        }
+      },
+      {
+        "station": "USC00201492",
+        "name": "CHEBOYGAN",
+        "1961-1990": {
+          "winters": 25,
+          "snowfall_mm": 37655,
+          "cover_days": 1980,
+          "days_per_10cm": 5.26
+        },
+        "1991-2020": {
+          "winters": 28,
+          "snowfall_mm": 45848,
+          "cover_days": 2118,
+          "days_per_10cm": 4.62
+        }
+      },
+      {
+        "station": "USC00201675",
+        "name": "COLDWATER ST SCHOOL",
+        "1961-1990": {
+          "winters": 27,
+          "snowfall_mm": 25822,
+          "cover_days": 1514,
+          "days_per_10cm": 5.86
+        },
+        "1991-2020": {
+          "winters": 20,
+          "snowfall_mm": 15939,
+          "cover_days": 871,
+          "days_per_10cm": 5.46
+        }
+      },
+      {
+        "station": "USC00201896",
+        "name": "CROSS VILLAGE 1E",
+        "1961-1990": {
+          "winters": 28,
+          "snowfall_mm": 41136,
+          "cover_days": 2238,
+          "days_per_10cm": 5.44
+        },
+        "1991-2020": {
+          "winters": 28,
+          "snowfall_mm": 39774,
+          "cover_days": 2109,
+          "days_per_10cm": 5.3
+        }
+      },
+      {
+        "station": "USC00202094",
+        "name": "DETOUR VILLAGE",
+        "1961-1990": {
+          "winters": 26,
+          "snowfall_mm": 32824,
+          "cover_days": 2018,
+          "days_per_10cm": 6.15
+        },
+        "1991-2020": {
+          "winters": 29,
+          "snowfall_mm": 37733,
+          "cover_days": 2263,
+          "days_per_10cm": 6.0
+        }
+      },
+      {
+        "station": "USC00202381",
+        "name": "E JORDAN",
+        "1961-1990": {
+          "winters": 27,
+          "snowfall_mm": 54208,
+          "cover_days": 2182,
+          "days_per_10cm": 4.03
+        },
+        "1991-2020": {
+          "winters": 22,
+          "snowfall_mm": 53672,
+          "cover_days": 1715,
+          "days_per_10cm": 3.2
+        }
+      },
+      {
+        "station": "USC00202984",
+        "name": "FRANKFORT 2NE",
+        "1961-1990": {
+          "winters": 26,
+          "snowfall_mm": 57302,
+          "cover_days": 2047,
+          "days_per_10cm": 3.57
+        },
+        "1991-2020": {
+          "winters": 20,
+          "snowfall_mm": 36308,
+          "cover_days": 1483,
+          "days_per_10cm": 4.08
+        }
+      },
+      {
+        "station": "USC00203096",
+        "name": "GAYLORD",
+        "1961-1990": {
+          "winters": 28,
+          "snowfall_mm": 69945,
+          "cover_days": 2435,
+          "days_per_10cm": 3.48
+        },
+        "1991-2020": {
+          "winters": 30,
+          "snowfall_mm": 73091,
+          "cover_days": 2489,
+          "days_per_10cm": 3.41
+        }
+      },
+      {
+        "station": "USC00203391",
+        "name": "GRAYLING",
+        "1961-1990": {
+          "winters": 20,
+          "snowfall_mm": 34402,
+          "cover_days": 1661,
+          "days_per_10cm": 4.83
+        },
+        "1991-2020": {
+          "winters": 29,
+          "snowfall_mm": 51426,
+          "cover_days": 2326,
+          "days_per_10cm": 4.52
+        }
+      },
+      {
+        "station": "USC00203429",
+        "name": "GREENVILLE 2 NNE",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 32817,
+          "cover_days": 1864,
+          "days_per_10cm": 5.68
+        },
+        "1991-2020": {
+          "winters": 24,
+          "snowfall_mm": 34002,
+          "cover_days": 1422,
+          "days_per_10cm": 4.18
+        }
+      },
+      {
+        "station": "USC00203661",
+        "name": "HASTINGS",
+        "1961-1990": {
+          "winters": 28,
+          "snowfall_mm": 26761,
+          "cover_days": 1774,
+          "days_per_10cm": 6.63
+        },
+        "1991-2020": {
+          "winters": 29,
+          "snowfall_mm": 39455,
+          "cover_days": 1687,
+          "days_per_10cm": 4.28
+        }
+      },
+      {
+        "station": "USC00204090",
+        "name": "IRON MTN-KINGSFORD WWTP",
+        "1961-1990": {
+          "winters": 26,
+          "snowfall_mm": 28323,
+          "cover_days": 2229,
+          "days_per_10cm": 7.87
+        },
+        "1991-2020": {
+          "winters": 26,
+          "snowfall_mm": 25369,
+          "cover_days": 2103,
+          "days_per_10cm": 8.29
+        }
+      },
+      {
+        "station": "USC00204104",
+        "name": "IRONWOOD",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 80030,
+          "cover_days": 2602,
+          "days_per_10cm": 3.25
+        },
+        "1991-2020": {
+          "winters": 29,
+          "snowfall_mm": 85111,
+          "cover_days": 2551,
+          "days_per_10cm": 3.0
+        }
+      },
+      {
+        "station": "USC00204257",
+        "name": "KALKASKA",
+        "1961-1990": {
+          "winters": 26,
+          "snowfall_mm": 62415,
+          "cover_days": 2175,
+          "days_per_10cm": 3.48
+        },
+        "1991-2020": {
+          "winters": 26,
+          "snowfall_mm": 62557,
+          "cover_days": 2101,
+          "days_per_10cm": 3.36
+        }
+      },
+      {
+        "station": "USC00205488",
+        "name": "MILLINGTON 3 SE",
+        "1961-1990": {
+          "winters": 28,
+          "snowfall_mm": 22440,
+          "cover_days": 1778,
+          "days_per_10cm": 7.92
+        },
+        "1991-2020": {
+          "winters": 23,
+          "snowfall_mm": 21176,
+          "cover_days": 1120,
+          "days_per_10cm": 5.29
+        }
+      },
+      {
+        "station": "USC00205892",
+        "name": "NILES",
+        "1961-1990": {
+          "winters": 28,
+          "snowfall_mm": 33737,
+          "cover_days": 1645,
+          "days_per_10cm": 4.88
+        },
+        "1991-2020": {
+          "winters": 29,
+          "snowfall_mm": 38350,
+          "cover_days": 1362,
+          "days_per_10cm": 3.55
+        }
+      },
+      {
+        "station": "USC00206184",
+        "name": "ONAWAY 4N",
+        "1961-1990": {
+          "winters": 23,
+          "snowfall_mm": 37858,
+          "cover_days": 1834,
+          "days_per_10cm": 4.84
+        },
+        "1991-2020": {
+          "winters": 24,
+          "snowfall_mm": 36388,
+          "cover_days": 1901,
+          "days_per_10cm": 5.22
+        }
+      },
+      {
+        "station": "USC00206680",
+        "name": "PORT HURON",
+        "1961-1990": {
+          "winters": 22,
+          "snowfall_mm": 17080,
+          "cover_days": 1078,
+          "days_per_10cm": 6.31
+        },
+        "1991-2020": {
+          "winters": 26,
+          "snowfall_mm": 18404,
+          "cover_days": 1076,
+          "days_per_10cm": 5.85
+        }
+      },
+      {
+        "station": "USC00207812",
+        "name": "STAMBAUGH 2SSE",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 33464,
+          "cover_days": 2567,
+          "days_per_10cm": 7.67
+        },
+        "1991-2020": {
+          "winters": 22,
+          "snowfall_mm": 22274,
+          "cover_days": 1849,
+          "days_per_10cm": 8.3
+        }
+      },
+      {
+        "station": "USC00208772",
+        "name": "WELLSTON TIPPY DAM",
+        "1961-1990": {
+          "winters": 27,
+          "snowfall_mm": 53480,
+          "cover_days": 2160,
+          "days_per_10cm": 4.04
+        },
+        "1991-2020": {
+          "winters": 26,
+          "snowfall_mm": 41905,
+          "cover_days": 1932,
+          "days_per_10cm": 4.61
+        }
+      },
+      {
+        "station": "USC00208800",
+        "name": "W BRANCH 3SE",
+        "1961-1990": {
+          "winters": 24,
+          "snowfall_mm": 23023,
+          "cover_days": 1831,
+          "days_per_10cm": 7.95
+        },
+        "1991-2020": {
+          "winters": 29,
+          "snowfall_mm": 28293,
+          "cover_days": 2083,
+          "days_per_10cm": 7.36
+        }
+      },
+      {
+        "station": "USW00014826",
+        "name": "FLINT FCWOS",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 25283,
+          "cover_days": 1629,
+          "days_per_10cm": 6.44
+        },
+        "1991-2020": {
+          "winters": 30,
+          "snowfall_mm": 30190,
+          "cover_days": 1609,
+          "days_per_10cm": 5.33
+        }
+      },
+      {
+        "station": "USW00014838",
+        "name": "MARQUETTE",
+        "1961-1990": {
+          "winters": 28,
+          "snowfall_mm": 53840,
+          "cover_days": 2462,
+          "days_per_10cm": 4.57
+        },
+        "1991-2020": {
+          "winters": 27,
+          "snowfall_mm": 45001,
+          "cover_days": 2202,
+          "days_per_10cm": 4.89
+        }
+      },
+      {
+        "station": "USW00014840",
+        "name": "MUSKEGON CO AP",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 66108,
+          "cover_days": 2007,
+          "days_per_10cm": 3.04
+        },
+        "1991-2020": {
+          "winters": 27,
+          "snowfall_mm": 47879,
+          "cover_days": 1616,
+          "days_per_10cm": 3.38
+        }
+      },
+      {
+        "station": "USW00014845",
+        "name": "SAGINAW MBS INTL AP",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 23017,
+          "cover_days": 1577,
+          "days_per_10cm": 6.85
+        },
+        "1991-2020": {
+          "winters": 22,
+          "snowfall_mm": 18346,
+          "cover_days": 1040,
+          "days_per_10cm": 5.67
+        }
+      },
+      {
+        "station": "USW00014847",
+        "name": "SAULT STE MARIE SANDERSON FLD",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 65988,
+          "cover_days": 2559,
+          "days_per_10cm": 3.88
+        },
+        "1991-2020": {
+          "winters": 27,
+          "snowfall_mm": 55936,
+          "cover_days": 2279,
+          "days_per_10cm": 4.07
+        }
+      },
+      {
+        "station": "USW00094814",
+        "name": "HOUGHTON LAKE ROSCOMMON CO AP",
+        "1961-1990": {
+          "winters": 26,
+          "snowfall_mm": 32572,
+          "cover_days": 2092,
+          "days_per_10cm": 6.42
+        },
+        "1991-2020": {
+          "winters": 26,
+          "snowfall_mm": 29515,
+          "cover_days": 1957,
+          "days_per_10cm": 6.63
+        }
+      },
+      {
+        "station": "USW00094847",
+        "name": "DETROIT METRO AP",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 22472,
+          "cover_days": 1308,
+          "days_per_10cm": 5.82
+        },
+        "1991-2020": {
+          "winters": 29,
+          "snowfall_mm": 26445,
+          "cover_days": 1147,
+          "days_per_10cm": 4.34
+        }
+      },
+      {
+        "station": "USW00094849",
+        "name": "ALPENA CO RGNL AP",
+        "1961-1990": {
+          "winters": 29,
+          "snowfall_mm": 43998,
+          "cover_days": 2296,
+          "days_per_10cm": 5.22
+        },
+        "1991-2020": {
+          "winters": 27,
+          "snowfall_mm": 38151,
+          "cover_days": 2039,
+          "days_per_10cm": 5.34
+        }
+      },
+      {
+        "station": "USW00094850",
+        "name": "MARQUETTE",
+        "1961-1990": {
+          "winters": 24,
+          "snowfall_mm": 63402,
+          "cover_days": 2142,
+          "days_per_10cm": 3.38
+        },
+        "1991-2020": {
+          "winters": 30,
+          "snowfall_mm": 91444,
+          "cover_days": 2624,
+          "days_per_10cm": 2.87
+        }
+      },
+      {
+        "station": "USW00094860",
+        "name": "GRAND RAPIDS",
+        "1961-1990": {
+          "winters": 27,
+          "snowfall_mm": 34681,
+          "cover_days": 1688,
+          "days_per_10cm": 4.87
+        },
+        "1991-2020": {
+          "winters": 30,
+          "snowfall_mm": 46124,
+          "cover_days": 1664,
+          "days_per_10cm": 3.61
+        }
+      }
+    ]
+  },
+  "near_zero": {
+    "michigan": {
+      "stations": 66,
+      "1961-1990": {
+        "days": 165771,
+        "mean_daily_temp": -5.73,
+        "share_below_-2": 0.695,
+        "share_-2_to_+2": 0.22,
+        "share_above_+2": 0.084
+      },
+      "1991-2020": {
+        "days": 171844,
+        "mean_daily_temp": -4.64,
+        "share_below_-2": 0.629,
+        "share_-2_to_+2": 0.249,
+        "share_above_+2": 0.123
+      }
+    },
+    "southern_germany": {
+      "stations": 66,
+      "1991-2020": {
+        "days": 176109,
+        "mean_daily_temp": 0.66,
+        "share_below_-2": 0.264,
+        "share_-2_to_+2": 0.336,
+        "share_above_+2": 0.4
+      },
+      "1961-1990": {
+        "days": 170244,
+        "mean_daily_temp": -0.53,
+        "share_below_-2": 0.334,
+        "share_-2_to_+2": 0.354,
+        "share_above_+2": 0.312
+      }
+    }
+  }
+}

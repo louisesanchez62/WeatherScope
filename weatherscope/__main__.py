@@ -3,6 +3,7 @@
     python -m weatherscope stations --area michigan --near -83.35,42.21,25 --element SNWD
     python -m weatherscope f1 USW00094847 --from 2013-12-01 --to 2014-02-28
     python -m weatherscope f1 USW00094847 --from 1991-01-01 --to 2020-12-31 --by winter --element SNWD
+    python -m weatherscope f2 --area southern_germany --element TMAX --above 30 --min-days 5 --from 2003-06-01 --to 2003-08-31
     python -m weatherscope trace --station USW00094847 --from 2014-01-05 --to 2014-01-07
     python -m weatherscope trace --id USW00094847:2014-01-06:TMIN --history
 
@@ -17,6 +18,8 @@ from pymongo.errors import PyMongoError
 from . import AREAS, ELEMENTS
 from .db import connect
 from .f1 import PERIODS, station_summary
+from .f2 import find_episodes
+from .f3 import monthly_anomalies
 from .output import as_json, print_result
 from .stations import search_stations
 from .trace import trace
@@ -46,6 +49,36 @@ def build_parser() -> argparse.ArgumentParser:
     f.add_argument("--by", choices=PERIODS, default="month")
     f.add_argument("--element", nargs="+", choices=ELEMENTS, default=list(ELEMENTS))
 
+    e = sub.add_parser("f2", parents=[common], help="F2: episodes of consecutive days meeting a rule")
+    e.add_argument("--element", required=True, choices=ELEMENTS)
+    e.add_argument("--from", dest="start", required=True, metavar="YYYY-MM-DD")
+    e.add_argument("--to", dest="end", required=True, metavar="YYYY-MM-DD")
+    e.add_argument("--area", choices=AREAS)
+    e.add_argument("--bbox", metavar="LON1,LAT1,LON2,LAT2")
+    e.add_argument("--near", metavar="LON,LAT,KM")
+    e.add_argument("--station", nargs="+", dest="stations", metavar="ID")
+    rule = e.add_mutually_exclusive_group(required=True)
+    rule.add_argument("--above", type=float, help="value >= X (degC or mm)")
+    rule.add_argument("--below", type=float, help="value <= X (degC or mm)")
+    rule.add_argument("--pct-above", type=float, metavar="P", help="above the station's 1961-1990 P-th percentile")
+    rule.add_argument("--pct-below", type=float, metavar="P", help="below the station's 1961-1990 (100-P)-th percentile")
+    e.add_argument("--min-days", type=int, default=1)
+    e.add_argument("--top", type=int, default=20, help="episodes shown in the table (default 20; --json gives all)")
+
+    a = sub.add_parser("f3", parents=[common], help="F3: most unusual months per area, against a reference")
+    a.add_argument("--element", required=True, choices=ELEMENTS)
+    a.add_argument("--area", nargs="+", choices=AREAS, default=list(AREAS))
+    a.add_argument("--from-year", type=int, default=1991)
+    a.add_argument("--to-year", type=int, default=2020)
+    a.add_argument("--ref-from", type=int, default=1961, help="first reference year (default 1961)")
+    a.add_argument("--ref-to", type=int, default=1990, help="last reference year (default 1990)")
+    a.add_argument("--months", nargs="+", type=int, choices=range(1, 13), metavar="M", help="only these calendar months, e.g. 12 1 2")
+    a.add_argument("--grid", type=float, default=1.0, help="grid cell size in degrees (default 1)")
+    a.add_argument("--min-ref-years", type=int, default=24, help="valid reference years needed for a normal (default 24)")
+    a.add_argument("--min-cells", type=float, default=0.5, help="share of the area's cells needed to rank a month (default 0.5)")
+    a.add_argument("--sign", choices=["high", "low"], help="rank only warm/wet (high) or cold/dry (low) months")
+    a.add_argument("--top", type=int, default=10)
+
     t = sub.add_parser("trace", parents=[common], help="list the source records behind a result")
     t.add_argument("--id", nargs="+", dest="ids", metavar="STATION:DATE:ELEMENT")
     t.add_argument("--station")
@@ -65,6 +98,15 @@ def main(argv=None) -> int:
             result = search_stations(db, args.area, args.bbox, args.near, args.element, args.name, args.limit)
         elif args.command == "f1":
             result = station_summary(db, args.station, args.start, args.end, args.by, args.element)
+        elif args.command == "f2":
+            result = find_episodes(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
+                                   args.stations, args.above, args.below, args.pct_above, args.pct_below,
+                                   args.min_days)
+            result["display_top"] = args.top
+        elif args.command == "f3":
+            result = monthly_anomalies(db, args.element, args.area, args.from_year, args.to_year, args.ref_from,
+                                       args.ref_to, args.months, args.grid, args.min_ref_years, args.min_cells,
+                                       args.sign, args.top)
         else:
             result = trace(db, args.ids, args.station, args.start, args.end, args.element, args.history, args.limit)
     except (ValueError, LookupError) as e:
