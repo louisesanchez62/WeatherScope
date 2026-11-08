@@ -2,7 +2,7 @@
 \usepackage{minted}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage[english]{babel} % french.ldf absent ici : sudo apt install texlive-lang-french pour passer en [french]
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{url}
@@ -39,6 +39,13 @@
 \fancyhead[R]{}
 \fancyfoot[C]{\thepage}
 \begin{document}
+% Titres en français (à retirer si babel passe en [french])
+\renewcommand{\contentsname}{Table des matières}
+\renewcommand{\refname}{Références}
+\renewcommand{\tablename}{Tableau}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\listfigurename}{Liste des figures}
+\renewcommand{\appendixname}{Annexe}
 \begin{titlepage}
   \noindent
   \includegraphics[width=0.35\textwidth]{assets/logo-ligne-simple-couleur-master.png}\hfill
@@ -101,6 +108,31 @@
 \newpage
 \thispagestyle{empty}
 \begin{thebibliography}{9}
+
+\bibitem{menne2012}
+M.~J. Menne, I.~Durre, R.~S. Vose, B.~E. Gleason et T.~G. Houston.
+\newblock An overview of the Global Historical Climatology Network-Daily database.
+\newblock \emph{Journal of Atmospheric and Oceanic Technology}, 29(7):897--910, 2012.
+
+\bibitem{wmo2017}
+World Meteorological Organization.
+\newblock \emph{WMO Guidelines on the Calculation of Climate Normals}.
+\newblock WMO-No.~1203, Genève, 2017.
+
+\bibitem{cifelli2005}
+R.~Cifelli, N.~Doesken, P.~Kennedy, L.~D. Carey, S.~A. Rutledge, C.~Gimmestad et T.~Depue.
+\newblock The Community Collaborative Rain, Hail, and Snow Network: informal education for scientists and citizens.
+\newblock \emph{Bulletin of the American Meteorological Society}, 86(8):1069--1077, 2005.
+
+\bibitem{kleintank2002}
+A.~M.~G. Klein~Tank et al.
+\newblock Daily dataset of 20th-century surface air temperature and precipitation series for the European Climate Assessment.
+\newblock \emph{International Journal of Climatology}, 22(12):1441--1453, 2002.
+
+\bibitem{naturalearth}
+Natural Earth.
+\newblock 1:10m Cultural Vectors, Admin 1 -- States, Provinces; 1:10m Physical Vectors, Lakes. Version 5.1.2.
+\newblock \url{https://www.naturalearthdata.com}, domaine public.
 
 \end{thebibliography}
 
