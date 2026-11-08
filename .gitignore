@@ -1,7 +1,13 @@
 # Downloaded NOAA / Natural Earth files: reproducible with scripts/fetch_metadata.py
-# (checksums are kept in data/raw/metadata/MANIFEST.json, which is tracked)
+# and scripts/fetch_observations.py. The manifests (URL, date, SHA-256) are tracked.
 data/raw/**
 !data/raw/metadata/
 !data/raw/metadata/MANIFEST.json
+!data/raw/by_station/
+!data/raw/by_station/MANIFEST.json
+
+# MongoDB data folders and logs (scripts/local_server.sh)
+data/db/
+
 __pycache__/
 *.pyc

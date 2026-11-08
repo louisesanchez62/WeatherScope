@@ -1,0 +1,39 @@
+\section{Anomalies relevées dans les données}
+\label{annexe:anomalies}
+
+Les fréquences portent sur les 31,6 millions d'observations chargées (1961--2020, 1\,352 stations). Les exemples sont des lignes réelles des fichiers \texttt{by\_station} de la NOAA, au format \texttt{station,date,élément,valeur,M,Q,S,heure} ; elles ont été relues dans les fichiers d'origine. Comptages produits par \texttt{scripts/coverage\_report.py} (\texttt{results/coverage/anomalies.json}).
+
+\paragraph{A1. Valeurs signalées par un drapeau qualité.}
+56\,360 valeurs (0,18~\%) portent un drapeau qualité, dont 47\,431 le drapeau \texttt{I} (échec d'un contrôle de cohérence interne, par exemple TMAX inférieur à TMIN). Le Michigan en concentre la grande majorité. \\
+\texttt{GM000002698,19620128,TMIN,4,,I,E,} (Karlsruhe, 0,4~°C signalé \texttt{I}). \\
+\emph{Traitement :} valeur conservée et traçable, exclue des analyses.
+
+\paragraph{A2. Valeurs physiquement impossibles.}
+63 valeurs portent le drapeau \texttt{X} (hors limites) et 255 le drapeau \texttt{G} (valeur aberrante). Le cas le plus net est Big Rapids (Michigan) le 11 janvier 1982 : 2\,032~mm de pluie, 2\,606~mm de neige et 38,9~°C le même jour d'hiver. \\
+\texttt{USC00200779,19820111,PRCP,20323,,X,0,2400} \\
+\texttt{USC00200779,19820111,SNOW,2606,,X,0,} \\
+\texttt{USC00200779,19820111,TMAX,389,,G,0,2400} \\
+Nous n'avons trouvé aucune valeur hors de nos bornes de plausibilité sans drapeau NOAA. \\
+\emph{Traitement :} comme A1.
+
+\paragraph{A3. Précipitations « manquantes, présumées nulles » (drapeau P).}
+1\,466\,628 valeurs PRCP ou SNOW portent le drapeau de mesure \texttt{P}, sur 298 stations, toutes au Michigan (aucune en Allemagne). \\
+\texttt{USC00200032,19820105,PRCP,0,P,,0,2400} (Adrian, Michigan). \\
+\emph{Traitement :} traitées comme manquantes, jamais comme un vrai zéro. Les traces (\texttt{T}, valeur 0) sont comptées comme jour de précipitation de quantité négligeable.
+
+\paragraph{A4. Neige au sol en été, sans drapeau.}
+4 valeurs de hauteur de neige positives en juin, juillet ou août, toutes les 1\textsuperscript{er} et 2 juin 1962, à quatre stations allemandes différentes (10 à 90~mm). \\
+\texttt{GME00102412,19620602,SNWD,40,,,E,} (Kempten, 40~mm). \\
+\emph{Traitement :} conservées. Plusieurs stations voisines les mêmes jours évoquent plutôt une vraie chute de neige tardive qu'une erreur : c'est le cas qu'un événement régional (F4) doit distinguer d'un extrême isolé.
+
+\paragraph{A5. Un même site sous deux identifiants.}
+95 paires de stations sont à moins de 1~km l'une de l'autre. À Gelbelsee (Bavière), \texttt{GMM00010777} (1988--2003) et \texttt{GME00122734} (depuis 1998) sont à 250~m. Sur les 36 jours de 2003 où les deux donnent TMAX, 33 valeurs sont identiques et 3 diffèrent. \\
+\texttt{GMM00010777,20030518,TMAX,158,,,S,} \quad \texttt{GME00122734,20030518,TMAX,158,,,E,} \\
+\texttt{GMM00010777,20030525,TMAX,181,,,S,} \quad \texttt{GME00122734,20030525,TMAX,215,,,E,} \\
+\emph{Traitement :} stations gardées séparément ; dans F3 et F4, une paire ne compte que pour un seul site.
+
+\paragraph{A6. Séries qui commencent, s'arrêtent ou s'interrompent.}
+Au Michigan, 888 stations commencent après janvier 1991 et 609 s'arrêtent avant décembre 2020 (67 et 108 en Allemagne). Parmi les stations à longue série, la plus longue interruption est à Tirschenreuth-Lodermühl : 1\,947 jours sans donnée. \\
+\texttt{GME00129298,20021031,TMAX,60,,,E,} puis \texttt{GME00129298,20080301,TMAX,85,,,E,} \\
+L'inventaire peut masquer ces trous : il annonce TMIN de 1943 à 2026 pour Michigamme (\texttt{USC00205403}), alors que le fichier s'arrête en 1949 et ne reprend qu'en 2022. \\
+\emph{Traitement :} statut \guillemotleft~longue série~\guillemotright{} mesuré mois par mois (règle 3/5 de l'OMM), pas d'après l'inventaire.

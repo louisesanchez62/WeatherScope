@@ -1,0 +1,22 @@
+{
+  "batch": "2026-11-08-initial",
+  "status": "done",
+  "uri": "mongodb://localhost:27017",
+  "db": "weatherscope",
+  "start": "1961-01-01",
+  "end": "2020-12-31",
+  "files": 1353,
+  "stations_with_rows": 1352,
+  "elapsed_s": 4008.86,
+  "counts": {
+    "inserted": 31628420,
+    "unchanged": 0,
+    "revised": 0,
+    "rejected": 0
+  },
+  "rows_by_period": {
+    "reference_1961_1990": 13530427,
+    "study_1991_2020": 18097993
+  },
+  "notes": {}
+}

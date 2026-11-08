@@ -6,6 +6,17 @@
 \contentsline {paragraph}{Zones.}{4}{}%
 \contentsline {paragraph}{Période.}{4}{}%
 \contentsline {paragraph}{Stations.}{4}{}%
-\contentsline {subsection}{\numberline {2.2}Traçabilité, Traitement des Drapeaux (Flags) et Valeurs Manquantes}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Traçabilité, Traitement des Drapeaux (Flags) et Valeurs Manquantes}{5}{}%
+\contentsline {paragraph}{Traçabilité.}{5}{}%
+\contentsline {paragraph}{Drapeaux.}{5}{}%
+\contentsline {paragraph}{Valeurs manquantes.}{5}{}%
+\contentsline {paragraph}{Heure d'observation.}{6}{}%
 \contentsline {section}{\numberline {3}Architecture Système \& Implémentation des Services}{6}{}%
 \contentsline {section}{\numberline {4}Conclusion}{6}{}%
+\contentsline {section}{\numberline {A}Anomalies relevées dans les données}{7}{}%
+\contentsline {paragraph}{A1. Valeurs signalées par un drapeau qualité.}{7}{}%
+\contentsline {paragraph}{A2. Valeurs physiquement impossibles.}{7}{}%
+\contentsline {paragraph}{A3. Précipitations « manquantes, présumées nulles » (drapeau P).}{8}{}%
+\contentsline {paragraph}{A4. Neige au sol en été, sans drapeau.}{8}{}%
+\contentsline {paragraph}{A5. Un même site sous deux identifiants.}{8}{}%
+\contentsline {paragraph}{A6. Séries qui commencent, s'arrêtent ou s'interrompent.}{8}{}%
