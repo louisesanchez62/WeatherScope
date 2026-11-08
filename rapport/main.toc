@@ -6,6 +6,47 @@
 \contentsline {paragraph}{Zones.}{4}{}%
 \contentsline {paragraph}{Période.}{4}{}%
 \contentsline {paragraph}{Stations.}{4}{}%
-\contentsline {subsection}{\numberline {2.2}Traçabilité, Traitement des Drapeaux (Flags) et Valeurs Manquantes}{6}{}%
+\contentsline {subsection}{\numberline {2.2}Traçabilité, Traitement des Drapeaux (Flags) et Valeurs Manquantes}{5}{}%
+\contentsline {paragraph}{Traçabilité.}{5}{}%
+\contentsline {paragraph}{Drapeaux.}{5}{}%
+\contentsline {paragraph}{Valeurs manquantes.}{5}{}%
+\contentsline {paragraph}{Heure d'observation.}{6}{}%
 \contentsline {section}{\numberline {3}Architecture Système \& Implémentation des Services}{6}{}%
-\contentsline {section}{\numberline {4}Conclusion}{6}{}%
+\contentsline {subsection}{\numberline {3.1}Modèle de données}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Services}{7}{}%
+\contentsline {paragraph}{F1, explorer une station.}{7}{}%
+\contentsline {paragraph}{Traçabilité.}{7}{}%
+\contentsline {paragraph}{F2, épisodes prolongés.}{7}{}%
+\contentsline {paragraph}{F3, mois anormaux.}{7}{}%
+\contentsline {section}{\numberline {4}Ce que disent les hivers}{7}{}%
+\contentsline {paragraph}{Des hivers d'enfance vraiment blancs.}{8}{}%
+\contentsline {paragraph}{Autant de neige, mais elle tient moins.}{8}{}%
+\contentsline {paragraph}{Le sud de l'Allemagne perd plus vite.}{9}{}%
+\contentsline {paragraph}{Pourquoi~: l'hiver allemand a franchi zéro.}{9}{}%
+\contentsline {paragraph}{Ce qui pourrait nous tromper.}{9}{}%
+\contentsline {section}{\numberline {5}Conclusion}{9}{}%
+\contentsline {section}{\numberline {A}Anomalies relevées dans les données}{10}{}%
+\contentsline {paragraph}{A1. Valeurs signalées par un drapeau qualité.}{10}{}%
+\contentsline {paragraph}{A2. Valeurs physiquement impossibles.}{10}{}%
+\contentsline {paragraph}{A3. Précipitations « manquantes, présumées nulles » (drapeau P).}{11}{}%
+\contentsline {paragraph}{A4. Neige au sol en été, sans drapeau.}{11}{}%
+\contentsline {paragraph}{A5. Un même site sous deux identifiants.}{11}{}%
+\contentsline {paragraph}{A6. Séries qui commencent, s'arrêtent ou s'interrompent.}{11}{}%
+\contentsline {section}{\numberline {B}Référence des services}{11}{}%
+\contentsline {subsection}{\numberline {B.1}F1 : explorer une station}{11}{}%
+\contentsline {paragraph}{Entrées.}{11}{}%
+\contentsline {paragraph}{Sorties.}{12}{}%
+\contentsline {paragraph}{Fonctionnement.}{12}{}%
+\contentsline {paragraph}{Exemple.}{12}{}%
+\contentsline {subsection}{\numberline {B.2}Traçabilité}{12}{}%
+\contentsline {paragraph}{Entrées.}{12}{}%
+\contentsline {paragraph}{Sorties.}{12}{}%
+\contentsline {paragraph}{Exemple.}{12}{}%
+\contentsline {subsection}{\numberline {B.3}F2 : épisodes prolongés}{12}{}%
+\contentsline {paragraph}{Entrées.}{12}{}%
+\contentsline {paragraph}{Sorties.}{13}{}%
+\contentsline {paragraph}{Exemple.}{13}{}%
+\contentsline {subsection}{\numberline {B.4}F3 : mois anormaux}{13}{}%
+\contentsline {paragraph}{Entrées.}{13}{}%
+\contentsline {paragraph}{Sorties.}{13}{}%
+\contentsline {paragraph}{Exemple.}{13}{}%

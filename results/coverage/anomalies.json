@@ -1,0 +1,1654 @@
+{
+  "mflag_P": {
+    "description": "PRCP or SNOW flagged P: missing, presumed zero",
+    "count": 1466628,
+    "stations": 298,
+    "examples": [
+      {
+        "station": "USC00200032",
+        "date": "1982-01-05",
+        "element": "PRCP",
+        "raw": 0,
+        "mflag": "P",
+        "qflag": null,
+        "sflag": "0",
+        "obs_time": "2400",
+        "source_file": "USC00200032.csv.gz"
+      },
+      {
+        "station": "USC00200032",
+        "date": "1982-01-26",
+        "element": "PRCP",
+        "raw": 0,
+        "mflag": "P",
+        "qflag": null,
+        "sflag": "0",
+        "obs_time": "2400",
+        "source_file": "USC00200032.csv.gz"
+      },
+      {
+        "station": "USC00200032",
+        "date": "1982-01-27",
+        "element": "PRCP",
+        "raw": 0,
+        "mflag": "P",
+        "qflag": null,
+        "sflag": "0",
+        "obs_time": "2400",
+        "source_file": "USC00200032.csv.gz"
+      },
+      {
+        "station": "USC00200032",
+        "date": "1982-01-28",
+        "element": "PRCP",
+        "raw": 0,
+        "mflag": "P",
+        "qflag": null,
+        "sflag": "0",
+        "obs_time": "2400",
+        "source_file": "USC00200032.csv.gz"
+      },
+      {
+        "station": "USC00200032",
+        "date": "1982-02-01",
+        "element": "PRCP",
+        "raw": 0,
+        "mflag": "P",
+        "qflag": null,
+        "sflag": "0",
+        "obs_time": "2400",
+        "source_file": "USC00200032.csv.gz"
+      }
+    ]
+  },
+  "qflag_I": {
+    "description": "Values carrying NOAA quality flag I",
+    "count": 47431,
+    "stations": 537,
+    "examples": [
+      {
+        "station": "GM000002698",
+        "date": "1962-01-28",
+        "element": "TMIN",
+        "raw": 4,
+        "mflag": null,
+        "qflag": "I",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GM000002698.csv.gz"
+      },
+      {
+        "station": "GM000002698",
+        "date": "1962-01-29",
+        "element": "TMAX",
+        "raw": -9,
+        "mflag": null,
+        "qflag": "I",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GM000002698.csv.gz"
+      },
+      {
+        "station": "GM000002698",
+        "date": "1963-01-09",
+        "element": "TMIN",
+        "raw": -27,
+        "mflag": null,
+        "qflag": "I",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GM000002698.csv.gz"
+      },
+      {
+        "station": "GM000002698",
+        "date": "1963-01-10",
+        "element": "TMAX",
+        "raw": -38,
+        "mflag": null,
+        "qflag": "I",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GM000002698.csv.gz"
+      },
+      {
+        "station": "GM000002698",
+        "date": "1965-07-16",
+        "element": "TMIN",
+        "raw": 171,
+        "mflag": null,
+        "qflag": "I",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GM000002698.csv.gz"
+      }
+    ]
+  },
+  "qflag_Z": {
+    "description": "Values carrying NOAA quality flag Z",
+    "count": 3598,
+    "stations": 30,
+    "examples": [
+      {
+        "station": "USC00200771",
+        "date": "2012-12-10",
+        "element": "SNOW",
+        "raw": 109,
+        "mflag": null,
+        "qflag": "Z",
+        "sflag": "7",
+        "obs_time": null,
+        "source_file": "USC00200771.csv.gz"
+      },
+      {
+        "station": "USC00200779",
+        "date": "2014-02-24",
+        "element": "SNWD",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "Z",
+        "sflag": "7",
+        "obs_time": null,
+        "source_file": "USC00200779.csv.gz"
+      },
+      {
+        "station": "USC00203295",
+        "date": "2013-01-01",
+        "element": "SNWD",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "Z",
+        "sflag": "7",
+        "obs_time": null,
+        "source_file": "USC00203295.csv.gz"
+      },
+      {
+        "station": "USC00203295",
+        "date": "2013-01-02",
+        "element": "SNWD",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "Z",
+        "sflag": "7",
+        "obs_time": null,
+        "source_file": "USC00203295.csv.gz"
+      },
+      {
+        "station": "USC00203295",
+        "date": "2014-03-12",
+        "element": "SNWD",
+        "raw": 483,
+        "mflag": null,
+        "qflag": "Z",
+        "sflag": "7",
+        "obs_time": null,
+        "source_file": "USC00203295.csv.gz"
+      }
+    ]
+  },
+  "qflag_L": {
+    "description": "Values carrying NOAA quality flag L",
+    "count": 2169,
+    "stations": 357,
+    "examples": [
+      {
+        "station": "US1MIAC0003",
+        "date": "2014-06-01",
+        "element": "PRCP",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "L",
+        "sflag": "N",
+        "obs_time": "0700",
+        "source_file": "US1MIAC0003.csv.gz"
+      },
+      {
+        "station": "US1MIAN0001",
+        "date": "2008-10-29",
+        "element": "PRCP",
+        "raw": 0,
+        "mflag": "T",
+        "qflag": "L",
+        "sflag": "N",
+        "obs_time": "0500",
+        "source_file": "US1MIAN0001.csv.gz"
+      },
+      {
+        "station": "US1MIAN0001",
+        "date": "2009-10-23",
+        "element": "PRCP",
+        "raw": 236,
+        "mflag": null,
+        "qflag": "L",
+        "sflag": "N",
+        "obs_time": "0600",
+        "source_file": "US1MIAN0001.csv.gz"
+      },
+      {
+        "station": "US1MIAN0001",
+        "date": "2013-12-20",
+        "element": "PRCP",
+        "raw": 28,
+        "mflag": null,
+        "qflag": "L",
+        "sflag": "N",
+        "obs_time": "0700",
+        "source_file": "US1MIAN0001.csv.gz"
+      },
+      {
+        "station": "US1MIAN0001",
+        "date": "2014-01-10",
+        "element": "PRCP",
+        "raw": 0,
+        "mflag": "T",
+        "qflag": "L",
+        "sflag": "N",
+        "obs_time": "0700",
+        "source_file": "US1MIAN0001.csv.gz"
+      }
+    ]
+  },
+  "qflag_S": {
+    "description": "Values carrying NOAA quality flag S",
+    "count": 1542,
+    "stations": 250,
+    "examples": [
+      {
+        "station": "GME00102412",
+        "date": "1964-02-03",
+        "element": "TMIN",
+        "raw": -161,
+        "mflag": null,
+        "qflag": "S",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00102412.csv.gz"
+      },
+      {
+        "station": "GME00111503",
+        "date": "1962-01-26",
+        "element": "TMIN",
+        "raw": -72,
+        "mflag": null,
+        "qflag": "S",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00111503.csv.gz"
+      },
+      {
+        "station": "GME00121870",
+        "date": "1982-11-08",
+        "element": "TMIN",
+        "raw": 170,
+        "mflag": null,
+        "qflag": "S",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00121870.csv.gz"
+      },
+      {
+        "station": "GME00121870",
+        "date": "1983-12-19",
+        "element": "TMAX",
+        "raw": 136,
+        "mflag": null,
+        "qflag": "S",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00121870.csv.gz"
+      },
+      {
+        "station": "GME00123190",
+        "date": "1994-07-26",
+        "element": "TMAX",
+        "raw": 162,
+        "mflag": null,
+        "qflag": "S",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00123190.csv.gz"
+      }
+    ]
+  },
+  "qflag_D": {
+    "description": "Values carrying NOAA quality flag D",
+    "count": 964,
+    "stations": 11,
+    "examples": [
+      {
+        "station": "USC00202015",
+        "date": "2008-03-01",
+        "element": "TMAX",
+        "raw": 22,
+        "mflag": null,
+        "qflag": "D",
+        "sflag": "0",
+        "obs_time": "0900",
+        "source_file": "USC00202015.csv.gz"
+      },
+      {
+        "station": "USC00202015",
+        "date": "2008-03-02",
+        "element": "TMAX",
+        "raw": 33,
+        "mflag": null,
+        "qflag": "D",
+        "sflag": "0",
+        "obs_time": "0900",
+        "source_file": "USC00202015.csv.gz"
+      },
+      {
+        "station": "USC00202015",
+        "date": "2008-03-03",
+        "element": "TMAX",
+        "raw": 117,
+        "mflag": null,
+        "qflag": "D",
+        "sflag": "0",
+        "obs_time": "0900",
+        "source_file": "USC00202015.csv.gz"
+      },
+      {
+        "station": "USC00202015",
+        "date": "2008-03-04",
+        "element": "TMAX",
+        "raw": 150,
+        "mflag": null,
+        "qflag": "D",
+        "sflag": "0",
+        "obs_time": "0900",
+        "source_file": "USC00202015.csv.gz"
+      },
+      {
+        "station": "USC00202015",
+        "date": "2008-03-05",
+        "element": "TMAX",
+        "raw": 11,
+        "mflag": null,
+        "qflag": "D",
+        "sflag": "0",
+        "obs_time": "0900",
+        "source_file": "USC00202015.csv.gz"
+      }
+    ]
+  },
+  "qflag_G": {
+    "description": "Values carrying NOAA quality flag G",
+    "count": 255,
+    "stations": 110,
+    "examples": [
+      {
+        "station": "GM000002716",
+        "date": "1990-02-18",
+        "element": "SNWD",
+        "raw": 1699,
+        "mflag": null,
+        "qflag": "G",
+        "sflag": "S",
+        "obs_time": null,
+        "source_file": "GM000002716.csv.gz"
+      },
+      {
+        "station": "GM000002716",
+        "date": "1990-11-12",
+        "element": "SNWD",
+        "raw": 2649,
+        "mflag": null,
+        "qflag": "G",
+        "sflag": "S",
+        "obs_time": null,
+        "source_file": "GM000002716.csv.gz"
+      },
+      {
+        "station": "GM000002716",
+        "date": "1991-04-21",
+        "element": "SNWD",
+        "raw": 1900,
+        "mflag": null,
+        "qflag": "G",
+        "sflag": "S",
+        "obs_time": null,
+        "source_file": "GM000002716.csv.gz"
+      },
+      {
+        "station": "GME00115771",
+        "date": "2003-05-31",
+        "element": "SNWD",
+        "raw": 1161,
+        "mflag": null,
+        "qflag": "G",
+        "sflag": "S",
+        "obs_time": null,
+        "source_file": "GME00115771.csv.gz"
+      },
+      {
+        "station": "GME00124954",
+        "date": "2003-02-17",
+        "element": "SNWD",
+        "raw": 1090,
+        "mflag": null,
+        "qflag": "G",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00124954.csv.gz"
+      }
+    ]
+  },
+  "qflag_O": {
+    "description": "Values carrying NOAA quality flag O",
+    "count": 177,
+    "stations": 98,
+    "examples": [
+      {
+        "station": "GME00102388",
+        "date": "1973-12-03",
+        "element": "TMIN",
+        "raw": -224,
+        "mflag": null,
+        "qflag": "O",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00102388.csv.gz"
+      },
+      {
+        "station": "GME00111512",
+        "date": "1969-10-01",
+        "element": "SNWD",
+        "raw": 30,
+        "mflag": null,
+        "qflag": "O",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00111512.csv.gz"
+      },
+      {
+        "station": "GME00121162",
+        "date": "2002-09-25",
+        "element": "SNWD",
+        "raw": 60,
+        "mflag": null,
+        "qflag": "O",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00121162.csv.gz"
+      },
+      {
+        "station": "GME00121654",
+        "date": "1973-12-03",
+        "element": "TMIN",
+        "raw": -242,
+        "mflag": null,
+        "qflag": "O",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00121654.csv.gz"
+      },
+      {
+        "station": "GME00121750",
+        "date": "1986-02-27",
+        "element": "TMIN",
+        "raw": -261,
+        "mflag": null,
+        "qflag": "O",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00121750.csv.gz"
+      }
+    ]
+  },
+  "qflag_K": {
+    "description": "Values carrying NOAA quality flag K",
+    "count": 65,
+    "stations": 4,
+    "examples": [
+      {
+        "station": "GME00132550",
+        "date": "1998-08-27",
+        "element": "PRCP",
+        "raw": 1,
+        "mflag": null,
+        "qflag": "K",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00132550.csv.gz"
+      },
+      {
+        "station": "GME00132550",
+        "date": "1998-08-28",
+        "element": "PRCP",
+        "raw": 1,
+        "mflag": null,
+        "qflag": "K",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00132550.csv.gz"
+      },
+      {
+        "station": "GME00132550",
+        "date": "1998-08-29",
+        "element": "PRCP",
+        "raw": 1,
+        "mflag": null,
+        "qflag": "K",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00132550.csv.gz"
+      },
+      {
+        "station": "GME00132550",
+        "date": "1998-09-02",
+        "element": "PRCP",
+        "raw": 1,
+        "mflag": null,
+        "qflag": "K",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00132550.csv.gz"
+      },
+      {
+        "station": "GME00132550",
+        "date": "1998-09-04",
+        "element": "PRCP",
+        "raw": 1,
+        "mflag": null,
+        "qflag": "K",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00132550.csv.gz"
+      }
+    ]
+  },
+  "qflag_X": {
+    "description": "Values carrying NOAA quality flag X",
+    "count": 63,
+    "stations": 21,
+    "examples": [
+      {
+        "station": "USC00200779",
+        "date": "1982-01-11",
+        "element": "PRCP",
+        "raw": 20323,
+        "mflag": null,
+        "qflag": "X",
+        "sflag": "0",
+        "obs_time": "2400",
+        "source_file": "USC00200779.csv.gz"
+      },
+      {
+        "station": "USC00200779",
+        "date": "1982-01-11",
+        "element": "SNOW",
+        "raw": 2606,
+        "mflag": null,
+        "qflag": "X",
+        "sflag": "0",
+        "obs_time": null,
+        "source_file": "USC00200779.csv.gz"
+      },
+      {
+        "station": "USC00202395",
+        "date": "1984-03-28",
+        "element": "SNWD",
+        "raw": 24028,
+        "mflag": null,
+        "qflag": "X",
+        "sflag": "0",
+        "obs_time": null,
+        "source_file": "USC00202395.csv.gz"
+      },
+      {
+        "station": "USC00203530",
+        "date": "2017-02-26",
+        "element": "SNWD",
+        "raw": 559,
+        "mflag": null,
+        "qflag": "X",
+        "sflag": "7",
+        "obs_time": "0900",
+        "source_file": "USC00203530.csv.gz"
+      },
+      {
+        "station": "USC00203530",
+        "date": "2017-02-27",
+        "element": "SNWD",
+        "raw": 5842,
+        "mflag": null,
+        "qflag": "X",
+        "sflag": "7",
+        "obs_time": "0900",
+        "source_file": "USC00203530.csv.gz"
+      }
+    ]
+  },
+  "qflag_N": {
+    "description": "Values carrying NOAA quality flag N",
+    "count": 35,
+    "stations": 15,
+    "examples": [
+      {
+        "station": "GME00123382",
+        "date": "2006-04-17",
+        "element": "TMAX",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "N",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00123382.csv.gz"
+      },
+      {
+        "station": "GME00123382",
+        "date": "2006-04-17",
+        "element": "TMIN",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "N",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00123382.csv.gz"
+      },
+      {
+        "station": "GME00123382",
+        "date": "2006-04-18",
+        "element": "TMAX",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "N",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00123382.csv.gz"
+      },
+      {
+        "station": "GME00123382",
+        "date": "2006-04-18",
+        "element": "TMIN",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "N",
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00123382.csv.gz"
+      },
+      {
+        "station": "USC00200632",
+        "date": "1990-12-26",
+        "element": "SNWD",
+        "raw": 25,
+        "mflag": "T",
+        "qflag": "N",
+        "sflag": "0",
+        "obs_time": null,
+        "source_file": "USC00200632.csv.gz"
+      }
+    ]
+  },
+  "qflag_W": {
+    "description": "Values carrying NOAA quality flag W",
+    "count": 23,
+    "stations": 13,
+    "examples": [
+      {
+        "station": "USC00200343",
+        "date": "1982-08-01",
+        "element": "SNWD",
+        "raw": 0,
+        "mflag": null,
+        "qflag": "W",
+        "sflag": "0",
+        "obs_time": null,
+        "source_file": "USC00200343.csv.gz"
+      },
+      {
+        "station": "USC00200343",
+        "date": "1982-08-02",
+        "element": "SNWD",
+        "raw": 25,
+        "mflag": null,
+        "qflag": "W",
+        "sflag": "0",
+        "obs_time": null,
+        "source_file": "USC00200343.csv.gz"
+      },
+      {
+        "station": "USC00200552",
+        "date": "1982-09-23",
+        "element": "SNWD",
+        "raw": 0,
+        "mflag": "P",
+        "qflag": "W",
+        "sflag": "0",
+        "obs_time": null,
+        "source_file": "USC00200552.csv.gz"
+      },
+      {
+        "station": "USC00200552",
+        "date": "1982-09-24",
+        "element": "SNWD",
+        "raw": 25,
+        "mflag": null,
+        "qflag": "W",
+        "sflag": "0",
+        "obs_time": null,
+        "source_file": "USC00200552.csv.gz"
+      },
+      {
+        "station": "USC00200864",
+        "date": "1963-05-04",
+        "element": "SNOW",
+        "raw": 13,
+        "mflag": null,
+        "qflag": "W",
+        "sflag": "0",
+        "obs_time": null,
+        "source_file": "USC00200864.csv.gz"
+      }
+    ]
+  },
+  "qflag_T": {
+    "description": "Values carrying NOAA quality flag T",
+    "count": 14,
+    "stations": 10,
+    "examples": [
+      {
+        "station": "USC00201299",
+        "date": "2001-02-12",
+        "element": "TMIN",
+        "raw": -89,
+        "mflag": null,
+        "qflag": "T",
+        "sflag": "0",
+        "obs_time": "1700",
+        "source_file": "USC00201299.csv.gz"
+      },
+      {
+        "station": "USC00201299",
+        "date": "2001-02-13",
+        "element": "TMIN",
+        "raw": -417,
+        "mflag": null,
+        "qflag": "T",
+        "sflag": "0",
+        "obs_time": "1700",
+        "source_file": "USC00201299.csv.gz"
+      },
+      {
+        "station": "USC00201299",
+        "date": "2012-01-21",
+        "element": "TMAX",
+        "raw": 239,
+        "mflag": null,
+        "qflag": "T",
+        "sflag": "7",
+        "obs_time": "0700",
+        "source_file": "USC00201299.csv.gz"
+      },
+      {
+        "station": "USC00201492",
+        "date": "1996-01-27",
+        "element": "TMIN",
+        "raw": -400,
+        "mflag": null,
+        "qflag": "T",
+        "sflag": "0",
+        "obs_time": "0900",
+        "source_file": "USC00201492.csv.gz"
+      },
+      {
+        "station": "USC00201492",
+        "date": "1997-03-07",
+        "element": "TMIN",
+        "raw": -383,
+        "mflag": null,
+        "qflag": "T",
+        "sflag": "0",
+        "obs_time": "0900",
+        "source_file": "USC00201492.csv.gz"
+      }
+    ]
+  },
+  "qflag_M": {
+    "description": "Values carrying NOAA quality flag M",
+    "count": 12,
+    "stations": 6,
+    "examples": [
+      {
+        "station": "GMM00010850",
+        "date": "1989-06-09",
+        "element": "SNWD",
+        "raw": 61,
+        "mflag": null,
+        "qflag": "M",
+        "sflag": "S",
+        "obs_time": null,
+        "source_file": "GMM00010850.csv.gz"
+      },
+      {
+        "station": "US1MIGG0001",
+        "date": "2008-10-27",
+        "element": "SNOW",
+        "raw": 76,
+        "mflag": null,
+        "qflag": "M",
+        "sflag": "N",
+        "obs_time": "0600",
+        "source_file": "US1MIGG0001.csv.gz"
+      },
+      {
+        "station": "US1MIGG0002",
+        "date": "2008-10-28",
+        "element": "SNOW",
+        "raw": 18,
+        "mflag": null,
+        "qflag": "M",
+        "sflag": "N",
+        "obs_time": "0700",
+        "source_file": "US1MIGG0002.csv.gz"
+      },
+      {
+        "station": "US1MIGG0002",
+        "date": "2009-10-22",
+        "element": "SNOW",
+        "raw": 13,
+        "mflag": null,
+        "qflag": "M",
+        "sflag": "N",
+        "obs_time": "0700",
+        "source_file": "US1MIGG0002.csv.gz"
+      },
+      {
+        "station": "US1MIGG0002",
+        "date": "2009-10-24",
+        "element": "SNOW",
+        "raw": 173,
+        "mflag": null,
+        "qflag": "M",
+        "sflag": "N",
+        "obs_time": "0700",
+        "source_file": "US1MIGG0002.csv.gz"
+      }
+    ]
+  },
+  "qflag_R": {
+    "description": "Values carrying NOAA quality flag R",
+    "count": 12,
+    "stations": 2,
+    "examples": [
+      {
+        "station": "USC00205567",
+        "date": "1998-06-23",
+        "element": "TMAX",
+        "raw": 278,
+        "mflag": null,
+        "qflag": "R",
+        "sflag": "0",
+        "obs_time": "1800",
+        "source_file": "USC00205567.csv.gz"
+      },
+      {
+        "station": "USC00205567",
+        "date": "1998-06-24",
+        "element": "TMAX",
+        "raw": 306,
+        "mflag": null,
+        "qflag": "R",
+        "sflag": "0",
+        "obs_time": "1800",
+        "source_file": "USC00205567.csv.gz"
+      },
+      {
+        "station": "USC00205567",
+        "date": "1998-06-24",
+        "element": "TMIN",
+        "raw": -144,
+        "mflag": null,
+        "qflag": "R",
+        "sflag": "0",
+        "obs_time": "1800",
+        "source_file": "USC00205567.csv.gz"
+      },
+      {
+        "station": "USC00205567",
+        "date": "1998-06-25",
+        "element": "TMAX",
+        "raw": 306,
+        "mflag": null,
+        "qflag": "R",
+        "sflag": "0",
+        "obs_time": "1800",
+        "source_file": "USC00205567.csv.gz"
+      },
+      {
+        "station": "USC00205567",
+        "date": "2010-08-09",
+        "element": "TMAX",
+        "raw": 278,
+        "mflag": null,
+        "qflag": "R",
+        "sflag": "0",
+        "obs_time": "1800",
+        "source_file": "USC00205567.csv.gz"
+      }
+    ]
+  },
+  "snow_depth_in_summer": {
+    "description": "Unflagged snow depth above zero in June, July or August",
+    "count": 4,
+    "stations": 4,
+    "examples": [
+      {
+        "station": "GME00102412",
+        "date": "1962-06-02",
+        "element": "SNWD",
+        "raw": 40,
+        "mflag": null,
+        "qflag": null,
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00102412.csv.gz"
+      },
+      {
+        "station": "GME00124930",
+        "date": "1962-06-01",
+        "element": "SNWD",
+        "raw": 10,
+        "mflag": null,
+        "qflag": null,
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00124930.csv.gz"
+      },
+      {
+        "station": "GME00130918",
+        "date": "1962-06-02",
+        "element": "SNWD",
+        "raw": 90,
+        "mflag": null,
+        "qflag": null,
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GME00130918.csv.gz"
+      },
+      {
+        "station": "GMM00010963",
+        "date": "1962-06-02",
+        "element": "SNWD",
+        "raw": 20,
+        "mflag": null,
+        "qflag": null,
+        "sflag": "E",
+        "obs_time": null,
+        "source_file": "GMM00010963.csv.gz"
+      }
+    ]
+  },
+  "colocated_stations": {
+    "description": "Pairs of station IDs less than 1 km apart (possible duplicate sources)",
+    "pairs": [
+      {
+        "a": "GME00122734",
+        "a_name": "GELBELSEE",
+        "b": "GMM00010777",
+        "b_name": "GELBELSEE",
+        "distance_km": 0.251
+      },
+      {
+        "a": "GME00126226",
+        "a_name": "MUHLDORF",
+        "b": "GMM00010875",
+        "b_name": "MUHLDORF",
+        "distance_km": 0.441
+      },
+      {
+        "a": "GME00127942",
+        "a_name": "ROTH",
+        "b": "GMM00010765",
+        "b_name": "ROTH",
+        "distance_km": 0.305
+      },
+      {
+        "a": "GME00129586",
+        "a_name": "ULM",
+        "b": "GMM00010838",
+        "b_name": "ULM (MIL/MET)",
+        "distance_km": 0.327
+      },
+      {
+        "a": "GME00130738",
+        "a_name": "ZWIESEL",
+        "b": "GMM00010796",
+        "b_name": "ZWIESEL (AUT)",
+        "distance_km": 0.68
+      },
+      {
+        "a": "GME00132550",
+        "a_name": "CHIEMING",
+        "b": "GMM00010982",
+        "b_name": "CHIEMING (AUT)",
+        "distance_km": 0.697
+      },
+      {
+        "a": "US1MIAG0001",
+        "a_name": "CHATHAM 0.2 SSE",
+        "b": "USC00201486",
+        "b_name": "CHATHAM EXP FARM 2",
+        "distance_km": 0.47
+      },
+      {
+        "a": "US1MIBH0003",
+        "a_name": "QUINCY 0.2 ENE",
+        "b": "US1MIBH0005",
+        "b_name": "QUINCY 0.1 SSW",
+        "distance_km": 0.464
+      },
+      {
+        "a": "US1MIBH0003",
+        "a_name": "QUINCY 0.2 ENE",
+        "b": "US1MIBH0007",
+        "b_name": "QUINCY 0.3 NE",
+        "distance_km": 0.264
+      },
+      {
+        "a": "US1MIBH0005",
+        "a_name": "QUINCY 0.1 SSW",
+        "b": "US1MIBH0007",
+        "b_name": "QUINCY 0.3 NE",
+        "distance_km": 0.725
+      },
+      {
+        "a": "US1MIBR0019",
+        "a_name": "MIDDLEVILLE 0.5 WSW",
+        "b": "US1MIBR0021",
+        "b_name": "MIDDLEVILLE 0.5 WNW",
+        "distance_km": 0.356
+      },
+      {
+        "a": "US1MICP0014",
+        "a_name": "SAULT STE. MARIE 2.2 E",
+        "b": "USC00207364",
+        "b_name": "SAULT STE MARIE",
+        "distance_km": 0.026
+      },
+      {
+        "a": "US1MICX0007",
+        "a_name": "EAST JORDAN 2.1 NNW",
+        "b": "USC00202382",
+        "b_name": "E JORDAN 2NW",
+        "distance_km": 0.024
+      },
+      {
+        "a": "US1MIEM0009",
+        "a_name": "PETOSKEY 0.1 NNW",
+        "b": "USC00206510",
+        "b_name": "PETOSKEY NCMC",
+        "distance_km": 0.838
+      },
+      {
+        "a": "US1MIET0001",
+        "a_name": "LANSING 3.8 WNW",
+        "b": "US1MIET0003",
+        "b_name": "LANSING 3.9 WNW",
+        "distance_km": 0.216
+      },
+      {
+        "a": "US1MIGN0024",
+        "a_name": "CLIO 0.4 SW",
+        "b": "USC00201645",
+        "b_name": "CLIO",
+        "distance_km": 0.883
+      },
+      {
+        "a": "US1MIGT0001",
+        "a_name": "TRAVERSE CITY 4.1 E",
+        "b": "US1MIGT0009",
+        "b_name": "TRAVERSE CITY 4.2 E",
+        "distance_km": 0.132
+      },
+      {
+        "a": "US1MIHG0005",
+        "a_name": "CALUMET 0.2 SW",
+        "b": "US1MIHG0018",
+        "b_name": "CALUMET 0.7 W (TAMARACK)",
+        "distance_km": 0.929
+      },
+      {
+        "a": "US1MIHG0005",
+        "a_name": "CALUMET 0.2 SW",
+        "b": "USC00204668",
+        "b_name": "CALUMET-TAMARACK",
+        "distance_km": 0.944
+      },
+      {
+        "a": "US1MIHG0018",
+        "a_name": "CALUMET 0.7 W (TAMARACK)",
+        "b": "USC00204668",
+        "b_name": "CALUMET-TAMARACK",
+        "distance_km": 0.015
+      },
+      {
+        "a": "US1MIIC0003",
+        "a_name": "EAST TAWAS 0.8 WSW",
+        "b": "USC00202423",
+        "b_name": "E TAWAS",
+        "distance_km": 0.359
+      },
+      {
+        "a": "US1MIIH0020",
+        "a_name": "LANSING 4.0 NNW",
+        "b": "US1MIIH0047",
+        "b_name": "EDGEMONT PARK 0.7 NNE",
+        "distance_km": 0.678
+      },
+      {
+        "a": "US1MIIS0004",
+        "a_name": "MOUNT PLEASANT 0.6 SSE",
+        "b": "USC00205662",
+        "b_name": "CENTRAL MICHIGAN UNIV",
+        "distance_km": 0.51
+      },
+      {
+        "a": "US1MIKN0001",
+        "a_name": "KENTWOOD 3.1 SW",
+        "b": "US1MIKN0089",
+        "b_name": "CUTLERVILLE 1.0 NNE",
+        "distance_km": 0.909
+      },
+      {
+        "a": "US1MIKN0006",
+        "a_name": "ADA 0.7 SE",
+        "b": "USC00200017",
+        "b_name": "ADA",
+        "distance_km": 0.684
+      },
+      {
+        "a": "US1MIKN0018",
+        "a_name": "WYOMING 2.2 SW",
+        "b": "US1MIKN0097",
+        "b_name": "WYOMING 2.8 SW",
+        "distance_km": 0.921
+      },
+      {
+        "a": "US1MIKN0032",
+        "a_name": "GRAND RAPIDS 2.9 NW",
+        "b": "US1MIKN0033",
+        "b_name": "GRAND RAPIDS 3.0 NW",
+        "distance_km": 0.388
+      },
+      {
+        "a": "US1MIKN0044",
+        "a_name": "ROCKFORD 2.0 N",
+        "b": "US1MIKN0046",
+        "b_name": "ROCKFORD 2.2 N",
+        "distance_km": 0.368
+      },
+      {
+        "a": "US1MIKN0045",
+        "a_name": "LOWELL 5.3 N",
+        "b": "US1MIKN0106",
+        "b_name": "LOWELL 5.5 N",
+        "distance_km": 0.217
+      },
+      {
+        "a": "US1MIKN0049",
+        "a_name": "CALEDONIA 2.6 NNW",
+        "b": "US1MIKN0094",
+        "b_name": "CALEDONIA 2.6 NNW",
+        "distance_km": 0.275
+      },
+      {
+        "a": "US1MIKN0068",
+        "a_name": "KENTWOOD 1.8 SSE",
+        "b": "US1MIKN0092",
+        "b_name": "KENTWOOD 1.7 SSE",
+        "distance_km": 0.546
+      },
+      {
+        "a": "US1MIKZ0012",
+        "a_name": "GALESBURG 1.3 N",
+        "b": "US1MIKZ0039",
+        "b_name": "GALESBURG 1.4 NNW",
+        "distance_km": 0.906
+      },
+      {
+        "a": "US1MIMB0003",
+        "a_name": "STERLING HEIGHTS 3.4 NE",
+        "b": "US1MIMB0012",
+        "b_name": "STERLING HEIGHTS 3.3 NE",
+        "distance_km": 0.874
+      },
+      {
+        "a": "US1MIMB0015",
+        "a_name": "WASHINGTON 0.2 NW",
+        "b": "USC00208653",
+        "b_name": "WASHINGTON TOWNSHIP",
+        "distance_km": 0.027
+      },
+      {
+        "a": "US1MIMB0024",
+        "a_name": "RAY 2.1 WNW",
+        "b": "USC00207103",
+        "b_name": "ROMEO 3SE",
+        "distance_km": 0.28
+      },
+      {
+        "a": "US1MIME0002",
+        "a_name": "BIG RAPIDS 0.7 ENE",
+        "b": "USC00200779",
+        "b_name": "BIG RAPIDS WTP",
+        "distance_km": 0.644
+      },
+      {
+        "a": "US1MIMG0003",
+        "a_name": "NORTON SHORES 2.9 NW",
+        "b": "US1MIMG0012",
+        "b_name": "NORTON SHORES 3.0 WNW",
+        "distance_km": 0.19
+      },
+      {
+        "a": "US1MIMG0013",
+        "a_name": "MUSKEGON 3.5 SSE",
+        "b": "USW00014840",
+        "b_name": "MUSKEGON CO AP",
+        "distance_km": 0.89
+      },
+      {
+        "a": "US1MIMM0001",
+        "a_name": "SPALDING 0.5 NW",
+        "b": "USC00207742",
+        "b_name": "SPALDING 1 NW",
+        "distance_km": 0.867
+      },
+      {
+        "a": "US1MIMQ0002",
+        "a_name": "MARQUETTE 6.5 SSE",
+        "b": "US1MIMQ0004",
+        "b_name": "MARQUETTE 6.5 SSE",
+        "distance_km": 0.525
+      },
+      {
+        "a": "US1MIMQ0012",
+        "a_name": "ISHPEMING 2.5 W",
+        "b": "US1MIMQ0014",
+        "b_name": "ISHPEMING 2.5 W",
+        "distance_km": 0.501
+      },
+      {
+        "a": "US1MIMQ0016",
+        "a_name": "MARQUETTE 0.4 ESE",
+        "b": "USW00014838",
+        "b_name": "MARQUETTE",
+        "distance_km": 0.749
+      },
+      {
+        "a": "US1MIOK0012",
+        "a_name": "WEST BLOOMFIELD TOWNSHIP 2.8 S",
+        "b": "USC00208779",
+        "b_name": "W BLOOMFIELD",
+        "distance_km": 0.52
+      },
+      {
+        "a": "US1MIOK0014",
+        "a_name": "FARMINGTON HILLS 2.3 SSW",
+        "b": "US1MIOK0125",
+        "b_name": "FARMINGTON HILLS 2.4 SSW",
+        "distance_km": 0.263
+      },
+      {
+        "a": "US1MIOK0036",
+        "a_name": "TROY 2.1 S",
+        "b": "US1MIOK0085",
+        "b_name": "TROY 1.8 S",
+        "distance_km": 0.739
+      },
+      {
+        "a": "US1MIOK0052",
+        "a_name": "NOVI 3.5 NNE",
+        "b": "US1MIOK0056",
+        "b_name": "NOVI 3.7 NE",
+        "distance_km": 0.847
+      },
+      {
+        "a": "US1MIOK0053",
+        "a_name": "WIXOM 1.3 NE",
+        "b": "US1MIOK0065",
+        "b_name": "WIXOM 1.4 ENE",
+        "distance_km": 0.634
+      },
+      {
+        "a": "US1MIOK0068",
+        "a_name": "ROYAL OAK 2.1 SE",
+        "b": "US1MIOK0102",
+        "b_name": "MADISON HEIGHTS 1.0 SW",
+        "distance_km": 0.544
+      },
+      {
+        "a": "US1MIOK0071",
+        "a_name": "BERKLEY 1.1 ESE",
+        "b": "US1MIOK0098",
+        "b_name": "ROYAL OAK 1.0 S",
+        "distance_km": 0.645
+      },
+      {
+        "a": "US1MIOK0071",
+        "a_name": "BERKLEY 1.1 ESE",
+        "b": "USC00200716",
+        "b_name": "BERKLEY",
+        "distance_km": 0.812
+      },
+      {
+        "a": "US1MIOK0083",
+        "a_name": "FARMINGTON HILLS 1.2 N",
+        "b": "US1MIOK0094",
+        "b_name": "FARMINGTON HILLS 1.4 N",
+        "distance_km": 0.44
+      },
+      {
+        "a": "US1MIOT0001",
+        "a_name": "GAYLORD 2.2 SE",
+        "b": "US1MIOT0016",
+        "b_name": "CRESTWOOD SUBDIVISION",
+        "distance_km": 0.551
+      },
+      {
+        "a": "US1MIOW0002",
+        "a_name": "HOLLAND 3.9 NNE",
+        "b": "US1MIOW0029",
+        "b_name": "HOLLAND 4.2 NNE",
+        "distance_km": 0.545
+      },
+      {
+        "a": "US1MIOW0008",
+        "a_name": "GRAND HAVEN 1.9 ESE",
+        "b": "US1MIOW0045",
+        "b_name": "GRAND HAVEN 1.4 ESE",
+        "distance_km": 0.772
+      },
+      {
+        "a": "US1MIOW0014",
+        "a_name": "HOLLAND 4.4 NW",
+        "b": "US1MIOW0049",
+        "b_name": "HOLLAND 4.2 NW",
+        "distance_km": 0.269
+      },
+      {
+        "a": "US1MIOW0014",
+        "a_name": "HOLLAND 4.4 NW",
+        "b": "USC00203860",
+        "b_name": "HOLLAND 3 NW",
+        "distance_km": 0.491
+      },
+      {
+        "a": "US1MIOW0025",
+        "a_name": "HOLLAND 5.1 WNW",
+        "b": "USC00203858",
+        "b_name": "HOLLAND WTP",
+        "distance_km": 0.978
+      },
+      {
+        "a": "US1MIOW0038",
+        "a_name": "ALLENDALE 2.1 SE",
+        "b": "US1MIOW0051",
+        "b_name": "ALLENDALE 1.7 SE",
+        "distance_km": 0.642
+      },
+      {
+        "a": "US1MIOW0049",
+        "a_name": "HOLLAND 4.2 NW",
+        "b": "USC00203860",
+        "b_name": "HOLLAND 3 NW",
+        "distance_km": 0.687
+      },
+      {
+        "a": "US1MIPI0001",
+        "a_name": "ROGERS CITY 0.2 WSW",
+        "b": "US1MIPI0002",
+        "b_name": "ROGERS CITY 0.4 SSW",
+        "distance_km": 0.417
+      },
+      {
+        "a": "US1MIPI0001",
+        "a_name": "ROGERS CITY 0.2 WSW",
+        "b": "USC00207094",
+        "b_name": "ROGERS CITY",
+        "distance_km": 0.41
+      },
+      {
+        "a": "US1MIPI0002",
+        "a_name": "ROGERS CITY 0.4 SSW",
+        "b": "USC00207094",
+        "b_name": "ROGERS CITY",
+        "distance_km": 0.594
+      },
+      {
+        "a": "US1MIRS0001",
+        "a_name": "HOUGHTON LAKE 4.9 NE",
+        "b": "USW00094814",
+        "b_name": "HOUGHTON LAKE ROSCOMMON CO AP",
+        "distance_km": 0.918
+      },
+      {
+        "a": "US1MISC0008",
+        "a_name": "ALGONAC 0.4 SW",
+        "b": "USC00200106",
+        "b_name": "ALGONAC WWTP",
+        "distance_km": 0.407
+      },
+      {
+        "a": "US1MISG0015",
+        "a_name": "BRANT 0.2 N",
+        "b": "USC00200970",
+        "b_name": "BRANT 0.2N",
+        "distance_km": 0.027
+      },
+      {
+        "a": "US1MIWS0005",
+        "a_name": "ANN ARBOR 3.0 SE",
+        "b": "US1MIWS0007",
+        "b_name": "ANN ARBOR 3.1 SE",
+        "distance_km": 0.59
+      },
+      {
+        "a": "US1MIWS0005",
+        "a_name": "ANN ARBOR 3.0 SE",
+        "b": "USC00200228",
+        "b_name": "ANN ARBOR SE",
+        "distance_km": 0.237
+      },
+      {
+        "a": "US1MIWS0006",
+        "a_name": "ANN ARBOR 2.4 WNW",
+        "b": "US1MIWS0015",
+        "b_name": "ANN ARBOR 2.1 WNW",
+        "distance_km": 0.778
+      },
+      {
+        "a": "US1MIWS0006",
+        "a_name": "ANN ARBOR 2.4 WNW",
+        "b": "USC00200220",
+        "b_name": "ANN ARBOR 1W",
+        "distance_km": 0.984
+      },
+      {
+        "a": "US1MIWS0007",
+        "a_name": "ANN ARBOR 3.1 SE",
+        "b": "USC00200228",
+        "b_name": "ANN ARBOR SE",
+        "distance_km": 0.355
+      },
+      {
+        "a": "US1MIWS0011",
+        "a_name": "ANN ARBOR 2.1 WNW",
+        "b": "US1MIWS0015",
+        "b_name": "ANN ARBOR 2.1 WNW",
+        "distance_km": 0.39
+      },
+      {
+        "a": "US1MIWS0011",
+        "a_name": "ANN ARBOR 2.1 WNW",
+        "b": "USC00200220",
+        "b_name": "ANN ARBOR 1W",
+        "distance_km": 0.98
+      },
+      {
+        "a": "US1MIWS0015",
+        "a_name": "ANN ARBOR 2.1 WNW",
+        "b": "USC00200220",
+        "b_name": "ANN ARBOR 1W",
+        "distance_km": 0.732
+      },
+      {
+        "a": "US1MIWS0016",
+        "a_name": "ANN ARBOR 1.5 N",
+        "b": "US1MIWS0020",
+        "b_name": "ANN ARBOR 1.7 NNW",
+        "distance_km": 0.692
+      },
+      {
+        "a": "US1MIWS0021",
+        "a_name": "SALINE 1.2 SE",
+        "b": "US1MIWS0044",
+        "b_name": "SALINE 1.3 SSE",
+        "distance_km": 0.264
+      },
+      {
+        "a": "US1MIWS0025",
+        "a_name": "SALINE 3.8 SSW",
+        "b": "USC00207312",
+        "b_name": "SALINE 4SW",
+        "distance_km": 0.804
+      },
+      {
+        "a": "US1MIWY0006",
+        "a_name": "DEARBORN 1.6 W",
+        "b": "USC00202015",
+        "b_name": "DEARBORN",
+        "distance_km": 0.799
+      },
+      {
+        "a": "US1MIWY0013",
+        "a_name": "BELLEVILLE 3.0 SE",
+        "b": "US1MIWY0047",
+        "b_name": "BELLEVILLE 2.8 ESE",
+        "distance_km": 0.479
+      },
+      {
+        "a": "US1MIWY0069",
+        "a_name": "GIBRALTAR 0.8 SW",
+        "b": "US1MIWY0087",
+        "b_name": "GIBRALTAR 0.8 SSW",
+        "distance_km": 0.033
+      },
+      {
+        "a": "US1MIWY0069",
+        "a_name": "GIBRALTAR 0.8 SW",
+        "b": "US1MIWY0088",
+        "b_name": "GIBRALTAR 0.7 SSW",
+        "distance_km": 0.061
+      },
+      {
+        "a": "US1MIWY0069",
+        "a_name": "GIBRALTAR 0.8 SW",
+        "b": "US1MIWY0116",
+        "b_name": "GIBRALTAR 0.8 SW",
+        "distance_km": 0.047
+      },
+      {
+        "a": "US1MIWY0087",
+        "a_name": "GIBRALTAR 0.8 SSW",
+        "b": "US1MIWY0088",
+        "b_name": "GIBRALTAR 0.7 SSW",
+        "distance_km": 0.028
+      },
+      {
+        "a": "US1MIWY0087",
+        "a_name": "GIBRALTAR 0.8 SSW",
+        "b": "US1MIWY0116",
+        "b_name": "GIBRALTAR 0.8 SW",
+        "distance_km": 0.047
+      },
+      {
+        "a": "US1MIWY0088",
+        "a_name": "GIBRALTAR 0.7 SSW",
+        "b": "US1MIWY0116",
+        "b_name": "GIBRALTAR 0.8 SW",
+        "distance_km": 0.067
+      },
+      {
+        "a": "US1MIWY0098",
+        "a_name": "DEARBORN HEIGHTS 3.6 S",
+        "b": "US1MIWY0122",
+        "b_name": "DEARBORN HEIGHTS 4.0 S",
+        "distance_km": 0.745
+      },
+      {
+        "a": "USC00200446",
+        "a_name": "BALDWIN",
+        "b": "USR0000MBAL",
+        "b_name": "BALDWIN MICHIGAN",
+        "distance_km": 0.812
+      },
+      {
+        "a": "USC00201486",
+        "a_name": "CHATHAM EXP FARM 2",
+        "b": "USW00054810",
+        "b_name": "CHATHAM 1 SE",
+        "distance_km": 0.843
+      },
+      {
+        "a": "USC00201780",
+        "a_name": "COPPER HARBOR FT WILKINS",
+        "b": "USW00094899",
+        "b_name": "COPPER HARBOR",
+        "distance_km": 0.587
+      },
+      {
+        "a": "USC00203099",
+        "a_name": "GAYLORD 9SSW",
+        "b": "USW00054854",
+        "b_name": "GAYLORD 9 SSW",
+        "distance_km": 0.149
+      },
+      {
+        "a": "USC00203527",
+        "a_name": "HALE 5SSW",
+        "b": "USC00203528",
+        "b_name": "HALE 5SSW #2",
+        "distance_km": 0.846
+      },
+      {
+        "a": "USC00204939",
+        "a_name": "LOWELL 1 SE",
+        "b": "USC00204944",
+        "b_name": "LOWELL",
+        "distance_km": 0.413
+      },
+      {
+        "a": "USC00205637",
+        "a_name": "MOTT IS ISLE ROYALE",
+        "b": "USR0000MOJI",
+        "b_name": "OJIBWAY MICHIGAN",
+        "distance_km": 0.189
+      },
+      {
+        "a": "USC00205690",
+        "a_name": "MUNISING",
+        "b": "USW00054813",
+        "b_name": "MUNSING LAKESHORE",
+        "distance_km": 0.913
+      },
+      {
+        "a": "USC00206013",
+        "a_name": "NWSFO GRAND RAPIDS",
+        "b": "USW00094860",
+        "b_name": "GRAND RAPIDS",
+        "distance_km": 0.071
+      },
+      {
+        "a": "USC00206442",
+        "a_name": "PELLSTON AP #2",
+        "b": "USW00014841",
+        "b_name": "PELLSTON RGNL AP",
+        "distance_km": 0.996
+      }
+    ],
+    "count": 95
+  }
+}

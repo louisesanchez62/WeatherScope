@@ -1,0 +1,41 @@
+\section{Référence des services}
+\label{annexe:services}
+
+Tous les services s'appellent par \texttt{python3 -m weatherscope <commande>}~; chacun accepte \texttt{--json} et \texttt{--uri} pour viser le serveur unique ou le cluster. Les exemples ci-dessous sont des sorties réelles sur nos données.
+
+\subsection{F1 : explorer une station}
+\paragraph{Entrées.} \texttt{stations}~: une zone (nom, rectangle \texttt{--bbox} ou rayon \texttt{--near}), éventuellement un élément ou un nom. \texttt{f1}~: une station, un intervalle de dates, un découpage par mois, année ou hiver, et les éléments voulus.
+\paragraph{Sorties.} La liste des stations de la zone~; puis, pour chaque élément et chaque période~: la disponibilité (jours attendus, jours utilisables, couverture, validité selon la règle 3/5), la qualité (valeurs signalées, drapeaux \texttt{P} et \texttt{T}) et des statistiques calculées sur les seules valeurs utilisables.
+\paragraph{Fonctionnement.} Une seule agrégation MongoDB, qui passe par l'index (station, élément, date) et regroupe par élément et par période. Les 30 hivers d'une station s'obtiennent en un peu plus d'une seconde.
+\paragraph{Exemple.} L'hiver 2013--14 à Detroit Metro (tableau~\ref{tab:f1}) est complet et sans drapeau~: 996~mm de neige en janvier et de la neige au sol tous les jours de janvier et de février. À l'inverse, la station bénévole de Woodhaven (\texttt{US1MIWY0011}) affiche 683~mm de pluie en 2010, mais avec seulement 17,5~\% de jours renseignés~: F1 marque l'année comme non valide, et ce total ne doit pas être comparé.
+
+\begin{table}[h!]
+  \centering
+  \small
+  \begin{tabular}{lrrrrr}
+    \hline
+    Mois & Couverture & TMIN moy. (°C) & TMIN min (°C) & Neige (mm) & Jours de neige au sol \\
+    \hline
+    2013-12 & 100~\% & $-6,2$ & $-14,9$ & 396 & 17 \\
+    2014-01 & 100~\% & $-13,0$ & $-25,5$ & 996 & 31 \\
+    2014-02 & 100~\% & $-11,1$ & $-20,5$ & 593 & 28 \\
+    \hline
+  \end{tabular}
+  \caption{Extrait de F1 pour \texttt{USW00094847} (Detroit Metro), du 1/12/2013 au 28/2/2014.}
+  \label{tab:f1}
+\end{table}
+
+\subsection{Traçabilité}
+\paragraph{Entrées.} Des identifiants \texttt{station:date:élément}, ou une station, une période et des éléments.
+\paragraph{Sorties.} Chaque relevé tel qu'il est stocké~: valeur brute, valeur convertie, drapeaux, heure d'observation, fichier source et lot d'import~; avec \texttt{--history}, les versions remplacées par un import ultérieur.
+\paragraph{Exemple.} Le minimum de $-25,5$~°C du tableau~\ref{tab:f1} renvoie à un seul document~: valeur brute $-255$, aucun drapeau, source \texttt{W}, relevé à 24~h, fichier \texttt{USW00094847.csv.gz}, lot \texttt{2026-11-08-initial}. C'est la ligne \texttt{USW00094847,20140106,TMIN,-255,,,W,2400} du fichier NOAA.
+
+\subsection{F2 : épisodes prolongés}
+\paragraph{Entrées.} Une zone ou une liste de stations, une période, un élément, une durée minimale et une règle~: seuil fixe (\texttt{--above}, \texttt{--below}) ou percentile du climat propre à la station sur 1961--1990 pour le même mois (\texttt{--pct-above}, \texttt{--pct-below}~; pour la pluie et la neige, calculé sur les jours d'au moins 1~mm). Les stations sans assez de valeurs de référence sont écartées et comptées.
+\paragraph{Sorties.} Pour chaque épisode~: station, début, fin, durée, intensité (écart moyen au seuil), valeur extrême, cumul pour la pluie et la neige, ce qui l'a ouvert et fermé (règle non remplie, jour manquant, jour signalé, limite de la requête) et les paramètres à passer à \texttt{trace}.
+\paragraph{Exemple.} Avec TMAX $\geq 30$~°C pendant au moins 5 jours, l'été 2003 donne 181 épisodes sur 160 stations du sud de l'Allemagne~; les plus longs couvrent du 1\textsuperscript{er} au 14 août, avec 40,2~°C à Karlsruhe et à Fribourg (1,5~s). À Détroit, avec TMAX $\leq 0$~°C, la vague de froid du 30 décembre 2013 au 9 janvier 2014 sort comme un seul épisode de 11 jours. Au Michigan, sur 1991--2020, 85 épisodes de chaleur se terminent sur un jour manquant et 38 sur un jour signalé~; à \texttt{USC00200710}, le 15 août 1995 affiche 32,2~°C avec le drapeau \texttt{I} et ne prolonge donc pas l'épisode.
+
+\subsection{F3 : mois anormaux}
+\paragraph{Entrées.} Un élément, une ou deux zones, les années étudiées (défaut 1991--2020), la référence (défaut 1961--1990), éventuellement des mois du calendrier (par exemple 12, 1, 2), la taille des cases (défaut 1°), le nombre minimal d'années valides pour une normale (défaut 24) et la part minimale de cases renseignées (défaut 50~\%).
+\paragraph{Sorties.} Pour chaque zone, les mois classés par anomalie standardisée~: anomalie, normale, pourcentage de la normale pour la pluie et la neige, nombre de stations et de cases~; pour chaque mois, les stations avec leur valeur, leur normale et leur anomalie, et les dates à tracer. Les mois écartés faute de couverture sont listés.
+\paragraph{Exemple.} Sur TMAX, les mois en tête sont mars 2012 au Michigan ($+8,1$~°C, anomalie standardisée 3,5, 76 stations dans 27 cases sur 31) et août puis juin 2003 en Allemagne ($+7,0$ et $+6,9$~°C). Une requête sur les deux zones et 60 ans prend environ 2 minutes.

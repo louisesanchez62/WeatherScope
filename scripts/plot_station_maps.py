@@ -26,6 +26,8 @@ from matplotlib.patches import Polygon  # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 META = ROOT / "data" / "raw" / "metadata"
 SCOPE = ROOT / "data" / "scope" / "stations.csv"
+# Long-record flag measured on the loaded data (coverage_report.py); falls back to the inventory flag.
+MEASURED = ROOT / "results" / "coverage" / "stations.csv"
 OUT = ROOT / "rapport" / "assets" / "carte_zones"
 
 LAT_RANGE = (41.3, 50.8)
@@ -56,6 +58,13 @@ def main() -> None:
     lakes = json.loads((META / "ne_10m_lakes.geojson").read_text())["features"]
     with SCOPE.open() as f:
         stations = list(csv.DictReader(f))
+    if MEASURED.exists():
+        with MEASURED.open() as f:
+            measured = {r["id"]: r.get("study_long_record") == "True" for r in csv.DictReader(f)}
+        for s in stations:
+            if s["id"] in measured:
+                s["long_record"] = str(measured[s["id"]])
+        print("long-record flag: measured (results/coverage/stations.csv)")
 
     widths = [VIEWS[a]["lon"][1] - VIEWS[a]["lon"][0] for a in VIEWS]
     aspect = 1 / math.cos(math.radians(sum(LAT_RANGE) / 2))
@@ -122,7 +131,7 @@ def main() -> None:
 
     handles = [
         Line2D([], [], marker="o", ls="", color="#555", markeredgecolor="white", markersize=5,
-               label="Station à longue série (TMAX, TMIN ou PRCP sur 1991–2020)"),
+               label="Station à longue série (≥ 80 % de mois valides sur 1991–2020)"),
         Line2D([], [], marker="o", ls="", markerfacecolor="none", markeredgecolor="#555", markersize=4,
                label="Autre station active sur 1991–2020"),
         Line2D([], [], marker="x", ls="", color="#444", markersize=5, label="Exclue : altitude > 800 m"),

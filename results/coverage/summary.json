@@ -1,0 +1,238 @@
+{
+  "generated_utc": "2026-11-08T17:30:41+00:00",
+  "definitions": {
+    "station_day": "station + date with at least one of TMAX, TMIN, PRCP",
+    "usable": "no quality flag",
+    "valid_month": "<= 5 missing days and <= 3 consecutive (WMO 3/5 rule)",
+    "measured_long_record": ">= 288 valid months of TMAX, TMIN or PRCP"
+  },
+  "areas": {
+    "michigan": {
+      "stations_loaded": 1058,
+      "measured_long_record_study": 94,
+      "measured_long_record_reference": 117,
+      "inventory_long_record": 119,
+      "study": {
+        "stations_with_core_data": 1055,
+        "station_days": 2862969,
+        "elements": {
+          "TMAX": {
+            "observations": 1820708,
+            "usable": 1809668,
+            "qflagged": 11040,
+            "stations": 315
+          },
+          "TMIN": {
+            "observations": 1818066,
+            "usable": 1798165,
+            "qflagged": 19901,
+            "stations": 316
+          },
+          "PRCP": {
+            "observations": 2747739,
+            "usable": 2743901,
+            "qflagged": 3838,
+            "mflag_P": 289386,
+            "mflag_T": 234548,
+            "stations": 1044
+          },
+          "SNOW": {
+            "observations": 2197197,
+            "usable": 2193986,
+            "qflagged": 3211,
+            "mflag_P": 693312,
+            "mflag_T": 118752,
+            "stations": 1009
+          },
+          "SNWD": {
+            "observations": 1867523,
+            "usable": 1865451,
+            "qflagged": 2072,
+            "stations": 893
+          }
+        }
+      },
+      "reference": {
+        "stations_with_core_data": 169,
+        "station_days": 1447121,
+        "elements": {
+          "TMAX": {
+            "observations": 1197242,
+            "usable": 1191625,
+            "qflagged": 5617,
+            "stations": 143
+          },
+          "TMIN": {
+            "observations": 1196774,
+            "usable": 1188906,
+            "qflagged": 7868,
+            "stations": 145
+          },
+          "PRCP": {
+            "observations": 1425326,
+            "usable": 1425185,
+            "qflagged": 141,
+            "mflag_P": 162494,
+            "mflag_T": 143704,
+            "stations": 169
+          },
+          "SNOW": {
+            "observations": 1399521,
+            "usable": 1398814,
+            "qflagged": 707,
+            "mflag_P": 321436,
+            "mflag_T": 87082,
+            "stations": 162
+          },
+          "SNWD": {
+            "observations": 1371094,
+            "usable": 1369639,
+            "qflagged": 1455,
+            "stations": 159
+          }
+        }
+      },
+      "obs_time": {
+        "TMAX": {
+          "0800": 709735,
+          "2400": 480042,
+          "(none)": 337311,
+          "0700": 295861,
+          "1700": 267886,
+          "1800": 175405
+        },
+        "TMIN": {
+          "0800": 709054,
+          "2400": 479403,
+          "(none)": 337302,
+          "0700": 294346,
+          "1700": 268115,
+          "1800": 175221
+        },
+        "PRCP": {
+          "0800": 1101803,
+          "0700": 815678,
+          "2400": 455771,
+          "(none)": 309419,
+          "1700": 283224,
+          "0900": 204300
+        },
+        "SNOW": {
+          "(none)": 3108791,
+          "0700": 228961,
+          "0800": 115657,
+          "0600": 23487,
+          "0900": 23355,
+          "0630": 12275
+        },
+        "SNWD": {
+          "(none)": 2509662,
+          "0800": 274539,
+          "0700": 169575,
+          "0730": 51968,
+          "1800": 42964,
+          "2400": 27988
+        }
+      }
+    },
+    "southern_germany": {
+      "stations_loaded": 295,
+      "measured_long_record_study": 139,
+      "measured_long_record_reference": 161,
+      "inventory_long_record": 150,
+      "study": {
+        "stations_with_core_data": 295,
+        "station_days": 2231460,
+        "elements": {
+          "TMAX": {
+            "observations": 1754368,
+            "usable": 1754338,
+            "qflagged": 30,
+            "stations": 264
+          },
+          "TMIN": {
+            "observations": 1753182,
+            "usable": 1753148,
+            "qflagged": 34,
+            "stations": 264
+          },
+          "PRCP": {
+            "observations": 2224130,
+            "usable": 2224098,
+            "qflagged": 32,
+            "mflag_P": 0,
+            "mflag_T": 0,
+            "stations": 294
+          },
+          "SNOW": {
+            "observations": 0,
+            "usable": 0,
+            "qflagged": 0,
+            "mflag_P": 0,
+            "mflag_T": 0
+          },
+          "SNWD": {
+            "observations": 1915080,
+            "usable": 1915055,
+            "qflagged": 25,
+            "stations": 287
+          }
+        }
+      },
+      "reference": {
+        "stations_with_core_data": 227,
+        "station_days": 1996682,
+        "elements": {
+          "TMAX": {
+            "observations": 1599454,
+            "usable": 1599300,
+            "qflagged": 154,
+            "stations": 204
+          },
+          "TMIN": {
+            "observations": 1600734,
+            "usable": 1600554,
+            "qflagged": 180,
+            "stations": 204
+          },
+          "PRCP": {
+            "observations": 1976167,
+            "usable": 1976159,
+            "qflagged": 8,
+            "mflag_P": 0,
+            "mflag_T": 105,
+            "stations": 227
+          },
+          "SNOW": {
+            "observations": 0,
+            "usable": 0,
+            "qflagged": 0,
+            "mflag_P": 0,
+            "mflag_T": 0
+          },
+          "SNWD": {
+            "observations": 1764115,
+            "usable": 1764068,
+            "qflagged": 47,
+            "stations": 224
+          }
+        }
+      },
+      "obs_time": {
+        "TMAX": {
+          "(none)": 3353822
+        },
+        "TMIN": {
+          "(none)": 3353916
+        },
+        "PRCP": {
+          "(none)": 4200297
+        },
+        "SNOW": {},
+        "SNWD": {
+          "(none)": 3679195
+        }
+      }
+    }
+  }
+}

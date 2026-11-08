@@ -13,7 +13,7 @@ Le Michigan regroupe les stations américaines avec le code d'État \texttt{MI}.
 Nous étudions 1991--2020, la normale climatique actuelle de l'OMM~\cite{wmo2017}. La référence pour les anomalies (F3) est 1961--1990~; elle passe par le même chargement mais est comptée à part. Un hiver va de décembre à février~: 30 hivers, de 1990--91 à 2019--20.
 
 \paragraph{Stations.}
-Nous gardons les stations qui ont des données TMAX, TMIN ou PRCP sur 1991--2020 (tableau~\ref{tab:stations}). Les réseaux diffèrent~: au Michigan, 675 stations viennent de CoCoRaHS, un réseau de bénévoles~\cite{cifelli2005}, et la plupart n'existent que depuis 2005. En Allemagne, le réseau (ECA\&D~\cite{kleintank2002}) reste stable. Une moyenne sur toutes les stations montrerait donc surtout l'arrivée de nouvelles stations. Pour les tendances, nous n'utilisons que les 269 stations \guillemotleft~à longue série~\guillemotright{}, qui couvrent toute la période. Elles suffisent pour les minimums du sujet~: plus de 100 stations, et au plus 2,9 millions de couples station--jour pour 200\,000 demandés. L'inventaire ne donne que la première et la dernière année~: les trous seront vérifiés après chargement.
+Nous gardons les stations qui ont des données TMAX, TMIN ou PRCP sur 1991--2020 (tableau~\ref{tab:stations}). Les réseaux diffèrent~: au Michigan, 675 stations viennent de CoCoRaHS, un réseau de bénévoles~\cite{cifelli2005}, et la plupart n'existent que depuis 2005. En Allemagne, le réseau (ECA\&D~\cite{kleintank2002}) reste stable. Une moyenne sur toutes les stations montrerait donc surtout l'arrivée de nouvelles stations. Pour les tendances, nous n'utilisons que les 233 stations \guillemotleft~à longue série~\guillemotright{}~: celles qui ont au moins 80~\% de mois valides sur 1991--2020 pour TMAX, TMIN ou PRCP, un mois étant valide s'il lui manque au plus 5 jours, dont au plus 3 consécutifs (règle 3/5 de l'OMM~\cite{wmo2017}). L'inventaire de la NOAA en annonçait 269, mais il ne donne que la première et la dernière année et masque les trous (annexe~\ref{annexe:anomalies}). Une fois chargées, les données comptent 5,1 millions de couples station--jour sur 1991--2020 (3,4 millions sur la référence), pour 200\,000 demandés.
 
 La hauteur de neige (SNWD) est disponible dans les deux zones. Les chutes de neige (SNOW) n'existent qu'au Michigan.
 
@@ -26,7 +26,7 @@ La hauteur de neige (SNWD) est disponible dans les deux zones. Les chutes de nei
     \hline
     Stations de la zone & 1\,560 & 400 \\
     Stations retenues & 1\,058 & 295 \\
-    \quad dont à longue série & 119 & 150 \\
+    \quad dont à longue série (mesurée) & 94 & 139 \\
     \quad dont débutées en 2005 ou après & 763 & 18 \\
     \hline
     \multicolumn{3}{l}{\emph{Stations retenues par élément~: avec données / sur toute la période}} \\
@@ -48,6 +48,16 @@ La hauteur de neige (SNWD) est disponible dans les deux zones. Les chutes de nei
   \label{fig:carte}
 \end{figure}
 
-% TODO 2.2~: heure d'observation (7 h ou 17 h au Michigan) et conséquences pour les comparaisons.
-
 \subsection{Traçabilité, Traitement des Drapeaux (Flags) et Valeurs Manquantes}
+
+\paragraph{Traçabilité.}
+Chaque observation garde sa valeur brute, ses trois drapeaux, son heure d'observation, le fichier source et le lot d'import qui l'a écrite. Son identifiant est \texttt{station:date:élément}~: pour tout résultat, on peut lister les relevés qui l'ont produit. Un import ne crée jamais de doublon~: une valeur identique est ignorée, une valeur modifiée remplace l'ancienne, qui est conservée dans un historique. Chaque lot enregistre ses fichiers et leur SHA-256.
+
+\paragraph{Drapeaux.}
+Rien n'est supprimé au chargement~; les règles s'appliquent dans les requêtes. Une valeur avec un drapeau qualité (0,18~\% des observations) est exclue des analyses. Le drapeau \texttt{P} (\guillemotleft~manquant, présumé nul~\guillemotright{}, 1,5 million de valeurs au Michigan) est traité comme une donnée manquante, pas comme un zéro. Une trace (\texttt{T}) compte comme un jour de précipitation de quantité négligeable. Les contrôles de la NOAA suffisent~: nous n'avons trouvé aucune valeur aberrante ni aucun TMAX inférieur à TMIN sans drapeau (annexe~\ref{annexe:anomalies}).
+
+\paragraph{Valeurs manquantes.}
+Nous ne comblons aucun trou. Un mois qui ne respecte pas la règle 3/5 n'entre pas dans les anomalies mensuelles (F3), et un jour manquant ou signalé interrompt un épisode (F2). Deux identifiants à moins d'un kilomètre l'un de l'autre (95 paires) comptent pour un seul site dans F3 et F4.
+
+\paragraph{Heure d'observation.}
+En Allemagne, ECA\&D ne donne pas d'heure~: chaque valeur couvre le jour climatologique du service météo national. Au Michigan, sur les 315 stations qui mesurent TMAX entre 1991 et 2020, 203 relèvent le matin (surtout à 7~h ou 8~h), 42 l'après-midi ou le soir, 28 à minuit (aéroports) et 42 ne donnent pas d'heure~; 118 ont changé d'heure au moins une fois. Pour une station relevée à 8~h, la TMAX notée le jour~J est en général celle de l'après-midi de la veille. Deux stations voisines peuvent donc dater le même épisode avec un jour d'écart. F4 tolère ce décalage d'un jour entre stations, et les deux zones (UTC$-$5 et UTC$+$1) sont comparées sur des valeurs mensuelles ou saisonnières, jamais jour par jour.
