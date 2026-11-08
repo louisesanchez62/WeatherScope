@@ -1,0 +1,38 @@
+{
+  "ghcnd-inventory.txt": {
+    "bytes": 36402100,
+    "retrieved_utc": "2026-11-08T12:48:05+00:00",
+    "sha256": "3d7378c3ecad6841340b47392f10b391c42a5f47369765e6bb032704d2301125",
+    "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-inventory.txt"
+  },
+  "ghcnd-stations.txt": {
+    "bytes": 11441526,
+    "retrieved_utc": "2026-11-08T12:48:03+00:00",
+    "sha256": "437ee87f0343bcad408a492cf7a02163fb69255364c541b4006d5d76055d0dc3",
+    "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt"
+  },
+  "ne_10m_admin_1_states_provinces.geojson": {
+    "bytes": 40726851,
+    "retrieved_utc": "2026-11-08T12:48:07+00:00",
+    "sha256": "22d0e3ad85eb3e27f17cabf8ba2d50e554fbc27a87796ff891d958185da62fb5",
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_admin_1_states_provinces.geojson"
+  },
+  "ne_10m_lakes.geojson": {
+    "bytes": 5043554,
+    "retrieved_utc": "2026-11-08T12:49:23+00:00",
+    "sha256": "2d036f53dedec578001c5c30c2959ee7d4eebc1306900fa4367c49929ec8f2d9",
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_lakes.geojson"
+  },
+  "readme-by_year.txt": {
+    "bytes": 1106,
+    "retrieved_utc": "2026-11-08T12:48:07+00:00",
+    "sha256": "645e3d8a7573f734e595187d24287551ad5a58b6f4719a444b1a0d1a1d0af1a5",
+    "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme-by_year.txt"
+  },
+  "readme.txt": {
+    "bytes": 29587,
+    "retrieved_utc": "2026-11-08T12:48:06+00:00",
+    "sha256": "0e4e6f0e6947cf1add884c328a01760f31c56ef5fb86b85ed57dd5dc4c4aeaa6",
+    "url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/readme.txt"
+  }
+}

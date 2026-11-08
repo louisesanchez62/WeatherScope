@@ -1,0 +1,12 @@
+{
+  "_id": "2026-11-09-initial",
+  "status": "done",
+  "started": { "$date": "2026-11-09T09:00:00Z" },
+  "finished": { "$date": "2026-11-09T09:01:12Z" },
+  "files": [
+    { "name": "USW00094847.csv.gz",
+      "sha256": "5a8742a947d0afae83b3ca932be53f9358cedd657c7696540343960603f0a20c",
+      "rows": 124003 }
+  ],
+  "counts": { "inserted": 124003, "unchanged": 0, "revised": 0, "rejected": 0 }
+}

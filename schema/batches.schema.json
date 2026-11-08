@@ -1,0 +1,39 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "batch",
+    "description": "One import run (initial load or F5 update) with its files and what it changed.",
+    "required": ["_id", "status", "started", "finished", "files", "counts"],
+    "additionalProperties": false,
+    "properties": {
+      "_id": { "bsonType": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$", "description": "YYYY-MM-DD-<label>, e.g. 2026-11-09-initial." },
+      "status": { "enum": ["running", "done", "failed"] },
+      "started": { "bsonType": "date" },
+      "finished": { "bsonType": ["date", "null"] },
+      "files": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["name", "sha256", "rows"],
+          "additionalProperties": false,
+          "properties": {
+            "name": { "bsonType": "string" },
+            "sha256": { "bsonType": "string", "pattern": "^[0-9a-f]{64}$" },
+            "rows": { "bsonType": "int", "minimum": 0, "description": "Rows read for our five elements." }
+          }
+        }
+      },
+      "counts": {
+        "bsonType": "object",
+        "required": ["inserted", "unchanged", "revised", "rejected"],
+        "additionalProperties": false,
+        "properties": {
+          "inserted": { "bsonType": "int", "minimum": 0, "description": "New observations." },
+          "unchanged": { "bsonType": "int", "minimum": 0, "description": "Already stored with identical value and flags." },
+          "revised": { "bsonType": "int", "minimum": 0, "description": "Stored with a different value or flag; old version moved to history." },
+          "rejected": { "bsonType": "int", "minimum": 0, "description": "Rows that could not be parsed or failed validation." }
+        }
+      }
+    }
+  }
+}

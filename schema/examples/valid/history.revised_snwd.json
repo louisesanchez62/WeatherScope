@@ -1,0 +1,15 @@
+{
+  "_id": { "$oid": "6730a1f2c0ffee0000000001" },
+  "obs_id": "USW00094847:2014-01-06:SNWD",
+  "replaced_at": { "$date": "2026-12-01T10:00:00Z" },
+  "by_batch": "2026-12-01-update",
+  "previous": {
+    "raw": 410,
+    "value": 410.0,
+    "mflag": null,
+    "qflag": null,
+    "sflag": "W",
+    "obs_time": null,
+    "source": { "file": "USW00094847.csv.gz", "batch": "2026-11-09-initial" }
+  }
+}

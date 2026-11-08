@@ -1,2 +1,7 @@
 \section{Introduction}
-Ce projet s'inscrit dans le cadre ....
+
+WeatherScope est un prototype d'analyse de données météo historiques, commandé par un observatoire régional. Il permet de choisir une zone et une période, de repérer des épisodes inhabituels (chaleur, fortes pluies), de comparer des zones, et de remonter à chaque fois jusqu'aux observations sources. Il tourne d'abord sur un seul serveur MongoDB, puis sur un cluster shardé.
+
+Comme cas d'usage, nous avons choisi les hivers. L'un de nous a grandi près de Détroit et a l'impression qu'il y neige moins qu'avant, et que la neige tient moins longtemps au sol. Nous voulons voir si les données vont dans ce sens, et comparer avec le sud de l'Allemagne~: même bande de latitude, mais un climat différent (air arctique et neige d'effet de lac au Michigan, air atlantique plus doux en Allemagne). D'où notre question~: \emph{entre 1991 et 2020, les hivers ont-ils changé de la même façon dans les deux zones~?}
+
+Nous suivons trois indicateurs~: le nombre de jours avec de la neige au sol (SNWD~$>0$), les dates du premier et du dernier jour d'enneigement, et le nombre de jours de gel (TMIN~$<0$\,°C). Les services de WeatherScope couvrent toute l'année~; l'hiver nous sert d'exemple.

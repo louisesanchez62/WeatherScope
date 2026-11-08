@@ -1,0 +1,38 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "title": "history",
+    "description": "Previous version of an observation, saved by F5 just before a later import replaces its value or flags.",
+    "required": ["_id", "obs_id", "replaced_at", "by_batch", "previous"],
+    "additionalProperties": false,
+    "properties": {
+      "_id": { "bsonType": "objectId" },
+      "obs_id": {
+        "bsonType": "string",
+        "pattern": "^[A-Z0-9]{11}:[0-9]{4}-[0-9]{2}-[0-9]{2}:(TMAX|TMIN|PRCP|SNOW|SNWD)$",
+        "description": "observations._id of the revised observation."
+      },
+      "replaced_at": { "bsonType": "date" },
+      "by_batch": { "bsonType": "string", "description": "batches._id of the import that brought the new version." },
+      "previous": {
+        "bsonType": "object",
+        "description": "The replaced fields, as they were stored.",
+        "required": ["raw", "value", "mflag", "qflag", "sflag", "obs_time", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "raw": { "bsonType": "int" },
+          "value": { "bsonType": "double" },
+          "mflag": { "bsonType": ["string", "null"] },
+          "qflag": { "bsonType": ["string", "null"] },
+          "sflag": { "bsonType": ["string", "null"] },
+          "obs_time": { "bsonType": ["string", "null"] },
+          "source": {
+            "bsonType": "object",
+            "required": ["file", "batch"],
+            "properties": { "file": { "bsonType": "string" }, "batch": { "bsonType": "string" } }
+          }
+        }
+      }
+    }
+  }
+}

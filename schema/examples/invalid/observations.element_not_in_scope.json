@@ -1,0 +1,7 @@
+{
+  "_id": "USW00094847:2014-01-06:TAVG",
+  "station": "USW00094847", "area": "michigan",
+  "date": { "$date": "2014-01-06T00:00:00Z" }, "element": "TAVG",
+  "raw": -160, "value": -16.0, "mflag": null, "qflag": null, "sflag": "W", "obs_time": null,
+  "source": { "file": "USW00094847.csv.gz", "batch": "2026-11-09-initial" }
+}

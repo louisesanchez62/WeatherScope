@@ -1,0 +1,21 @@
+{
+  "observations": [
+    { "name": "station_element_date", "keys": [["station", 1], ["element", 1], ["date", 1]],
+      "why": "F1 (one station over a date range), F2 per station, tracing results back to records." },
+    { "name": "area_element_date", "keys": [["area", 1], ["element", 1], ["date", 1]],
+      "why": "F3 and F4 (all stations of an area for one element and period)." },
+    { "name": "batch", "keys": [["source.batch", 1]],
+      "why": "F5 checks: what a given import wrote." }
+  ],
+  "stations": [
+    { "name": "location_2dsphere", "keys": [["location", "2dsphere"]],
+      "why": "F1 and F4: stations within a geographic area or radius." },
+    { "name": "area", "keys": [["area", 1]],
+      "why": "List the stations of one area." }
+  ],
+  "history": [
+    { "name": "obs_replaced", "keys": [["obs_id", 1], ["replaced_at", 1]],
+      "why": "Show every past version of one observation, oldest first." }
+  ],
+  "batches": []
+}

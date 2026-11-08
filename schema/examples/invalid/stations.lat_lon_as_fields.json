@@ -1,0 +1,5 @@
+{
+  "_id": "USW00094847", "name": "DETROIT METRO AP", "area": "michigan", "region": "Michigan",
+  "lat": 42.2311, "lon": -83.3311,
+  "elev_m": 192.0, "network": "W", "long_record": true, "reference_record": true, "elements": {}
+}

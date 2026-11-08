@@ -1,0 +1,2 @@
+matplotlib>=3.9
+pymongo==4.10.1

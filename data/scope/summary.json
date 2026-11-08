@@ -1,0 +1,95 @@
+{
+  "study_period": [
+    1991,
+    2020
+  ],
+  "reference_period": [
+    1961,
+    1990
+  ],
+  "elevation_max_m": 800.0,
+  "areas": {
+    "michigan": {
+      "stations_in_area_metadata": 1560,
+      "excluded_inactive": 502,
+      "excluded_elevation": 0,
+      "selected": 1058,
+      "selected_long_record": 119,
+      "selected_reference_record": 135,
+      "by_network": {
+        "1": 675,
+        "C": 330,
+        "R": 11,
+        "W": 42
+      },
+      "elements": {
+        "TMAX": {
+          "overlap_study": 317,
+          "cover_study": 95,
+          "cover_reference": 112
+        },
+        "TMIN": {
+          "overlap_study": 319,
+          "cover_study": 98,
+          "cover_reference": 114
+        },
+        "PRCP": {
+          "overlap_study": 1045,
+          "cover_study": 117,
+          "cover_reference": 133
+        },
+        "SNOW": {
+          "overlap_study": 1009,
+          "cover_study": 109,
+          "cover_reference": 130
+        },
+        "SNWD": {
+          "overlap_study": 890,
+          "cover_study": 110,
+          "cover_reference": 130
+        }
+      }
+    },
+    "southern_germany": {
+      "stations_in_area_metadata": 400,
+      "excluded_inactive": 87,
+      "excluded_elevation": 18,
+      "selected": 295,
+      "selected_long_record": 150,
+      "selected_reference_record": 169,
+      "by_network": {
+        "0": 4,
+        "E": 272,
+        "M": 17,
+        "W": 2
+      },
+      "elements": {
+        "TMAX": {
+          "overlap_study": 264,
+          "cover_study": 93,
+          "cover_reference": 120
+        },
+        "TMIN": {
+          "overlap_study": 264,
+          "cover_study": 94,
+          "cover_reference": 120
+        },
+        "PRCP": {
+          "overlap_study": 294,
+          "cover_study": 148,
+          "cover_reference": 169
+        },
+        "SNOW": {
+          "overlap_study": 0,
+          "cover_study": 0,
+          "cover_reference": 0
+        },
+        "SNWD": {
+          "overlap_study": 287,
+          "cover_study": 140,
+          "cover_reference": 140
+        }
+      }
+    }
+  }
+}

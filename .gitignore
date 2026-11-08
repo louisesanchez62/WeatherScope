@@ -1,0 +1,7 @@
+# Downloaded NOAA / Natural Earth files: reproducible with scripts/fetch_metadata.py
+# (checksums are kept in data/raw/metadata/MANIFEST.json, which is tracked)
+data/raw/**
+!data/raw/metadata/
+!data/raw/metadata/MANIFEST.json
+__pycache__/
+*.pyc
