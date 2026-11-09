@@ -11,3 +11,5 @@ data/db/
 
 __pycache__/
 *.pyc
+cluster_data/
+.venv

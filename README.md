@@ -19,6 +19,21 @@ python3 scripts/build_read_model.py                   # monthly read model used 
 
 Details: [`scripts/README.md`](scripts/README.md) for the pipeline, [`schema/README.md`](schema/README.md) for the data model.
 
+## Part II: the cluster
+
+```bash
+python3 cluster.py start --shards 2                       # config server, 2 shards, mongos on 27400 (3 GB cache shared)
+python3 -m scripts.distributed.setup_db hashed            # or zoned: shard observations and obs_months
+python3 -m weatherscope f5 --profile hashed --label initial   # load through mongos (or sync_from_local)
+python3 scripts/build_read_model.py --uri mongodb://localhost:27400
+python3 -m scripts.distributed.compare hashed zoned       # same answers on every deployment
+python3 -m scripts.distributed.route hashed               # which shards answer which request
+python3 cluster.py kill shard2 && python3 -m scripts.distributed.failure_demo hashed shard2RS
+python3 cluster.py start --shards 2                       # restart what is down
+```
+
+Profiles: `local` (one mongod, port 27017, database `weatherscope`), `hashed` (mongos, `weatherscope`, key `{station: "hashed"}`) and `zoned` (mongos, `weatherscope_zoned`, key `{area, station}`, Michigan on shard1RS and Germany on shard2RS). Every command takes `--profile`. On the cluster, a request whose data sit on a stopped shard is refused (`UNAVAILABLE`, exit code 4) instead of returning a partial answer. `cluster.py` and `scripts/local_server.sh` share the same local data folder (`data/db/local`) and the same 3 GB cache budget.
+
 ## Using WeatherScope
 
 ```bash

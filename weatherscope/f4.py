@@ -54,7 +54,8 @@ def regional_events(db, element, start, end, area=None, bbox=None, near=None, st
         usable["mflag"] = {"$ne": "P"}
     reporting = {}
     for g in db.observations.aggregate([
-        {"$match": {"station": {"$in": sorted(st)}, "element": element, "date": {"$gte": d0, "$lte": d1}, **usable}},
+        {"$match": {"area": {"$in": sorted({v["area"] for v in st.values()})}, "station": {"$in": sorted(st)},
+                    "element": element, "date": {"$gte": d0, "$lte": d1}, **usable}},
         {"$group": {"_id": "$date", "s": {"$addToSet": "$station"}}},
     ], allowDiskUse=True):
         reporting[g["_id"]] = set(g["s"])

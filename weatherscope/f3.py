@@ -117,7 +117,7 @@ def monthly_anomalies(db, element, areas=AREAS, start_year=1991, end_year=2020, 
     if source not in ("auto", "buckets", "observations"):
         raise ValueError("source must be auto, buckets or observations")
     if source == "auto":
-        source = "buckets" if bucket.available(db) else "observations"
+        source = "buckets" if bucket.available(db, areas) else "observations"
     if station_months is not None:
         sm = station_months
     elif source == "buckets":

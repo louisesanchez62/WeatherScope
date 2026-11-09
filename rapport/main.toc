@@ -21,47 +21,56 @@
 \contentsline {paragraph}{F3, mois anormaux.}{8}{}%
 \contentsline {paragraph}{F5, mettre à jour l'archive.}{8}{}%
 \contentsline {paragraph}{F4, événement régional ou extrême isolé.}{9}{}%
-\contentsline {section}{\numberline {4}Ce que disent les hivers}{9}{}%
-\contentsline {paragraph}{Des hivers d'enfance vraiment blancs.}{9}{}%
-\contentsline {paragraph}{Et aujourd'hui~?}{9}{}%
-\contentsline {paragraph}{Autant de neige, mais elle tient moins.}{9}{}%
-\contentsline {paragraph}{Le sud de l'Allemagne perd plus vite.}{10}{}%
-\contentsline {paragraph}{Pourquoi~: l'hiver allemand a franchi zéro.}{10}{}%
-\contentsline {paragraph}{Ce qui pourrait nous tromper.}{10}{}%
-\contentsline {paragraph}{Vérifié sans notre système.}{11}{}%
-\contentsline {section}{\numberline {5}Conclusion}{11}{}%
-\contentsline {section}{\numberline {A}Anomalies relevées dans les données}{12}{}%
-\contentsline {paragraph}{A1. Valeurs signalées par un drapeau qualité.}{12}{}%
-\contentsline {paragraph}{A2. Valeurs physiquement impossibles.}{12}{}%
-\contentsline {paragraph}{A3. Précipitations « manquantes, présumées nulles » (drapeau P).}{13}{}%
-\contentsline {paragraph}{A4. Neige au sol en été, sans drapeau.}{13}{}%
-\contentsline {paragraph}{A5. Un même site sous deux identifiants.}{13}{}%
-\contentsline {paragraph}{A6. Séries qui commencent, s'arrêtent ou s'interrompent.}{13}{}%
-\contentsline {section}{\numberline {B}Référence des services}{13}{}%
-\contentsline {subsection}{\numberline {B.1}F1 : explorer une station}{13}{}%
-\contentsline {paragraph}{Entrées.}{13}{}%
-\contentsline {paragraph}{Sorties.}{14}{}%
-\contentsline {paragraph}{Fonctionnement.}{14}{}%
-\contentsline {paragraph}{Exemple.}{14}{}%
-\contentsline {subsection}{\numberline {B.2}Traçabilité}{14}{}%
-\contentsline {paragraph}{Entrées.}{14}{}%
-\contentsline {paragraph}{Sorties.}{14}{}%
-\contentsline {paragraph}{Exemple.}{14}{}%
-\contentsline {subsection}{\numberline {B.3}F2 : épisodes prolongés}{14}{}%
-\contentsline {paragraph}{Entrées.}{14}{}%
-\contentsline {paragraph}{Sorties.}{15}{}%
-\contentsline {paragraph}{Exemple.}{15}{}%
-\contentsline {subsection}{\numberline {B.4}F3 : mois anormaux}{15}{}%
-\contentsline {paragraph}{Entrées.}{15}{}%
-\contentsline {paragraph}{Sorties.}{15}{}%
-\contentsline {paragraph}{Exemple.}{15}{}%
-\contentsline {subsection}{\numberline {B.5}F4 : événements régionaux}{15}{}%
-\contentsline {paragraph}{Entrées.}{15}{}%
-\contentsline {paragraph}{Sorties.}{15}{}%
-\contentsline {paragraph}{Exemples.}{16}{}%
-\contentsline {subsection}{\numberline {B.6}F5 : mettre à jour l'archive}{16}{}%
-\contentsline {paragraph}{Entrées.}{16}{}%
-\contentsline {paragraph}{Sorties.}{16}{}%
-\contentsline {paragraph}{Politique.}{16}{}%
-\contentsline {paragraph}{Exemples.}{16}{}%
-\contentsline {section}{\numberline {C}Sensibilité aux paramètres}{16}{}%
+\contentsline {section}{\numberline {4}Prototype distribué}{9}{}%
+\contentsline {subsection}{\numberline {4.1}Déploiement : processus, ports et mémoire}{9}{}%
+\contentsline {subsection}{\numberline {4.2}Placement des observations}{10}{}%
+\contentsline {paragraph}{Profil \texttt {hashed}.}{10}{}%
+\contentsline {paragraph}{Profil \texttt {zoned}.}{10}{}%
+\contentsline {subsection}{\numberline {4.3}Préparation et alimentation des bases distribuées}{10}{}%
+\contentsline {subsection}{\numberline {4.4}Accès aux données et routage des requêtes}{11}{}%
+\contentsline {subsection}{\numberline {4.5}Perte d'une instance}{12}{}%
+\contentsline {subsection}{\numberline {4.6}Limites du prototype distribué}{13}{}%
+\contentsline {section}{\numberline {5}Ce que disent les hivers}{13}{}%
+\contentsline {paragraph}{Des hivers d'enfance vraiment blancs.}{13}{}%
+\contentsline {paragraph}{Et aujourd'hui~?}{13}{}%
+\contentsline {paragraph}{Autant de neige, mais elle tient moins.}{14}{}%
+\contentsline {paragraph}{Le sud de l'Allemagne perd plus vite.}{14}{}%
+\contentsline {paragraph}{Pourquoi~: l'hiver allemand a franchi zéro.}{14}{}%
+\contentsline {paragraph}{Ce qui pourrait nous tromper.}{15}{}%
+\contentsline {paragraph}{Vérifié sans notre système.}{15}{}%
+\contentsline {section}{\numberline {6}Conclusion}{15}{}%
+\contentsline {section}{\numberline {A}Anomalies relevées dans les données}{16}{}%
+\contentsline {paragraph}{A1. Valeurs signalées par un drapeau qualité.}{16}{}%
+\contentsline {paragraph}{A2. Valeurs physiquement impossibles.}{16}{}%
+\contentsline {paragraph}{A3. Précipitations « manquantes, présumées nulles » (drapeau P).}{17}{}%
+\contentsline {paragraph}{A4. Neige au sol en été, sans drapeau.}{17}{}%
+\contentsline {paragraph}{A5. Un même site sous deux identifiants.}{17}{}%
+\contentsline {paragraph}{A6. Séries qui commencent, s'arrêtent ou s'interrompent.}{17}{}%
+\contentsline {section}{\numberline {B}Référence des services}{17}{}%
+\contentsline {subsection}{\numberline {B.1}F1 : explorer une station}{17}{}%
+\contentsline {paragraph}{Entrées.}{17}{}%
+\contentsline {paragraph}{Sorties.}{18}{}%
+\contentsline {paragraph}{Fonctionnement.}{18}{}%
+\contentsline {paragraph}{Exemple.}{18}{}%
+\contentsline {subsection}{\numberline {B.2}Traçabilité}{18}{}%
+\contentsline {paragraph}{Entrées.}{18}{}%
+\contentsline {paragraph}{Sorties.}{18}{}%
+\contentsline {paragraph}{Exemple.}{18}{}%
+\contentsline {subsection}{\numberline {B.3}F2 : épisodes prolongés}{18}{}%
+\contentsline {paragraph}{Entrées.}{18}{}%
+\contentsline {paragraph}{Sorties.}{19}{}%
+\contentsline {paragraph}{Exemple.}{19}{}%
+\contentsline {subsection}{\numberline {B.4}F3 : mois anormaux}{19}{}%
+\contentsline {paragraph}{Entrées.}{19}{}%
+\contentsline {paragraph}{Sorties.}{19}{}%
+\contentsline {paragraph}{Exemple.}{19}{}%
+\contentsline {subsection}{\numberline {B.5}F4 : événements régionaux}{19}{}%
+\contentsline {paragraph}{Entrées.}{19}{}%
+\contentsline {paragraph}{Sorties.}{19}{}%
+\contentsline {paragraph}{Exemples.}{20}{}%
+\contentsline {subsection}{\numberline {B.6}F5 : mettre à jour l'archive}{20}{}%
+\contentsline {paragraph}{Entrées.}{20}{}%
+\contentsline {paragraph}{Sorties.}{20}{}%
+\contentsline {paragraph}{Politique.}{20}{}%
+\contentsline {paragraph}{Exemples.}{20}{}%
+\contentsline {section}{\numberline {C}Sensibilité aux paramètres}{20}{}%

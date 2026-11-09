@@ -7,8 +7,11 @@
     python -m weatherscope trace --station USW00094847 --from 2014-01-05 --to 2014-01-07
     python -m weatherscope trace --id USW00094847:2014-01-06:TMIN --history
 
-Every command accepts --json for machine-readable output, and --uri / --db
-(or WEATHERSCOPE_URI / WEATHERSCOPE_DB) to choose the server.
+Every command accepts --json for machine-readable output, and either
+--profile local|hashed|zoned or --uri / --db (or WEATHERSCOPE_URI /
+WEATHERSCOPE_DB) to choose the deployment. On a cluster, a request whose
+data sit on an unreachable shard is refused (status UNAVAILABLE, exit code 4)
+instead of returning a partial answer.
 """
 import argparse
 import sys
@@ -17,6 +20,7 @@ from pymongo.errors import PyMongoError
 
 from . import AREAS, ELEMENTS
 from .db import connect
+from .deploy import PROFILES, guard, profile_db
 from .f1 import PERIODS, station_summary
 from .f2 import find_episodes
 from .f3 import monthly_anomalies
@@ -32,6 +36,9 @@ def build_parser() -> argparse.ArgumentParser:
     common.add_argument("--uri", help="MongoDB URI (default $WEATHERSCOPE_URI or mongodb://localhost:27017)")
     common.add_argument("--db", help="database name (default $WEATHERSCOPE_DB or weatherscope)")
     common.add_argument("--json", action="store_true", help="print the full result as JSON")
+    common.add_argument("--profile", choices=list(PROFILES),
+                        help="deployment: local (one mongod), hashed or zoned (cluster through mongos); "
+                             "sets the URI and database (--db still overrides the database)")
 
     ap = argparse.ArgumentParser(prog="weatherscope", description=__doc__.splitlines()[0])
     sub = ap.add_subparsers(dest="command", required=True)
@@ -124,37 +131,69 @@ def build_parser() -> argparse.ArgumentParser:
     return ap
 
 
+def open_db(args):
+    if args.profile:
+        return profile_db(args.profile, args.db)
+    return connect(args.uri, args.db)
+
+
+def run_command(db, args) -> dict:
+    """Run one parsed command on a database handle and return its result (no printing)."""
+    if args.command == "stations":
+        return search_stations(db, args.area, args.bbox, args.near, args.element, args.name, args.limit)
+    if args.command == "f1":
+        return station_summary(db, args.station, args.start, args.end, args.by, args.element)
+    if args.command == "f2":
+        result = find_episodes(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
+                               args.stations, args.above, args.below, args.pct_above, args.pct_below,
+                               args.min_days)
+        result["display_top"] = args.top
+        return result
+    if args.command == "f3":
+        return monthly_anomalies(db, args.element, args.area, args.from_year, args.to_year, args.ref_from,
+                                 args.ref_to, args.months, args.grid, args.min_ref_years, args.min_cells,
+                                 args.sign, args.top, args.max_elev, source=args.source)
+    if args.command == "f4":
+        return regional_events(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
+                               args.stations, args.above, args.below, args.pct_above, args.pct_below,
+                               args.tolerance, args.grid, args.min_share, args.min_cells, args.top)
+    if args.command == "f5":
+        return import_batch(db, args.label, args.files, args.stations, args.long_only, args.start, args.end,
+                            args.include_unselected, log=lambda m: print(m, file=sys.stderr))
+    return trace(db, args.ids, args.station, args.start, args.end, args.element, args.history, args.limit)
+
+
+def execute(argv) -> dict:
+    """Parse, guard and run a command; always returns an answer with `complete` (used by the scripts)."""
+    args = build_parser().parse_args(argv)
+    db = open_db(args)
+    refused = guard(db, args.command, args)
+    if refused:
+        return refused
+    try:
+        return run_command(db, args)
+    except PyMongoError as e:  # a shard failed during the request: never a partial answer
+        return {"service": args.command, "status": "ERROR", "complete": False,
+                "message": f"the database did not answer ({e.__class__.__name__}: {e})"}
+
+
 def main(argv=None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        db = connect(args.uri, args.db)
-        if args.command == "stations":
-            result = search_stations(db, args.area, args.bbox, args.near, args.element, args.name, args.limit)
-        elif args.command == "f1":
-            result = station_summary(db, args.station, args.start, args.end, args.by, args.element)
-        elif args.command == "f2":
-            result = find_episodes(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
-                                   args.stations, args.above, args.below, args.pct_above, args.pct_below,
-                                   args.min_days)
-            result["display_top"] = args.top
-        elif args.command == "f3":
-            result = monthly_anomalies(db, args.element, args.area, args.from_year, args.to_year, args.ref_from,
-                                       args.ref_to, args.months, args.grid, args.min_ref_years, args.min_cells,
-                                       args.sign, args.top, args.max_elev, source=args.source)
-        elif args.command == "f4":
-            result = regional_events(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
-                                     args.stations, args.above, args.below, args.pct_above, args.pct_below,
-                                     args.tolerance, args.grid, args.min_share, args.min_cells, args.top)
-        elif args.command == "f5":
-            result = import_batch(db, args.label, args.files, args.stations, args.long_only, args.start, args.end,
-                                  args.include_unselected, log=lambda m: print(m, file=sys.stderr))
-        else:
-            result = trace(db, args.ids, args.station, args.start, args.end, args.element, args.history, args.limit)
+        db = open_db(args)
+        refused = guard(db, args.command, args)
+        if refused:
+            print(as_json(refused) if args.json else f"UNAVAILABLE: {refused['message']}\n"
+                  + as_json(refused["missing"]))
+            return 4
+        result = run_command(db, args)
     except (ValueError, LookupError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
     except PyMongoError as e:
-        print(f"error: the database did not answer ({e.__class__.__name__}: {e})", file=sys.stderr)
+        failed = {"service": args.command, "status": "ERROR", "complete": False,
+                  "message": f"the database did not answer ({e.__class__.__name__}: {e})"}
+        print(as_json(failed) if args.json else f"error: {failed['message']}", file=sys.stdout if args.json else sys.stderr)
         return 3
     print(as_json(result) if args.json else "", end="")
     if not args.json:

@@ -57,3 +57,15 @@ python3 scripts/load_observations.py --label f5-2021 --files 2021.csv.gz --end 2
 `--files` accepts per-station and per-year NOAA files (gzipped or not); rows from stations outside our scope are skipped. The timings and counts in `results/ingest/` are the raw measurements for experiment E1.
 
 The data model is described in [`schema/README.md`](../schema/README.md).
+
+## Part II (`scripts/distributed/`, run as modules from the repository root)
+
+| Script | What it does |
+|---|---|
+| `../cluster.py` | Starts, stops, kills or restarts the config server, 2 or 3 shards and mongos (`cluster_data/`, not in git). |
+| `setup_db.py` | Creates the collections on the cluster and shards `observations` and `obs_months` (`hashed` or `zoned`). |
+| `sync_from_local.py` | Copies the local database to a cluster profile, idempotently. |
+| `compare.py` | Runs the same seven requests on local, hashed and zoned and checks the answers are identical (`results/part2/`). |
+| `route.py` | Shows which shards each representative request contacts. |
+| `failure_demo.py` | After `cluster.py kill shardN`: what F1 and F3 return when a shard is down. |
+

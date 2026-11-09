@@ -73,7 +73,7 @@ def station_summary(db, station: str, start: str, end: str, by: str = "month", e
         raise LookupError(f"station {station} is not in the database")
     d0, d1 = dt.date.fromisoformat(start), dt.date.fromisoformat(end)
 
-    match = {"station": station, "element": {"$in": list(elements)},
+    match = {"area": st["area"], "station": station, "element": {"$in": list(elements)},  # area: shard-key prefix (zoned)
              "date": {"$gte": dt.datetime.combine(d0, dt.time()), "$lte": dt.datetime.combine(d1, dt.time())}}
     usable = {"$eq": [{"$ifNull": ["$qflag", None]}, None]}
     amount_ok = {"$and": [usable, {"$ne": ["$mflag", "P"]}]}

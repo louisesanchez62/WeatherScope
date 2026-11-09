@@ -75,7 +75,9 @@ def select_days(db, element, start, end, area=None, bbox=None, near=None, statio
     ids = sorted(meta)
     d0, d1 = dt.datetime.fromisoformat(start), dt.datetime.fromisoformat(end)
 
-    q = {"station": {"$in": ids}, "element": element, "date": {"$gte": d0, "$lte": d1}, **_usable(element)}
+    areas = sorted({m["area"] for m in meta.values()})  # shard-key prefix on the zoned cluster
+    q = {"area": {"$in": areas}, "station": {"$in": ids}, "element": element,
+         "date": {"$gte": d0, "$lte": d1}, **_usable(element)}
     thresholds, skipped = None, []
     if percentile is None:
         fixed = above if direction == "above" else below

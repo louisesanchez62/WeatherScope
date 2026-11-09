@@ -30,7 +30,16 @@ def _ensure_indexes(db):
     db[COLL].create_index([("area", 1), ("element", 1), ("year", 1), ("month", 1)], name="area_element_ym")
 
 
-def available(db) -> bool:
+def _is_cluster(db) -> bool:
+    return db.client.admin.command("hello").get("msg") == "isdbgrid"
+
+
+def available(db, areas=None) -> bool:
+    """Is the read model built? With `areas`, only those areas are looked at, so on a zoned
+    cluster the check reaches only their shards (a whole-collection count would contact every
+    shard, including a stopped one the request does not need)."""
+    if areas:
+        return db[COLL].find_one({"area": {"$in": list(areas)}}, {"_id": 1}) is not None
     return db[COLL].estimated_document_count() > 0
 
 
@@ -55,7 +64,11 @@ def refresh(db, keys) -> int:
 
 
 def build(db, log=print) -> None:
-    db[COLL].drop()
+    sharded = db.client.config.collections.find_one({"_id": f"{db.name}.{COLL}"}) if _is_cluster(db) else None
+    if sharded:
+        db[COLL].delete_many({})  # keep the collection and its sharding (dropping would unshard it)
+    else:
+        db[COLL].drop()
     _aggregate(db, None)
     _ensure_indexes(db)
     log(f"{COLL}: {db[COLL].estimated_document_count():,} documents")
