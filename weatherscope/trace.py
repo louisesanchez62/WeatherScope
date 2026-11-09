@@ -26,10 +26,12 @@ def _record(d: dict) -> dict:
 def trace(db, ids=None, station=None, start=None, end=None, elements=ELEMENTS, history=False, limit=5000) -> dict:
     if ids:
         stations = sorted({i.split(":", 1)[0] for i in ids})
-        q = {"station": {"$in": stations}, "_id": {"$in": list(ids)}}
+        areas = sorted({s["area"] for s in db.stations.find({"_id": {"$in": stations}}, {"area": 1})})
+        q = {"area": {"$in": areas}, "station": {"$in": stations}, "_id": {"$in": list(ids)}}
         query = {"ids": list(ids)}
     elif station and start and end:
-        q = {"station": station, "element": {"$in": list(elements)},
+        st = db.stations.find_one({"_id": station}, {"area": 1})
+        q = {"area": st["area"] if st else None, "station": station, "element": {"$in": list(elements)},
              "date": {"$gte": dt.datetime.fromisoformat(start), "$lte": dt.datetime.fromisoformat(end)}}
         query = {"station": station, "start": start, "end": end, "elements": list(elements)}
     else:

@@ -1,0 +1,23 @@
+{
+  "service": "F5",
+  "batch": "2026-11-08-f5-2021-2025",
+  "status": "done",
+  "db": "weatherscope",
+  "start": "2021-01-01",
+  "end": "2025-12-31",
+  "files": 1353,
+  "stations_with_rows": 744,
+  "stations_upserted": 744,
+  "elapsed_s": 543.81,
+  "counts": {
+    "inserted": 3201939,
+    "unchanged": 0,
+    "revised": 0,
+    "rejected": 0
+  },
+  "rows_by_period": {
+    "other": 3201939
+  },
+  "notes": {},
+  "complete": true
+}

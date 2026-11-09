@@ -18,6 +18,10 @@ import datetime as dt
 
 from . import ELEMENTS
 
+# Sums are taken on the raw NOAA integers, which are exact whatever the order of
+# addition (one server, several shards), and converted to degC / mm at the end.
+SCALE = {"TMAX": 10, "TMIN": 10, "PRCP": 10, "SNOW": 1, "SNWD": 1}
+
 PERIODS = ("month", "year", "winter")
 
 
@@ -69,7 +73,7 @@ def station_summary(db, station: str, start: str, end: str, by: str = "month", e
         raise LookupError(f"station {station} is not in the database")
     d0, d1 = dt.date.fromisoformat(start), dt.date.fromisoformat(end)
 
-    match = {"station": station, "element": {"$in": list(elements)},
+    match = {"area": st["area"], "station": station, "element": {"$in": list(elements)},  # area: shard-key prefix (zoned)
              "date": {"$gte": dt.datetime.combine(d0, dt.time()), "$lte": dt.datetime.combine(d1, dt.time())}}
     usable = {"$eq": [{"$ifNull": ["$qflag", None]}, None]}
     amount_ok = {"$and": [usable, {"$ne": ["$mflag", "P"]}]}
@@ -85,7 +89,7 @@ def station_summary(db, station: str, start: str, end: str, by: str = "month", e
             "mflag_P": {"$sum": {"$cond": [{"$eq": ["$mflag", "P"]}, 1, 0]}},
             "mflag_T": {"$sum": {"$cond": [{"$eq": ["$mflag", "T"]}, 1, 0]}},
             "n": {"$sum": {"$cond": [amount_ok, 1, 0]}},
-            "sum": {"$sum": {"$cond": [amount_ok, "$value", 0]}},
+            "sum_raw": {"$sum": {"$cond": [amount_ok, "$raw", 0]}},
             "min": {"$min": {"$cond": [amount_ok, "$value", None]}},
             "max": {"$max": {"$cond": [amount_ok, "$value", None]}},
             "positive": {"$sum": {"$cond": [{"$and": [amount_ok, {"$gt": ["$value", 0]}]}, 1, 0]}},
@@ -115,12 +119,13 @@ def station_summary(db, station: str, start: str, end: str, by: str = "month", e
             "qflagged": g["qflagged"], "mflag_P": g["mflag_P"], "mflag_T": g["mflag_T"],
         }
         n = g["n"]
+        total = g["sum_raw"] / SCALE[el]
         if el in ("TMAX", "TMIN"):
-            row.update(mean=round(g["sum"] / n, 1) if n else None, min=g["min"], max=g["max"])
+            row.update(mean=round(total / n, 1) if n else None, min=g["min"], max=g["max"])
         elif el in ("PRCP", "SNOW"):
-            row.update(total=round(g["sum"], 1) if n else None, days_positive=g["positive"])
+            row.update(total=round(total, 1) if n else None, days_positive=g["positive"])
         else:  # SNWD
-            row.update(days_positive=g["positive"], max=g["max"], mean=round(g["sum"] / n, 1) if n else None)
+            row.update(days_positive=g["positive"], max=g["max"], mean=round(total / n, 1) if n else None)
         rows.append(row)
 
     lon, lat = st["location"]["coordinates"]

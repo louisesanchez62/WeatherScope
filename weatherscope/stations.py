@@ -35,4 +35,5 @@ def search_stations(db, area=None, bbox=None, near=None, element=None, name=None
         "count": len(rows),
         "stations": rows[:limit],
         "truncated": len(rows) > limit,
+        "complete": True,
     }

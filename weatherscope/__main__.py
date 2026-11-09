@@ -7,8 +7,11 @@
     python -m weatherscope trace --station USW00094847 --from 2014-01-05 --to 2014-01-07
     python -m weatherscope trace --id USW00094847:2014-01-06:TMIN --history
 
-Every command accepts --json for machine-readable output, and --uri / --db
-(or WEATHERSCOPE_URI / WEATHERSCOPE_DB) to choose the server.
+Every command accepts --json for machine-readable output, and either
+--profile local|hashed|zoned or --uri / --db (or WEATHERSCOPE_URI /
+WEATHERSCOPE_DB) to choose the deployment. On a cluster, a request whose
+data sit on an unreachable shard is refused (status UNAVAILABLE, exit code 4)
+instead of returning a partial answer.
 """
 import argparse
 import sys
@@ -17,9 +20,12 @@ from pymongo.errors import PyMongoError
 
 from . import AREAS, ELEMENTS
 from .db import connect
+from .deploy import PROFILES, guard, profile_db
 from .f1 import PERIODS, station_summary
 from .f2 import find_episodes
 from .f3 import monthly_anomalies
+from .f4 import regional_events
+from .f5 import import_batch
 from .output import as_json, print_result
 from .stations import search_stations
 from .trace import trace
@@ -30,6 +36,9 @@ def build_parser() -> argparse.ArgumentParser:
     common.add_argument("--uri", help="MongoDB URI (default $WEATHERSCOPE_URI or mongodb://localhost:27017)")
     common.add_argument("--db", help="database name (default $WEATHERSCOPE_DB or weatherscope)")
     common.add_argument("--json", action="store_true", help="print the full result as JSON")
+    common.add_argument("--profile", choices=list(PROFILES),
+                        help="deployment: local (one mongod), hashed or zoned (cluster through mongos); "
+                             "sets the URI and database (--db still overrides the database)")
 
     ap = argparse.ArgumentParser(prog="weatherscope", description=__doc__.splitlines()[0])
     sub = ap.add_subparsers(dest="command", required=True)
@@ -78,6 +87,38 @@ def build_parser() -> argparse.ArgumentParser:
     a.add_argument("--min-cells", type=float, default=0.5, help="share of the area's cells needed to rank a month (default 0.5)")
     a.add_argument("--sign", choices=["high", "low"], help="rank only warm/wet (high) or cold/dry (low) months")
     a.add_argument("--top", type=int, default=10)
+    a.add_argument("--max-elev", type=float, help="only stations at or below this elevation (m)")
+    a.add_argument("--source", choices=["auto", "buckets", "observations"], default="auto",
+                   help="read station-months from the monthly read model (default when built) or from observations")
+
+    r = sub.add_parser("f4", parents=[common], help="F4: regional events versus isolated extremes")
+    r.add_argument("--element", required=True, choices=ELEMENTS)
+    r.add_argument("--from", dest="start", required=True, metavar="YYYY-MM-DD")
+    r.add_argument("--to", dest="end", required=True, metavar="YYYY-MM-DD")
+    r.add_argument("--area", choices=AREAS)
+    r.add_argument("--bbox", metavar="LON1,LAT1,LON2,LAT2")
+    r.add_argument("--near", metavar="LON,LAT,KM")
+    r.add_argument("--station", nargs="+", dest="stations", metavar="ID")
+    rule4 = r.add_mutually_exclusive_group(required=True)
+    rule4.add_argument("--above", type=float)
+    rule4.add_argument("--below", type=float)
+    rule4.add_argument("--pct-above", type=float, metavar="P")
+    rule4.add_argument("--pct-below", type=float, metavar="P")
+    r.add_argument("--tolerance", type=int, default=1, help="days of offset allowed between stations (default 1)")
+    r.add_argument("--grid", type=float, default=1.0, help="grid cell size in degrees (default 1)")
+    r.add_argument("--min-share", type=float, default=0.25, help="share of reporting cells affected (default 0.25)")
+    r.add_argument("--min-cells", type=int, default=2, help="affected cells needed (default 2)")
+    r.add_argument("--top", type=int, default=10)
+
+    u = sub.add_parser("f5", parents=[common], help="F5: import a batch of NOAA observations")
+    u.add_argument("--label", required=True, help="batch label (lowercase, digits, dashes)")
+    u.add_argument("--files", nargs="+", help="GHCN CSV files, per station or per year (default: downloaded by_station files)")
+    u.add_argument("--station", nargs="+", dest="stations", metavar="ID")
+    u.add_argument("--long-only", action="store_true")
+    u.add_argument("--include-unselected", action="store_true",
+                   help="also accept stations of our areas left out of the initial load (e.g. above 800 m)")
+    u.add_argument("--from", dest="start", default="1961-01-01", metavar="YYYY-MM-DD")
+    u.add_argument("--to", dest="end", default="2020-12-31", metavar="YYYY-MM-DD")
 
     t = sub.add_parser("trace", parents=[common], help="list the source records behind a result")
     t.add_argument("--id", nargs="+", dest="ids", metavar="STATION:DATE:ELEMENT")
@@ -90,30 +131,69 @@ def build_parser() -> argparse.ArgumentParser:
     return ap
 
 
+def open_db(args):
+    if args.profile:
+        return profile_db(args.profile, args.db)
+    return connect(args.uri, args.db)
+
+
+def run_command(db, args) -> dict:
+    """Run one parsed command on a database handle and return its result (no printing)."""
+    if args.command == "stations":
+        return search_stations(db, args.area, args.bbox, args.near, args.element, args.name, args.limit)
+    if args.command == "f1":
+        return station_summary(db, args.station, args.start, args.end, args.by, args.element)
+    if args.command == "f2":
+        result = find_episodes(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
+                               args.stations, args.above, args.below, args.pct_above, args.pct_below,
+                               args.min_days)
+        result["display_top"] = args.top
+        return result
+    if args.command == "f3":
+        return monthly_anomalies(db, args.element, args.area, args.from_year, args.to_year, args.ref_from,
+                                 args.ref_to, args.months, args.grid, args.min_ref_years, args.min_cells,
+                                 args.sign, args.top, args.max_elev, source=args.source)
+    if args.command == "f4":
+        return regional_events(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
+                               args.stations, args.above, args.below, args.pct_above, args.pct_below,
+                               args.tolerance, args.grid, args.min_share, args.min_cells, args.top)
+    if args.command == "f5":
+        return import_batch(db, args.label, args.files, args.stations, args.long_only, args.start, args.end,
+                            args.include_unselected, log=lambda m: print(m, file=sys.stderr))
+    return trace(db, args.ids, args.station, args.start, args.end, args.element, args.history, args.limit)
+
+
+def execute(argv) -> dict:
+    """Parse, guard and run a command; always returns an answer with `complete` (used by the scripts)."""
+    args = build_parser().parse_args(argv)
+    db = open_db(args)
+    refused = guard(db, args.command, args)
+    if refused:
+        return refused
+    try:
+        return run_command(db, args)
+    except PyMongoError as e:  # a shard failed during the request: never a partial answer
+        return {"service": args.command, "status": "ERROR", "complete": False,
+                "message": f"the database did not answer ({e.__class__.__name__}: {e})"}
+
+
 def main(argv=None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        db = connect(args.uri, args.db)
-        if args.command == "stations":
-            result = search_stations(db, args.area, args.bbox, args.near, args.element, args.name, args.limit)
-        elif args.command == "f1":
-            result = station_summary(db, args.station, args.start, args.end, args.by, args.element)
-        elif args.command == "f2":
-            result = find_episodes(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
-                                   args.stations, args.above, args.below, args.pct_above, args.pct_below,
-                                   args.min_days)
-            result["display_top"] = args.top
-        elif args.command == "f3":
-            result = monthly_anomalies(db, args.element, args.area, args.from_year, args.to_year, args.ref_from,
-                                       args.ref_to, args.months, args.grid, args.min_ref_years, args.min_cells,
-                                       args.sign, args.top)
-        else:
-            result = trace(db, args.ids, args.station, args.start, args.end, args.element, args.history, args.limit)
+        db = open_db(args)
+        refused = guard(db, args.command, args)
+        if refused:
+            print(as_json(refused) if args.json else f"UNAVAILABLE: {refused['message']}\n"
+                  + as_json(refused["missing"]))
+            return 4
+        result = run_command(db, args)
     except (ValueError, LookupError) as e:
         print(f"error: {e}", file=sys.stderr)
         return 2
     except PyMongoError as e:
-        print(f"error: the database did not answer ({e.__class__.__name__}: {e})", file=sys.stderr)
+        failed = {"service": args.command, "status": "ERROR", "complete": False,
+                  "message": f"the database did not answer ({e.__class__.__name__}: {e})"}
+        print(as_json(failed) if args.json else f"error: {failed['message']}", file=sys.stdout if args.json else sys.stderr)
         return 3
     print(as_json(result) if args.json else "", end="")
     if not args.json:

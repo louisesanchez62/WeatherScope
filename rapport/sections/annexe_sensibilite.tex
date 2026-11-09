@@ -1,0 +1,26 @@
+\section{Sensibilité aux paramètres}
+\label{annexe:sensibilite}
+
+Le résultat central de la section~\ref{sec:resultats} repose sur trois paramètres que nous avons choisis~: le seuil d'altitude (800~m), la taille des cases de F3 (1°) et le nombre d'années valides exigé pour une normale (24 sur 30, la règle des 80~\% de l'OMM). Le tableau~\ref{tab:sensibilite} refait le calcul de F3 sur les hivers (décembre à février, 1991--2020 contre 1961--1990) en faisant varier chacun d'eux. Produit par \texttt{scripts/sensitivity.py} (\texttt{results/sensitivity/winter.json}).
+
+\begin{table}[h!]
+  \centering
+  \small
+  \begin{tabular}{lrrrrr}
+    \hline
+    & \multicolumn{2}{c}{Jours de neige au sol} & \multicolumn{2}{c}{TMIN} & Stations \\
+    Variante & Michigan & Sud de l'All. & Michigan & Sud de l'All. & MI / All. \\
+    \hline
+    Référence (800~m, 1°, 24 ans) & $-7,9$~\% & $-27,0$~\% & $+1,38$~°C & $+0,99$~°C & 121 / 136 \\
+    Altitude $\leq 600$~m & $-7,9$~\% & $-30,8$~\% & $+1,38$~°C & $+1,00$~°C & 121 / 118 \\
+    Cases de 0,5° & $-7,6$~\% & $-28,2$~\% & $+1,37$~°C & $+1,04$~°C & 121 / 136 \\
+    Cases de 2° & $-7,3$~\% & $-27,6$~\% & $+1,39$~°C & $+0,96$~°C & 121 / 136 \\
+    Normale sur 20 ans & $-7,8$~\% & $-26,8$~\% & $+1,39$~°C & $+0,97$~°C & 128 / 145 \\
+    Normale sur 27 ans & $-8,4$~\% & $-27,2$~\% & $+1,35$~°C & $+0,99$~°C & 117 / 122 \\
+    \hline
+  \end{tabular}
+  \caption{Évolution des hivers entre 1961--1990 et 1991--2020 selon les paramètres. Le Michigan n'a aucune station au-dessus de 600~m~: le seuil d'altitude ne le change pas.}
+  \label{tab:sensibilite}
+\end{table}
+
+L'écart entre les deux zones tient dans toutes les variantes. Le seul paramètre qui le déplace sensiblement est l'altitude, et dans le sens de notre explication~: sans les stations allemandes entre 600 et 800~m, qui ont les hivers les plus froids, la perte de neige au sol passe de 27 à 31~\%.

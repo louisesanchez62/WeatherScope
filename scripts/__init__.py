@@ -1,0 +1,1 @@
+"""WeatherScope application scripts."""

@@ -22,6 +22,7 @@ The validators are MongoDB `$jsonSchema` documents, applied with `validationLeve
 | `observations` | station + date + element | loader and F5 |
 | `history` | replaced version of an observation | F5, when a value or flag changes |
 | `batches` | import run | loader and F5 |
+| `obs_months` | station + element + month (read model) | `build_read_model.py`, then F5 |
 
 ## `observations`
 
@@ -75,6 +76,18 @@ The validator checks types and formats. These rules it cannot check, so the load
    - same `_id`, different `raw` or flag → copy the old version to `history`, write the new one, count as `revised`.
 
    Importing the same batch twice must therefore end with `inserted: 0` and `revised: 0`.
+
+## Monthly read model: `obs_months`
+
+Derived from `observations`, never written directly. One document per station, element and month, with the month's days in a sorted array:
+
+```json
+{ "_id": "USW00094847:SNWD:2014-01", "station": "USW00094847", "area": "michigan",
+  "element": "SNWD", "year": 2014, "month": 1, "n": 31,
+  "days": [ { "d": 1, "raw": 25, "v": 25.0, "m": null, "q": null, "s": "W", "t": null }, ... ] }
+```
+
+`observations` stays the source of truth (imports, revisions, history, validation, trace). `obs_months` serves regional analyses that read whole months (F3), about 13 times faster (Part I, `results/part1/compare_designs.json`). It is built once with `scripts/build_read_model.py`; afterwards every F5 import rebuilds the months it inserted into or revised. Indexes: `station, element, year, month` and `area, element, year, month`.
 
 ## Indexes
 

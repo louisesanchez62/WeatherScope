@@ -1,5 +1,8 @@
 """F3: months that depart most from the usual seasonal behaviour, per area.
 
+Station-months come from the monthly read model (obs_months) when it exists,
+otherwise from observations; both give identical tables (Part I check).
+
 1. Station-months (computed in MongoDB, one aggregation over the
    area/element/date index): usable values only (no quality flag, no P),
    with the number of days, the longest run of missing days, and the
@@ -34,6 +37,8 @@ import statistics
 
 from . import AREAS
 from .areas import distance_km
+from . import bucket
+from .f1 import SCALE
 
 DAY_MS = 86_400_000
 AMOUNTS = ("PRCP", "SNOW")
@@ -54,7 +59,7 @@ def _station_months(db, areas, element, y0, y1):
         {"$group": {
             "_id": {"s": "$station", "y": "$y", "m": "$m"},
             "n": {"$sum": 1},
-            "sum": {"$sum": "$value"},
+            "sum_raw": {"$sum": "$raw"},  # exact integer sum, see f1.SCALE
             "pos": {"$sum": {"$cond": [{"$gt": ["$value", 0]}, 1, 0]}},
             "gap": {"$max": {"$cond": [{"$eq": ["$prev", None]}, 0,
                                        {"$subtract": [{"$divide": [{"$subtract": ["$date", "$prev"]}, DAY_MS]}, 1]}]}},
@@ -71,9 +76,9 @@ def _station_months(db, areas, element, y0, y1):
         if missing > 5 or longest > 3:
             continue
         if element in ("TMAX", "TMIN"):
-            v = g["sum"] / g["n"]
+            v = g["sum_raw"] / SCALE[element] / g["n"]
         elif element in AMOUNTS:
-            v = g["sum"] / g["n"] * dim
+            v = g["sum_raw"] / SCALE[element] / g["n"] * dim
         else:  # SNWD: days with snow on the ground
             v = g["pos"] / g["n"] * dim
         out[(s, y, m)] = v
@@ -95,7 +100,11 @@ def _dedupe(stations: dict, ref_count: dict) -> tuple[set, list]:
 
 
 def monthly_anomalies(db, element, areas=AREAS, start_year=1991, end_year=2020, ref_start=1961, ref_end=1990,
-                      months=None, grid=1.0, min_ref_years=24, min_cells=0.5, sign=None, top=10) -> dict:
+                      months=None, grid=1.0, min_ref_years=24, min_cells=0.5, sign=None, top=10,
+                      max_elev=None, station_months=None, source="auto") -> dict:
+    """`max_elev` keeps only stations at or below that elevation (m). `station_months`
+    lets a caller reuse the output of `_station_months` across several runs with
+    different parameters (used by the sensitivity analysis)."""
     areas = list(areas)
     for a in areas:
         if a not in AREAS:
@@ -105,12 +114,25 @@ def monthly_anomalies(db, element, areas=AREAS, start_year=1991, end_year=2020, 
     months = sorted(set(months)) if months else list(range(1, 13))
 
     y0, y1 = min(ref_start, start_year), max(ref_end, end_year)
-    sm = _station_months(db, areas, element, y0, y1)
-    stations = {s["_id"]: s for s in db.stations.find({"area": {"$in": areas}}, {"area": 1, "name": 1, "location": 1})}
+    if source not in ("auto", "buckets", "observations"):
+        raise ValueError("source must be auto, buckets or observations")
+    if source == "auto":
+        source = "buckets" if bucket.available(db, areas) else "observations"
+    if station_months is not None:
+        sm = station_months
+    elif source == "buckets":
+        sm = bucket.station_months(db, areas, element, y0, y1)  # monthly read model, about 13x faster
+    else:
+        sm = _station_months(db, areas, element, y0, y1)
+    sq = {"area": {"$in": areas}}
+    if max_elev is not None:
+        sq["elev_m"] = {"$lte": max_elev}
+    stations = {s["_id"]: s for s in db.stations.find(sq, {"area": 1, "name": 1, "location": 1, "elev_m": 1})}
+    sm = {k: v for k, v in sm.items() if k[0] in stations}
 
     # normals per station and calendar month
     ref_vals = collections.defaultdict(list)
-    for (s, y, m), v in sm.items():
+    for (s, y, m), v in sorted(sm.items()):  # fixed order: same float results on any deployment
         if ref_start <= y <= ref_end:
             ref_vals[(s, m)].append(v)
     normals = {k: (statistics.fmean(v), statistics.stdev(v)) for k, v in ref_vals.items() if len(v) >= min_ref_years}
@@ -131,7 +153,7 @@ def monthly_anomalies(db, element, areas=AREAS, start_year=1991, end_year=2020, 
             eligible[(stations[s]["area"], m)].add(cell(s))
 
     by_month = collections.defaultdict(list)  # (area, y, m) -> station anomalies
-    for (s, y, m), v in sm.items():
+    for (s, y, m), v in sorted(sm.items()):  # fixed order: same float results on any deployment
         if not (start_year <= y <= end_year) or m not in months or s not in kept or (s, m) not in normals:
             continue
         mean, sd = normals[(s, m)]
@@ -178,7 +200,8 @@ def monthly_anomalies(db, element, areas=AREAS, start_year=1991, end_year=2020, 
         "service": "F3",
         "query": {"element": element, "areas": areas, "years": [start_year, end_year],
                   "reference": [ref_start, ref_end], "months": months, "grid_deg": grid,
-                  "min_ref_years": min_ref_years, "min_cells": min_cells, "sign": sign},
+                  "min_ref_years": min_ref_years, "min_cells": min_cells, "sign": sign, "max_elev": max_elev,
+                  "source": source},
         "reference_station_months": sum(1 for (_s, y, _m) in sm if ref_start <= y <= ref_end),
         "study_station_months": sum(1 for (_s, y, _m) in sm if start_year <= y <= end_year),
         "stations_with_normal": {a: len({s for s in kept if stations[s]["area"] == a}) for a in areas},

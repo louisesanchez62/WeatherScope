@@ -29,56 +29,98 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3}Architecture Système \& Implémentation des Services}{6}{}\protected@file@percent }
 \newlabel{sec:architecture}{{3}{6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Modèle de données}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Conception alternative mesurée.}{7}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Comparaison des deux modèles sur les mêmes données (\texttt  {results/part1/compare\_designs.json}).\relax }}{7}{}\protected@file@percent }
+\newlabel{tab:conception}{{2}{7}}
 \citation{wmo2017}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Services}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{F1, explorer une station.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Traçabilité.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{F2, épisodes prolongés.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{F3, mois anormaux.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Ce que disent les hivers}{7}{}\protected@file@percent }
-\newlabel{sec:resultats}{{4}{7}}
-\@writefile{toc}{\contentsline {paragraph}{Des hivers d'enfance vraiment blancs.}{8}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Hivers complets (règle 3/5) aux deux stations les plus proches de Grosse Pointe Woods. La station de Grosse Pointe Farms n'a que 5 hivers complets après 2011~: la tendance y est nette, mais repose sur peu d'hivers.\relax }}{8}{}\protected@file@percent }
-\newlabel{tab:enfance}{{2}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Hivers (décembre--février) à Detroit Metro, calculés par F1. Les hivers qui ne respectent pas la règle 3/5 sont omis.\relax }}{8}{}\protected@file@percent }
-\newlabel{fig:hivers-detroit}{{2}{8}}
-\@writefile{toc}{\contentsline {paragraph}{Autant de neige, mais elle tient moins.}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Le sud de l'Allemagne perd plus vite.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Pourquoi~: l'hiver allemand a franchi zéro.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Ce qui pourrait nous tromper.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Services}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{F1, explorer une station.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Traçabilité.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{F2, épisodes prolongés.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{F3, mois anormaux.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{F5, mettre à jour l'archive.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{F4, événement régional ou extrême isolé.}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Prototype distribué}{9}{}\protected@file@percent }
+\newlabel{sec:distribue}{{4}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Déploiement : processus, ports et mémoire}{9}{}\protected@file@percent }
+\newlabel{sec:dist-deploiement}{{4.1}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Processus du déploiement distribué (N shards, $N \in \{2, 3\}$).\relax }}{9}{}\protected@file@percent }
+\newlabel{tab:processus}{{3}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Placement des observations}{10}{}\protected@file@percent }
+\newlabel{sec:dist-placement}{{4.2}{10}}
+\@writefile{toc}{\contentsline {paragraph}{Profil \texttt  {hashed}.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Profil \texttt  {zoned}.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Préparation et alimentation des bases distribuées}{10}{}\protected@file@percent }
+\newlabel{sec:dist-alimentation}{{4.3}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparaison des deux politiques de placement.\relax }}{11}{}\protected@file@percent }
+\newlabel{tab:placements}{{4}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Accès aux données et routage des requêtes}{11}{}\protected@file@percent }
+\newlabel{sec:dist-routage}{{4.4}{11}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Shards contactés par des requêtes représentatives (deux shards).\relax }}{12}{}\protected@file@percent }
+\newlabel{tab:routage}{{5}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Perte d'une instance}{12}{}\protected@file@percent }
+\newlabel{sec:dist-panne}{{4.5}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.6}Limites du prototype distribué}{13}{}\protected@file@percent }
+\newlabel{sec:dist-limites}{{4.6}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Ce que disent les hivers}{13}{}\protected@file@percent }
+\newlabel{sec:resultats}{{5}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Des hivers d'enfance vraiment blancs.}{13}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Hivers complets (règle 3/5) aux deux stations les plus proches de Grosse Pointe Woods. La station de Grosse Pointe Farms n'a que 5 hivers complets après 2011~: la tendance y est nette, mais repose sur peu d'hivers.\relax }}{13}{}\protected@file@percent }
+\newlabel{tab:enfance}{{6}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Et aujourd'hui~?}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Hivers (décembre--février) à Detroit Metro, calculés par F1. Les hivers qui ne respectent pas la règle 3/5 sont omis.\relax }}{14}{}\protected@file@percent }
+\newlabel{fig:hivers-detroit}{{2}{14}}
+\@writefile{toc}{\contentsline {paragraph}{Autant de neige, mais elle tient moins.}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Le sud de l'Allemagne perd plus vite.}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Pourquoi~: l'hiver allemand a franchi zéro.}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ce qui pourrait nous tromper.}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Vérifié sans notre système.}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{15}{}\protected@file@percent }
 \bibcite{menne2012}{1}
 \bibcite{wmo2017}{2}
 \bibcite{cifelli2005}{3}
 \bibcite{kleintank2002}{4}
 \bibcite{naturalearth}{5}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Anomalies relevées dans les données}{10}{}\protected@file@percent }
-\newlabel{annexe:anomalies}{{A}{10}}
-\@writefile{toc}{\contentsline {paragraph}{A1. Valeurs signalées par un drapeau qualité.}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A2. Valeurs physiquement impossibles.}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A3. Précipitations « manquantes, présumées nulles » (drapeau P).}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A4. Neige au sol en été, sans drapeau.}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A5. Un même site sous deux identifiants.}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A6. Séries qui commencent, s'arrêtent ou s'interrompent.}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {B}Référence des services}{11}{}\protected@file@percent }
-\newlabel{annexe:services}{{B}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}F1 : explorer une station}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Entrées.}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Sorties.}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Fonctionnement.}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Exemple.}{12}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Extrait de F1 pour \texttt  {USW00094847} (Detroit Metro), du 1/12/2013 au 28/2/2014.\relax }}{12}{}\protected@file@percent }
-\newlabel{tab:f1}{{3}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Traçabilité}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Entrées.}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Sorties.}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Exemple.}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}F2 : épisodes prolongés}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Entrées.}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Sorties.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Exemple.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.4}F3 : mois anormaux}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Entrées.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Sorties.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Exemple.}{13}{}\protected@file@percent }
-\gdef \@abspage@last{14}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Anomalies relevées dans les données}{16}{}\protected@file@percent }
+\newlabel{annexe:anomalies}{{A}{16}}
+\@writefile{toc}{\contentsline {paragraph}{A1. Valeurs signalées par un drapeau qualité.}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A2. Valeurs physiquement impossibles.}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A3. Précipitations « manquantes, présumées nulles » (drapeau P).}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A4. Neige au sol en été, sans drapeau.}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A5. Un même site sous deux identifiants.}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A6. Séries qui commencent, s'arrêtent ou s'interrompent.}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Référence des services}{17}{}\protected@file@percent }
+\newlabel{annexe:services}{{B}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}F1 : explorer une station}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Entrées.}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sorties.}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fonctionnement.}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Exemple.}{18}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Extrait de F1 pour \texttt  {USW00094847} (Detroit Metro), du 1/12/2013 au 28/2/2014.\relax }}{18}{}\protected@file@percent }
+\newlabel{tab:f1}{{7}{18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}Traçabilité}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Entrées.}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sorties.}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Exemple.}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}F2 : épisodes prolongés}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Entrées.}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sorties.}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Exemple.}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.4}F3 : mois anormaux}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Entrées.}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sorties.}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Exemple.}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.5}F4 : événements régionaux}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Entrées.}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sorties.}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Exemples.}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.6}F5 : mettre à jour l'archive}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Entrées.}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sorties.}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Politique.}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Exemples.}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C}Sensibilité aux paramètres}{20}{}\protected@file@percent }
+\newlabel{annexe:sensibilite}{{C}{20}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Évolution des hivers entre 1961--1990 et 1991--2020 selon les paramètres. Le Michigan n'a aucune station au-dessus de 600~m~: le seuil d'altitude ne le change pas.\relax }}{21}{}\protected@file@percent }
+\newlabel{tab:sensibilite}{{8}{21}}
+\gdef \@abspage@last{22}

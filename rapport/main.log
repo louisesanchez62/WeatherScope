@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.10)  8 NOV 2026 21:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.10)  9 NOV 2026 09:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -283,6 +283,46 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen166
+\ar@mcellbox=\box61
+\extrarowheight=\dimen167
+\NC@list=\toks28
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box62
+)
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen168
+\lightrulewidth=\dimen169
+\cmidrulewidth=\dimen170
+\belowrulesep=\dimen171
+\belowbottomsep=\dimen172
+\aboverulesep=\dimen173
+\abovetopsep=\dimen174
+\cmidrulesep=\dimen175
+\cmidrulekern=\dimen176
+\defaultaddspace=\dimen177
+\@cmidla=\count304
+\@cmidlb=\count305
+\@aboverulesep=\dimen178
+\@belowrulesep=\dimen179
+\@thisruleclass=\count306
+\@lastruleclass=\count307
+\@thisrulewidth=\dimen180
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen181
+\TX@old@table=\dimen182
+\TX@old@col=\dimen183
+\TX@target=\dimen184
+\TX@delta=\dimen185
+\TX@cols=\count308
+\TX@ftn=\toks29
+)
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -290,21 +330,21 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip57
-\f@nch@O@elh=\skip58
-\f@nch@O@erh=\skip59
-\f@nch@O@olh=\skip60
-\f@nch@O@orh=\skip61
-\f@nch@O@elf=\skip62
-\f@nch@O@erf=\skip63
-\f@nch@O@olf=\skip64
-\f@nch@O@orf=\skip65
+\f@nch@headwidth=\skip59
+\f@nch@O@elh=\skip60
+\f@nch@O@erh=\skip61
+\f@nch@O@olh=\skip62
+\f@nch@O@orh=\skip63
+\f@nch@O@elf=\skip64
+\f@nch@O@erf=\skip65
+\f@nch@O@olf=\skip66
+\f@nch@O@orf=\skip67
 )
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count304
-\c@@ppsavesec=\count305
-\c@@ppsaveapp=\count306
+\c@@pps=\count309
+\c@@ppsavesec=\count310
+\c@@ppsaveapp=\count311
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -323,25 +363,25 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen166
-\Gin@req@width=\dimen167
+\Gin@req@height=\dimen186
+\Gin@req@width=\dimen187
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen168
-\captionmargin@=\dimen169
-\captionwidth=\dimen170
-\caption@tempdima=\dimen171
-\caption@indent=\dimen172
-\caption@parindent=\dimen173
-\caption@hangindent=\dimen174
+\captionmargin=\dimen188
+\captionmargin@=\dimen189
+\captionwidth=\dimen190
+\caption@tempdima=\dimen191
+\caption@indent=\dimen192
+\caption@parindent=\dimen193
+\caption@hangindent=\dimen194
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count307
-\c@continuedfloat=\count308
+\c@caption@flags=\count312
+\c@continuedfloat=\count313
 Package caption Info: float package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
@@ -350,28 +390,28 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count309
-\Gm@cntv=\count310
-\c@Gm@tempcnt=\count311
-\Gm@bindingoffset=\dimen175
-\Gm@wd@mp=\dimen176
-\Gm@odd@mp=\dimen177
-\Gm@even@mp=\dimen178
-\Gm@layoutwidth=\dimen179
-\Gm@layoutheight=\dimen180
-\Gm@layouthoffset=\dimen181
-\Gm@layoutvoffset=\dimen182
-\Gm@dimlist=\toks28
+\Gm@cnth=\count314
+\Gm@cntv=\count315
+\c@Gm@tempcnt=\count316
+\Gm@bindingoffset=\dimen195
+\Gm@wd@mp=\dimen196
+\Gm@odd@mp=\dimen197
+\Gm@even@mp=\dimen198
+\Gm@layoutwidth=\dimen199
+\Gm@layoutheight=\dimen256
+\Gm@layouthoffset=\dimen257
+\Gm@layoutvoffset=\dimen258
+\Gm@dimlist=\toks30
 )
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
-\csq@reset=\count312
-\csq@gtype=\count313
-\csq@glevel=\count314
-\csq@qlevel=\count315
-\csq@maxlvl=\count316
-\csq@tshold=\count317
-\csq@ltx@everypar=\toks29
+\csq@reset=\count317
+\csq@gtype=\count318
+\csq@glevel=\count319
+\csq@qlevel=\count320
+\csq@maxlvl=\count321
+\csq@tshold=\count322
+\csq@ltx@everypar=\toks31
 
 (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
@@ -385,8 +425,8 @@ File: csquotes.cfg
 (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-\@float@every@algorithm=\toks30
-\c@algorithm=\count318
+\@float@every@algorithm=\toks32
+\c@algorithm=\count323
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -395,16 +435,16 @@ Package: algpseudocode
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count319
-\c@ALG@rem=\count320
-\c@ALG@nested=\count321
-\ALG@tlm=\skip66
-\ALG@thistlm=\skip67
-\c@ALG@Lnr=\count322
-\c@ALG@blocknr=\count323
-\c@ALG@storecount=\count324
-\c@ALG@tmpcounter=\count325
-\ALG@tmplength=\skip68
+\c@ALG@line=\count324
+\c@ALG@rem=\count325
+\c@ALG@nested=\count326
+\ALG@tlm=\skip68
+\ALG@thistlm=\skip69
+\c@ALG@Lnr=\count327
+\c@ALG@blocknr=\count328
+\c@ALG@storecount=\count329
+\c@ALG@tmpcounter=\count330
+\ALG@tmplength=\skip70
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -417,21 +457,10 @@ Package xcolor Info: Driver file: pdftex.def on input line 227.
 
 (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen183
-\ar@mcellbox=\box61
-\extrarowheight=\dimen184
-\NC@list=\toks31
-\extratabsurround=\skip69
-\backup@length=\skip70
-\ar@cellbox=\box62
-)
-\everycr=\toks32
+\everycr=\toks33
 \minrowclearance=\skip71
 )
-\rownum=\count326
+\rownum=\count331
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
 Package xcolor Info: Model `RGB' extended on input line 1368.
@@ -443,23 +472,23 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count327
+\lst@mode=\count332
 \lst@gtempboxa=\box63
-\lst@token=\toks33
-\lst@length=\count328
-\lst@currlwidth=\dimen185
-\lst@column=\count329
-\lst@pos=\count330
-\lst@lostspace=\dimen186
-\lst@width=\dimen187
-\lst@newlines=\count331
-\lst@lineno=\count332
-\lst@maxwidth=\dimen188
+\lst@token=\toks34
+\lst@length=\count333
+\lst@currlwidth=\dimen259
+\lst@column=\count334
+\lst@pos=\count335
+\lst@lostspace=\dimen260
+\lst@width=\dimen261
+\lst@newlines=\count336
+\lst@lineno=\count337
+\lst@maxwidth=\dimen262
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count333
-\lst@skipnumbers=\count334
+\c@lstnumber=\count338
+\lst@skipnumbers=\count339
 \lst@framebox=\box64
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -481,39 +510,39 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count335
+\l__color_backend_stack_int=\count340
 \l__pdf_internal_box=\box65
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count336
-\scratchdimen=\dimen189
+\scratchcounter=\count341
+\scratchdimen=\dimen263
 \scratchbox=\box66
-\nofMPsegments=\count337
-\nofMParguments=\count338
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count339
-\MPscratchDim=\dimen190
-\MPnumerator=\count340
-\makeMPintoPDFobject=\count341
-\everyMPtoPDFconversion=\toks35
+\nofMPsegments=\count342
+\nofMParguments=\count343
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count344
+\MPscratchDim=\dimen264
+\MPnumerator=\count345
+\makeMPintoPDFobject=\count346
+\everyMPtoPDFconversion=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -561,19 +590,19 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count342
+\c@lstlisting=\count347
 <assets/logo-ligne-simple-couleur-master.png, id=1, 938.57143pt x 244.02856pt>
 File: assets/logo-ligne-simple-couleur-master.png Graphic file (type png)
 <use assets/logo-ligne-simple-couleur-master.png>
 Package pdftex.def Info: assets/logo-ligne-simple-couleur-master.png  used on i
-nput line 51.
+nput line 55.
 (pdftex.def)             Requested size: 165.2138pt x 42.95511pt.
 <assets/univ.jpg, id=3, 289.08pt x 117.8001pt>
 File: assets/univ.jpg Graphic file (type jpg)
 <use assets/univ.jpg>
-Package pdftex.def Info: assets/univ.jpg  used on input line 52.
+Package pdftex.def Info: assets/univ.jpg  used on input line 56.
 (pdftex.def)             Requested size: 165.2138pt x 67.32469pt.
-LaTeX Font Info:    Trying to load font information for T1+qpl on input line 57
+LaTeX Font Info:    Trying to load font information for T1+qpl on input line 61
 .
 (/usr/share/texmf/tex/latex/tex-gyre/t1qpl.fd
 File: t1qpl.fd 2009/09/25 v1.2 font definition file for T1/qpl
@@ -636,27 +665,50 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-14.11858pt}.
 
-[5]) (./sections/section02.tex [6 <./assets/carte_zones.pdf>])
-(./sections/resultats.tex [7]
+[5]) (./sections/section02.tex [6 <./assets/carte_zones.pdf>]
+Overfull \hbox (141.10751pt too wide) in paragraph at lines 14--24
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]\T1/cmr/m/n/12 Tableau 2: |Com-para-i-son des deux mod-èles sur les mêmes don
+-nées
+ []
+
+[7]) (./sections/distributed_prototype.tex [8] [9]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 53.
+ [10]
+Overfull \hbox (4.32607pt too wide) in paragraph at lines 84--85
+[]\T1/cmr/m/n/12 Pour F5, \T1/cmtt/m/n/12 python3 -m weatherscope f5 --profile 
+hashed \T1/cmr/m/n/12 (ou \T1/cmtt/m/n/12 zoned\T1/cmr/m/n/12 ) passe par \T1/c
+mtt/m/n/12 mongos
+ []
+
+[11] [12]) (./sections/resultats.tex
 Overfull \hbox (8.34026pt too wide) in paragraph at lines 7--8
  \T1/cmr/bx/n/12 Des hivers d'enfance vrai-ment blancs.[] \T1/cmr/m/n/12 La sta
 -tion de Grosse Pointe Farms (\T1/cmtt/m/n/12 USC00203477\T1/cmr/m/n/12 )
  []
 
-<assets/hivers_USW00094847.pdf, id=117, 487.73468pt x 356.48996pt>
+<assets/hivers_USW00094847.pdf, id=135, 487.73468pt x 356.48996pt>
 File: assets/hivers_USW00094847.pdf Graphic file (type pdf)
 <use assets/hivers_USW00094847.pdf>
 Package pdftex.def Info: assets/hivers_USW00094847.pdf  used on input line 27.
 (pdftex.def)             Requested size: 377.62642pt x 276.01575pt.
-[8 <./assets/hivers_USW00094847.pdf>]) (./sections/conclusion.tex) [9]
-(./sections/annexe_anomalies.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] [14 <./assets/hivers_USW00094847.pdf>]) (./sections/conclusion.tex)
+[15] (./sections/annexe_anomalies.tex
 Overfull \hbox (19.32239pt too wide) in paragraph at lines 4--5
 \T1/cmr/m/n/12 Comp-tages pro-duits par \T1/cmtt/m/n/12 scripts/coverage_report
 .py \T1/cmr/m/n/12 (\T1/cmtt/m/n/12 results/coverage/anomalies.json\T1/cmr/m/n/
 12 ). 
  []
 
-[10]) (./sections/annexe_services.tex [11]
+[16]) (./sections/annexe_services.tex [17]
 Overfull \hbox (1.26006pt too wide) in paragraph at lines 15--24
  [][] 
  []
@@ -669,47 +721,52 @@ e \T1/cmtt/m/n/12 W\T1/cmr/m/n/12 , relevé à 24 h, fichier \T1/cmtt/m/n/12 USW0
 n/12 .
  []
 
-[12]
+[18]
 Overfull \hbox (4.28041pt too wide) in paragraph at lines 39--40
  \T1/cmr/bx/n/12 En-trées.[] \T1/cmr/m/n/12 Un élé-ment, une ou deux zones, les
  an-nées étudiées (dé-faut 1991--2020), la référence
  []
 
-) [13] (./main.aux) ) 
+[19]) (./sections/annexe_sensibilite.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [20] [21] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 12431 strings out of 480171
- 218124 string characters out of 5894489
- 575125 words of memory out of 5000000
- 30149 multiletter control sequences out of 15000+600000
- 489960 words of font info for 70 fonts, out of 8000000 for 9000
+ 12594 strings out of 480171
+ 221069 string characters out of 5894489
+ 582143 words of memory out of 5000000
+ 30298 multiletter control sequences out of 15000+600000
+ 490274 words of font info for 71 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 74i,11n,77p,1130b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/tcrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen
-/ec/ecti1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
-c/tcrm1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecrm0800.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/
-ectt1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cbx1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-ti1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
-x1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
-1728.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
-200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx10
-95.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti144
-0.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440
-.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.
-600pk>{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplr.pf
-b>
-Output written on main.pdf (14 pages, 898435 bytes).
+ 74i,12n,77p,1146b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/tcrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ectt1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecti1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/tcrm1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecrm0800.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen
+/ec/ectt1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecbx1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecti1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecbx1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecbx1728.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+crm1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+bx1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
+i1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
+1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2
+074.600pk>{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qpl
+r.pfb>
+Output written on main.pdf (22 pages, 951732 bytes).
 PDF statistics:
- 806 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 927 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

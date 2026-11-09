@@ -1,0 +1,20 @@
+{
+  "hashed": {
+    "stations_area": "identical",
+    "f1_one_station_winters": "identical",
+    "f2_heat_2003_germany": "identical",
+    "f3_snow_cover_both_areas": "identical",
+    "f4_heavy_snow_michigan": "identical",
+    "trace_detroit_storm": "identical",
+    "f3_tmax_observations_germany": "identical"
+  },
+  "zoned": {
+    "stations_area": "identical",
+    "f1_one_station_winters": "identical",
+    "f2_heat_2003_germany": "identical",
+    "f3_snow_cover_both_areas": "identical",
+    "f4_heavy_snow_michigan": "identical",
+    "trace_detroit_storm": "identical",
+    "f3_tmax_observations_germany": "identical"
+  }
+}
