@@ -134,3 +134,23 @@ python3 -m weatherscope trace --id USW00094847:2014-01-06:TMIN --history
 ```
 
 Shows each record as stored (raw NOAA value, converted value, flags, observation time, source file, import batch). `--history` also lists versions replaced by a later import.
+
+## Reproducing the experiments
+
+Run from the repository root after the setup above (local server running, full archive loaded, read model built). Every script writes its raw measurements under `results/`.
+
+| What | Command | Results |
+|---|---|---|
+| Data coverage and anomalies (report section 2, appendix A) | `python3 scripts/coverage_report.py` | `results/coverage/` |
+| Part I: one document per observation vs. per station-month | `python3 scripts/compare_designs.py --build` | `results/part1/compare_designs.json` |
+| Winter results (report section "Ce que disent les hivers") | `python3 scripts/plot_station_winters.py`, `python3 scripts/winter_mechanisms.py` | `results/f1/`, `results/winter/` |
+| Sensitivity of the winter result to our parameters | `python3 scripts/sensitivity.py` | `results/sensitivity/winter.json` |
+| Independent verification from the raw NOAA files (no database) | `python3 scripts/verify_independent.py` | `results/verification/` |
+| E1: increasing data volume (single server) | `python3 -m scripts.experiments.e1` | `results/e1/e1.json` |
+| E2: local vs. distributed | `python3 -m scripts.experiments.e2 local`, then `bash scripts/experiments/e2_load_cluster.sh`, then `python3 -m scripts.experiments.e2 hashed` and `... zoned` | `results/e2/` |
+| Equivalence of the three deployments, routing, losing a shard | see "Part II: the cluster" above | `results/part2/` |
+| E4: network growth biases F4 | `python3 -m scripts.experiments.e4_network_bias` | `results/e4/network_bias.json` |
+
+Load timings of every import are in `results/ingest/`. E2 runs one deployment at a time (the scripts stop and start the servers) so the deployments never compete for the machine. E3 was not run.
+
+Hardware used for the reported measurements: Linux (WSL2), 8 cores, 7.7 GB RAM, MongoDB 8.0.32, Python 3.10, WiredTiger cache 3 GB.
