@@ -12,6 +12,7 @@ python3 scripts/fetch_observations.py    # one CSV per selected station
 scripts/local_server.sh start            # Part I: one mongod on port 27017
 python3 scripts/init_db.py               # collections, validators, indexes
 python3 scripts/load_observations.py --label initial
+python3 scripts/build_read_model.py       # monthly read model for F3, ~10 min
 ```
 
 The database scripts use `mongodb://localhost:27017` and the database `weatherscope` by default. Change them with `--uri` / `--db`, or with the `WEATHERSCOPE_URI` / `WEATHERSCOPE_DB` environment variables.
@@ -28,6 +29,8 @@ The database scripts use `mongodb://localhost:27017` and the database `weathersc
 | `init_db.py` | Creates the four collections with the validators and indexes from `schema/`. Safe to re-run; `--drop` empties the collections first. | MongoDB |
 | `check_schema.py` | Checks that `schema/examples/valid/` is accepted and `schema/examples/invalid/` is rejected, in a temporary database. | nothing |
 | `load_observations.py` | Loads GHCN CSV files as one import batch (see below). Also upserts the selected stations. | MongoDB, `results/ingest/<batch>.json` |
+| `build_read_model.py` | Builds `obs_months`, the monthly read model (one document per station, element and month) used by F3. Run once after the initial load; F5 then keeps it up to date. | MongoDB |
+| `compare_designs.py` | Part I: storage of both models, equivalence on two requests, then interleaved timings. | `results/part1/compare_designs.json` |
 | `coverage_report.py` | Reads the database and measures coverage per area, period and element (station-days, usable values, flags, obs times), month completeness with the WMO 3/5 rule, the measured long-record flag (≥ 80 % valid months), gaps, and anomalies with real example rows. | `results/coverage/` (`summary.json`, `stations.csv`, `anomalies.json`, `stations_per_year.csv`) |
 
 Run `plot_station_maps.py` again after `coverage_report.py`: the map then uses the measured long-record flag instead of the inventory estimate.

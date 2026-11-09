@@ -14,6 +14,7 @@ python3 scripts/select_stations.py                    # data/scope/stations.csv
 python3 scripts/fetch_observations.py                 # 1,353 station files, ~215 MB
 python3 scripts/init_db.py                            # collections, validators, indexes
 python3 scripts/load_observations.py --label initial  # ~31.6 M observations, about 1 hour
+python3 scripts/build_read_model.py                   # monthly read model used by F3, about 10 minutes
 ```
 
 Details: [`scripts/README.md`](scripts/README.md) for the pipeline, [`schema/README.md`](schema/README.md) for the data model.
@@ -78,7 +79,37 @@ How it works:
 4. Uneven station density: stations less than 1 km apart count once, station anomalies are averaged per grid cell (`--grid`, default 1°), then cells are averaged with a cos(latitude) weight. A month is ranked only if at least half of the area's cells with a normal have data (`--min-cells`).
 5. Months are ranked by |z|, or by z with `--sign high|low`.
 
-Each ranked month lists its stations (value, normal, anomaly, z) and the dates to pass to `trace`. A full 60-year query over both areas takes about 2 minutes.
+Each ranked month lists its stations (value, normal, anomaly, z) and the dates to pass to `trace`. Station-months are read from the monthly read model `obs_months` when it exists (`--source auto`, the default), otherwise from `observations` (`--source observations`); both give identical results. A 60-year query over both areas takes about 10 seconds on the read model, 2–4 minutes without it.
+
+### `f4`: regional events versus isolated extremes (F4)
+
+```bash
+# the 2003 heatwave covers every grid cell of southern Germany
+python3 -m weatherscope f4 --area southern_germany --element TMAX --above 30 --from 2003-06-01 --to 2003-08-31
+# heavy snow in Michigan: regional blizzards (Feb 2011, Feb 2015) versus lake-effect bands
+python3 -m weatherscope f4 --area michigan --element SNOW --above 150 --from 2010-11-01 --to 2015-03-31
+```
+
+Same rule options as `f2`. Stations are grouped in grid cells (`--grid`, default 1°, stations under 1 km apart count once). Each day, F4 compares the cells where at least one station meets the rule (on that day or within `--tolerance` days, default 1, to absorb observation-time shifts) with the cells that report usable data, weighted by cell area. A missing station leaves the count instead of counting as "not affected". Days are then classified:
+
+- **regional**: at least `--min-share` (default 25 %) of reporting cells and `--min-cells` (default 2) affected;
+- **local**: 2 or more cells, below that share;
+- **isolated**: a single cell, with at least 3 cells reporting.
+
+Consecutive days of the same kind form an event, with its peak share, cells, stations, severity (sum of daily share × mean excess beyond the threshold), extreme value, the stations involved and their dates, and the arguments for `trace`.
+
+### `f5`: import a batch of NOAA observations (F5)
+
+```bash
+# add 2021-2025 from the downloaded per-station files
+python3 -m weatherscope f5 --label f5-2021-2025 --from 2021-01-01 --to 2025-12-31
+# import an extract supplied separately (per-station or per-year NOAA file)
+python3 -m weatherscope f5 --label extract --files 2021.csv.gz --from 2021-01-01 --to 2021-12-31
+# add stations left out of the initial load, e.g. above 800 m
+python3 -m weatherscope f5 --label high-stations --include-unselected --station GM000004155
+```
+
+An observation is identified by station + date + element. For each row: new → inserted; same value and flags → unchanged (nothing written); different value or flag → the stored version is copied to `history`, then replaced (revised); unreadable row or second row for the same observation in the batch → rejected. Importing the same files again therefore gives `inserted 0, revised 0`. Each import is recorded in `batches` with its files and their SHA-256, and timings go to `results/ingest/`. The other services read the archive at query time, and F5 rebuilds the months it changed in the monthly read model, so every service reflects an import immediately. `scripts/load_observations.py` runs the same code.
 
 ### `trace`: list the source records behind a result
 

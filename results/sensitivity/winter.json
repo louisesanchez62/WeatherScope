@@ -1,0 +1,201 @@
+{
+  "generated_utc": "2026-11-08T21:20:44+00:00",
+  "variants": {
+    "baseline (800 m, 1\u00b0, 24 years)": {
+      "params": {},
+      "SNWD": {
+        "michigan": {
+          "stations": 121,
+          "months": 90,
+          "mean_anomaly": -1.88,
+          "pct_change": -7.9,
+          "days_per_winter": -5.6
+        },
+        "southern_germany": {
+          "stations": 136,
+          "months": 90,
+          "mean_anomaly": -4.08,
+          "pct_change": -27.0,
+          "days_per_winter": -12.2
+        }
+      },
+      "TMIN": {
+        "michigan": {
+          "stations": 104,
+          "months": 90,
+          "mean_anomaly": 1.38
+        },
+        "southern_germany": {
+          "stations": 121,
+          "months": 90,
+          "mean_anomaly": 0.99
+        }
+      }
+    },
+    "elevation cap 600 m": {
+      "params": {
+        "max_elev": 600
+      },
+      "SNWD": {
+        "michigan": {
+          "stations": 121,
+          "months": 90,
+          "mean_anomaly": -1.88,
+          "pct_change": -7.9,
+          "days_per_winter": -5.6
+        },
+        "southern_germany": {
+          "stations": 118,
+          "months": 90,
+          "mean_anomaly": -4.16,
+          "pct_change": -30.8,
+          "days_per_winter": -12.5
+        }
+      },
+      "TMIN": {
+        "michigan": {
+          "stations": 104,
+          "months": 90,
+          "mean_anomaly": 1.38
+        },
+        "southern_germany": {
+          "stations": 104,
+          "months": 90,
+          "mean_anomaly": 1.0
+        }
+      }
+    },
+    "grid 0.5\u00b0": {
+      "params": {
+        "grid": 0.5
+      },
+      "SNWD": {
+        "michigan": {
+          "stations": 121,
+          "months": 90,
+          "mean_anomaly": -1.8,
+          "pct_change": -7.6,
+          "days_per_winter": -5.4
+        },
+        "southern_germany": {
+          "stations": 136,
+          "months": 90,
+          "mean_anomaly": -4.22,
+          "pct_change": -28.2,
+          "days_per_winter": -12.7
+        }
+      },
+      "TMIN": {
+        "michigan": {
+          "stations": 104,
+          "months": 90,
+          "mean_anomaly": 1.37
+        },
+        "southern_germany": {
+          "stations": 121,
+          "months": 90,
+          "mean_anomaly": 1.04
+        }
+      }
+    },
+    "grid 2\u00b0": {
+      "params": {
+        "grid": 2.0
+      },
+      "SNWD": {
+        "michigan": {
+          "stations": 121,
+          "months": 90,
+          "mean_anomaly": -1.81,
+          "pct_change": -7.3,
+          "days_per_winter": -5.4
+        },
+        "southern_germany": {
+          "stations": 136,
+          "months": 90,
+          "mean_anomaly": -4.13,
+          "pct_change": -27.6,
+          "days_per_winter": -12.4
+        }
+      },
+      "TMIN": {
+        "michigan": {
+          "stations": 104,
+          "months": 90,
+          "mean_anomaly": 1.39
+        },
+        "southern_germany": {
+          "stations": 121,
+          "months": 90,
+          "mean_anomaly": 0.96
+        }
+      }
+    },
+    "normal needs 20 years": {
+      "params": {
+        "min_ref_years": 20
+      },
+      "SNWD": {
+        "michigan": {
+          "stations": 128,
+          "months": 90,
+          "mean_anomaly": -1.88,
+          "pct_change": -7.8,
+          "days_per_winter": -5.6
+        },
+        "southern_germany": {
+          "stations": 145,
+          "months": 90,
+          "mean_anomaly": -4.06,
+          "pct_change": -26.8,
+          "days_per_winter": -12.2
+        }
+      },
+      "TMIN": {
+        "michigan": {
+          "stations": 110,
+          "months": 90,
+          "mean_anomaly": 1.39
+        },
+        "southern_germany": {
+          "stations": 131,
+          "months": 90,
+          "mean_anomaly": 0.97
+        }
+      }
+    },
+    "normal needs 27 years": {
+      "params": {
+        "min_ref_years": 27
+      },
+      "SNWD": {
+        "michigan": {
+          "stations": 117,
+          "months": 90,
+          "mean_anomaly": -1.99,
+          "pct_change": -8.4,
+          "days_per_winter": -6.0
+        },
+        "southern_germany": {
+          "stations": 122,
+          "months": 90,
+          "mean_anomaly": -4.08,
+          "pct_change": -27.2,
+          "days_per_winter": -12.2
+        }
+      },
+      "TMIN": {
+        "michigan": {
+          "stations": 101,
+          "months": 90,
+          "mean_anomaly": 1.35
+        },
+        "southern_germany": {
+          "stations": 112,
+          "months": 90,
+          "mean_anomaly": 0.99
+        }
+      }
+    }
+  }
+}

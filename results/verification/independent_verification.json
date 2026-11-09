@@ -1,0 +1,26 @@
+{
+  "V1_f2_heat_2003": {
+    "episodes_recomputed": 181,
+    "episodes_service": 181,
+    "identical": true,
+    "only_recomputed": [],
+    "only_service": []
+  },
+  "V2_f3_snow_cover_djf": {
+    "area_months_recomputed": 180,
+    "area_months_service": 180,
+    "same_months": true,
+    "largest_difference": 0.0054,
+    "within_rounding": true,
+    "headline_snow_cover_change": {
+      "michigan": {
+        "recomputed_pct": -7.9,
+        "service_pct": -7.9
+      },
+      "southern_germany": {
+        "recomputed_pct": -27.0,
+        "service_pct": -27.0
+      }
+    }
+  }
+}

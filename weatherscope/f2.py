@@ -55,8 +55,9 @@ def _thresholds(db, stations, element, pct, direction):
     return out
 
 
-def find_episodes(db, element, start, end, area=None, bbox=None, near=None, stations=None,
-                  above=None, below=None, pct_above=None, pct_below=None, min_days=1) -> dict:
+def select_days(db, element, start, end, area=None, bbox=None, near=None, stations=None,
+                above=None, below=None, pct_above=None, pct_below=None) -> dict:
+    """Usable days meeting the rule, per station. Shared by F2 and F4."""
     rules = [r for r in (above, below, pct_above, pct_below) if r is not None]
     if len(rules) != 1:
         raise ValueError("give exactly one rule: --above, --below, --pct-above or --pct-below")
@@ -92,6 +93,17 @@ def find_episodes(db, element, start, end, area=None, bbox=None, near=None, stat
             if t is None or (d["value"] <= t if direction == "above" else d["value"] >= t):
                 continue
         days[d["station"]][d["date"]] = d["value"]
+
+    return {"meta": meta, "ids": ids, "d0": d0, "d1": d1, "direction": direction,
+            "thresholds": thresholds, "skipped": skipped, "days": days,
+            "fixed": None if percentile is not None else (above if direction == "above" else below)}
+
+
+def find_episodes(db, element, start, end, area=None, bbox=None, near=None, stations=None,
+                  above=None, below=None, pct_above=None, pct_below=None, min_days=1) -> dict:
+    sel = select_days(db, element, start, end, area, bbox, near, stations, above, below, pct_above, pct_below)
+    meta, ids, d0, d1 = sel["meta"], sel["ids"], sel["d0"], sel["d1"]
+    direction, thresholds, skipped, days = sel["direction"], sel["thresholds"], sel["skipped"], sel["days"]
 
     # 2. join consecutive days into episodes
     episodes = []

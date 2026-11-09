@@ -20,6 +20,8 @@ from .db import connect
 from .f1 import PERIODS, station_summary
 from .f2 import find_episodes
 from .f3 import monthly_anomalies
+from .f4 import regional_events
+from .f5 import import_batch
 from .output import as_json, print_result
 from .stations import search_stations
 from .trace import trace
@@ -78,6 +80,38 @@ def build_parser() -> argparse.ArgumentParser:
     a.add_argument("--min-cells", type=float, default=0.5, help="share of the area's cells needed to rank a month (default 0.5)")
     a.add_argument("--sign", choices=["high", "low"], help="rank only warm/wet (high) or cold/dry (low) months")
     a.add_argument("--top", type=int, default=10)
+    a.add_argument("--max-elev", type=float, help="only stations at or below this elevation (m)")
+    a.add_argument("--source", choices=["auto", "buckets", "observations"], default="auto",
+                   help="read station-months from the monthly read model (default when built) or from observations")
+
+    r = sub.add_parser("f4", parents=[common], help="F4: regional events versus isolated extremes")
+    r.add_argument("--element", required=True, choices=ELEMENTS)
+    r.add_argument("--from", dest="start", required=True, metavar="YYYY-MM-DD")
+    r.add_argument("--to", dest="end", required=True, metavar="YYYY-MM-DD")
+    r.add_argument("--area", choices=AREAS)
+    r.add_argument("--bbox", metavar="LON1,LAT1,LON2,LAT2")
+    r.add_argument("--near", metavar="LON,LAT,KM")
+    r.add_argument("--station", nargs="+", dest="stations", metavar="ID")
+    rule4 = r.add_mutually_exclusive_group(required=True)
+    rule4.add_argument("--above", type=float)
+    rule4.add_argument("--below", type=float)
+    rule4.add_argument("--pct-above", type=float, metavar="P")
+    rule4.add_argument("--pct-below", type=float, metavar="P")
+    r.add_argument("--tolerance", type=int, default=1, help="days of offset allowed between stations (default 1)")
+    r.add_argument("--grid", type=float, default=1.0, help="grid cell size in degrees (default 1)")
+    r.add_argument("--min-share", type=float, default=0.25, help="share of reporting cells affected (default 0.25)")
+    r.add_argument("--min-cells", type=int, default=2, help="affected cells needed (default 2)")
+    r.add_argument("--top", type=int, default=10)
+
+    u = sub.add_parser("f5", parents=[common], help="F5: import a batch of NOAA observations")
+    u.add_argument("--label", required=True, help="batch label (lowercase, digits, dashes)")
+    u.add_argument("--files", nargs="+", help="GHCN CSV files, per station or per year (default: downloaded by_station files)")
+    u.add_argument("--station", nargs="+", dest="stations", metavar="ID")
+    u.add_argument("--long-only", action="store_true")
+    u.add_argument("--include-unselected", action="store_true",
+                   help="also accept stations of our areas left out of the initial load (e.g. above 800 m)")
+    u.add_argument("--from", dest="start", default="1961-01-01", metavar="YYYY-MM-DD")
+    u.add_argument("--to", dest="end", default="2020-12-31", metavar="YYYY-MM-DD")
 
     t = sub.add_parser("trace", parents=[common], help="list the source records behind a result")
     t.add_argument("--id", nargs="+", dest="ids", metavar="STATION:DATE:ELEMENT")
@@ -106,7 +140,14 @@ def main(argv=None) -> int:
         elif args.command == "f3":
             result = monthly_anomalies(db, args.element, args.area, args.from_year, args.to_year, args.ref_from,
                                        args.ref_to, args.months, args.grid, args.min_ref_years, args.min_cells,
-                                       args.sign, args.top)
+                                       args.sign, args.top, args.max_elev, source=args.source)
+        elif args.command == "f4":
+            result = regional_events(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
+                                     args.stations, args.above, args.below, args.pct_above, args.pct_below,
+                                     args.tolerance, args.grid, args.min_share, args.min_cells, args.top)
+        elif args.command == "f5":
+            result = import_batch(db, args.label, args.files, args.stations, args.long_only, args.start, args.end,
+                                  args.include_unselected, log=lambda m: print(m, file=sys.stderr))
         else:
             result = trace(db, args.ids, args.station, args.start, args.end, args.element, args.history, args.limit)
     except (ValueError, LookupError) as e:

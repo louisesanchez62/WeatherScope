@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.10)  8 NOV 2026 21:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.10)  9 NOV 2026 00:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -636,27 +636,40 @@ Package fancyhdr Warning: \headheight is too small (15.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-14.11858pt}.
 
-[5]) (./sections/section02.tex [6 <./assets/carte_zones.pdf>])
-(./sections/resultats.tex [7]
+[5]) (./sections/section02.tex [6 <./assets/carte_zones.pdf>]
+Overfull \hbox (141.10751pt too wide) in paragraph at lines 14--24
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]\T1/cmr/m/n/12 Tableau 2: |Com-para-i-son des deux mod-èles sur les mêmes don
+-nées
+ []
+
+[7]) (./sections/resultats.tex [8]
 Overfull \hbox (8.34026pt too wide) in paragraph at lines 7--8
  \T1/cmr/bx/n/12 Des hivers d'enfance vrai-ment blancs.[] \T1/cmr/m/n/12 La sta
 -tion de Grosse Pointe Farms (\T1/cmtt/m/n/12 USC00203477\T1/cmr/m/n/12 )
  []
 
-<assets/hivers_USW00094847.pdf, id=117, 487.73468pt x 356.48996pt>
+<assets/hivers_USW00094847.pdf, id=120, 487.73468pt x 356.48996pt>
 File: assets/hivers_USW00094847.pdf Graphic file (type pdf)
 <use assets/hivers_USW00094847.pdf>
 Package pdftex.def Info: assets/hivers_USW00094847.pdf  used on input line 27.
 (pdftex.def)             Requested size: 377.62642pt x 276.01575pt.
-[8 <./assets/hivers_USW00094847.pdf>]) (./sections/conclusion.tex) [9]
-(./sections/annexe_anomalies.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9] [10 <./assets/hivers_USW00094847.pdf>]) (./sections/conclusion.tex)
+[11] (./sections/annexe_anomalies.tex
 Overfull \hbox (19.32239pt too wide) in paragraph at lines 4--5
 \T1/cmr/m/n/12 Comp-tages pro-duits par \T1/cmtt/m/n/12 scripts/coverage_report
 .py \T1/cmr/m/n/12 (\T1/cmtt/m/n/12 results/coverage/anomalies.json\T1/cmr/m/n/
 12 ). 
  []
 
-[10]) (./sections/annexe_services.tex [11]
+[12]) (./sections/annexe_services.tex [13]
 Overfull \hbox (1.26006pt too wide) in paragraph at lines 15--24
  [][] 
  []
@@ -669,47 +682,51 @@ e \T1/cmtt/m/n/12 W\T1/cmr/m/n/12 , relevé à 24 h, fichier \T1/cmtt/m/n/12 USW0
 n/12 .
  []
 
-[12]
+[14]
 Overfull \hbox (4.28041pt too wide) in paragraph at lines 39--40
  \T1/cmr/bx/n/12 En-trées.[] \T1/cmr/m/n/12 Un élé-ment, une ou deux zones, les
  an-nées étudiées (dé-faut 1991--2020), la référence
  []
 
-) [13] (./main.aux) ) 
+[15]) (./sections/annexe_sensibilite.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [16] [17] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 12431 strings out of 480171
- 218124 string characters out of 5894489
- 575125 words of memory out of 5000000
- 30149 multiletter control sequences out of 15000+600000
+ 12439 strings out of 480171
+ 218333 string characters out of 5894489
+ 576152 words of memory out of 5000000
+ 30154 multiletter control sequences out of 15000+600000
  489960 words of font info for 70 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 74i,11n,77p,1130b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/tcrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen
-/ec/ecti1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
-c/tcrm1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecrm0800.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/
-ectt1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cbx1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-ti1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
-x1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
-1728.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
-200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx10
-95.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti144
-0.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440
-.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.
-600pk>{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplr.pf
-b>
-Output written on main.pdf (14 pages, 898435 bytes).
+ 74i,11n,77p,1146b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/tcrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecti1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/tcrm1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecrm0800.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ectt1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen
+/ec/ecbx1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecti1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecbx1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecbx1728.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecrm1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+cbx1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+ti1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr
+m1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
+2074.600pk>{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qp
+lr.pfb>
+Output written on main.pdf (18 pages, 914514 bytes).
 PDF statistics:
- 806 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 830 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

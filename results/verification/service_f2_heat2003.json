@@ -1,0 +1,3469 @@
+{
+  "service": "F2",
+  "query": {
+    "element": "TMAX",
+    "start": "2003-06-01",
+    "end": "2003-08-31",
+    "area": "southern_germany",
+    "bbox": null,
+    "near": null,
+    "stations": null,
+    "rule": {
+      "above": 30.0,
+      "below": null,
+      "pct_above": null,
+      "pct_below": null
+    },
+    "min_days": 5
+  },
+  "stations_searched": 295,
+  "stations_with_episodes": 160,
+  "stations_without_reference": [],
+  "count": 181,
+  "episodes_per_year": {
+    "2003": 181
+  },
+  "episodes": [
+    {
+      "station": "GM000002698",
+      "name": "KARLSRUHE",
+      "area": "southern_germany",
+      "start": "2003-06-10",
+      "end": "2003-06-14",
+      "days": 5,
+      "intensity": 2.84,
+      "peak": 35.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GM000002698",
+        "from": "2003-06-10",
+        "to": "2003-06-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GM000002698",
+      "name": "KARLSRUHE",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 7.11,
+      "peak": 40.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GM000002698",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GM000002698",
+      "name": "KARLSRUHE",
+      "area": "southern_germany",
+      "start": "2003-08-16",
+      "end": "2003-08-23",
+      "days": 8,
+      "intensity": 1.08,
+      "peak": 32.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GM000002698",
+        "from": "2003-08-16",
+        "to": "2003-08-23",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GM000004063",
+      "name": "BAMBERG",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.73,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GM000004063",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GM000004199",
+      "name": "MUNCHEN-NYMPHENBURG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 4.13,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GM000004199",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00102356",
+      "name": "WURZBURG",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.21,
+      "peak": 37.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00102356",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00102380",
+      "name": "NURNBERG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.59,
+      "peak": 37.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00102380",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00102388",
+      "name": "STRAUBING",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.92,
+      "peak": 37.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00102388",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00102396",
+      "name": "AUGSBURG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.19,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00102396",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00102404",
+      "name": "KONSTANZ",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 4.81,
+      "peak": 36.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00102404",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00102412",
+      "name": "KEMPTEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.02,
+      "peak": 34.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00102412",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00111512",
+      "name": "STUTTGART/ECHTERDINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.02,
+      "peak": 37.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00111512",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00115771",
+      "name": "STUTTGART-SCHNARRENBERG",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.58,
+      "peak": 38.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00115771",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00120946",
+      "name": "FREUDENSTADT",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 1.65,
+      "peak": 32.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00120946",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121054",
+      "name": "LAHR",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.98,
+      "peak": 38.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121054",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121126",
+      "name": "OHRINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.25,
+      "peak": 37.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121126",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121138",
+      "name": "REGENSBURG",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.29,
+      "peak": 38.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121138",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121162",
+      "name": "STOTTEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.48,
+      "peak": 34.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121162",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121186",
+      "name": "WEIDEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.95,
+      "peak": 36.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121186",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121210",
+      "name": "FURSTENZELL",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-10",
+      "days": 8,
+      "intensity": 2.27,
+      "peak": 34.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121210",
+        "from": "2003-08-03",
+        "to": "2003-08-10",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121330",
+      "name": "DONAUESCHINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.67,
+      "peak": 34.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121330",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121486",
+      "name": "EBERBACH/NECKAR",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.9,
+      "peak": 38.3,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121486",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121510",
+      "name": "EBERSBERG-HALBING",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.48,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121510",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121534",
+      "name": "EBRACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 4.21,
+      "peak": 36.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121534",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121654",
+      "name": "ELLWANGEN-RINDELBACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 5.29,
+      "peak": 37.3,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121654",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121750",
+      "name": "EMMENDINGEN-MUNDINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.69,
+      "peak": 39.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121750",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121822",
+      "name": "EPPINGEN-ELSENZ",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.42,
+      "peak": 37.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121822",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121882",
+      "name": "MOHRENDORF-KLEINSEEBACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.08,
+      "peak": 37.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121882",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121906",
+      "name": "ESCHAU-HOBBACH",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.41,
+      "peak": 37.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121906",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00121918",
+      "name": "ESCHENBACH/OBERPFALZ",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.63,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00121918",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122038",
+      "name": "KR.ROTTAL-INN FALKENBERG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.18,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122038",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122410",
+      "name": "ALTOMUNSTER-MAISBRUNN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.69,
+      "peak": 36.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122410",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122434",
+      "name": "FREIAMT-OTTOSCHWANDEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.94,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122434",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122458",
+      "name": "FREIBURG",
+      "area": "southern_germany",
+      "start": "2003-06-10",
+      "end": "2003-06-15",
+      "days": 6,
+      "intensity": 2.53,
+      "peak": 36.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122458",
+        "from": "2003-06-10",
+        "to": "2003-06-15",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122458",
+      "name": "FREIBURG",
+      "area": "southern_germany",
+      "start": "2003-06-22",
+      "end": "2003-06-26",
+      "days": 5,
+      "intensity": 2.7,
+      "peak": 36.3,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122458",
+        "from": "2003-06-22",
+        "to": "2003-06-26",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122458",
+      "name": "FREIBURG",
+      "area": "southern_germany",
+      "start": "2003-07-19",
+      "end": "2003-07-23",
+      "days": 5,
+      "intensity": 2.84,
+      "peak": 37.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122458",
+        "from": "2003-07-19",
+        "to": "2003-07-23",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122458",
+      "name": "FREIBURG",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.45,
+      "peak": 40.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122458",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122602",
+      "name": "AMBERG-UNTERAMMERSRICHT",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.68,
+      "peak": 38.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122602",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122650",
+      "name": "AMERANG-PFAFFING",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-14",
+      "days": 12,
+      "intensity": 3.04,
+      "peak": 36.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122650",
+        "from": "2003-08-03",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122734",
+      "name": "GELBELSEE",
+      "area": "southern_germany",
+      "start": "2003-08-08",
+      "end": "2003-08-13",
+      "days": 6,
+      "intensity": 3.83,
+      "peak": 35.2,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "missing day",
+      "trace": {
+        "station": "GME00122734",
+        "from": "2003-08-08",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122890",
+      "name": "GOSSWEINSTEIN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.92,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122890",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00122938",
+      "name": "GRAFENBERG-KASBERG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.45,
+      "peak": 36.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00122938",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123190",
+      "name": "ARNSTEIN-MUDESHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.14,
+      "peak": 39.3,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123190",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123382",
+      "name": "HARBURG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.98,
+      "peak": 36.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123382",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123466",
+      "name": "HECHINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.12,
+      "peak": 38.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123466",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123538",
+      "name": "HEIDENHEIM/BRENZ",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.45,
+      "peak": 36.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123538",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123562",
+      "name": "HEILBRONN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.79,
+      "peak": 38.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123562",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123730",
+      "name": "ATTENKAM",
+      "area": "southern_germany",
+      "start": "2003-08-08",
+      "end": "2003-08-13",
+      "days": 6,
+      "intensity": 1.92,
+      "peak": 34.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123730",
+        "from": "2003-08-08",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123850",
+      "name": "HOLLENSTEIN (KRAFTWERK)",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.09,
+      "peak": 35.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123850",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123898",
+      "name": "HOFHEIM",
+      "area": "southern_germany",
+      "start": "2003-07-19",
+      "end": "2003-07-23",
+      "days": 5,
+      "intensity": 1.54,
+      "peak": 34.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123898",
+        "from": "2003-07-19",
+        "to": "2003-07-23",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123898",
+      "name": "HOFHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.11,
+      "peak": 37.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123898",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00123970",
+      "name": "HOLZKIRCHEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.05,
+      "peak": 34.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00123970",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124138",
+      "name": "IHRINGEN",
+      "area": "southern_germany",
+      "start": "2003-06-10",
+      "end": "2003-06-14",
+      "days": 5,
+      "intensity": 3.1,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124138",
+        "from": "2003-06-10",
+        "to": "2003-06-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124138",
+      "name": "IHRINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 6.25,
+      "peak": 38.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124138",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124426",
+      "name": "KAUFBEUREN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.05,
+      "peak": 34.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124426",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124438",
+      "name": "KAUFERING",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.02,
+      "peak": 35.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124438",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124450",
+      "name": "KEHL-ODELSHOFEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.74,
+      "peak": 39.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124450",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124498",
+      "name": "BADEN-BADEN-GEROLDSAU",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.2,
+      "peak": 37.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124498",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124510",
+      "name": "BAD KISSINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.33,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124510",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124534",
+      "name": "KITZINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.68,
+      "peak": 38.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124534",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124678",
+      "name": "BAD KONIGSHOFEN",
+      "area": "southern_germany",
+      "start": "2003-07-19",
+      "end": "2003-07-23",
+      "days": 5,
+      "intensity": 1.28,
+      "peak": 33.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124678",
+        "from": "2003-07-19",
+        "to": "2003-07-23",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124678",
+      "name": "BAD KONIGSHOFEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-13",
+      "days": 13,
+      "intensity": 5.05,
+      "peak": 37.3,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124678",
+        "from": "2003-08-01",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124714",
+      "name": "KONIGSMOOS-UNTERMAXFELD",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.05,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124714",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124726",
+      "name": "KOSCHING",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.09,
+      "peak": 38.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124726",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124774",
+      "name": "BAD KOHLGRUB (ROSSHOF)",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.61,
+      "peak": 35.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124774",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124810",
+      "name": "KRONACH",
+      "area": "southern_germany",
+      "start": "2003-07-19",
+      "end": "2003-07-23",
+      "days": 5,
+      "intensity": 1.46,
+      "peak": 33.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124810",
+        "from": "2003-07-19",
+        "to": "2003-07-23",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124810",
+      "name": "KRONACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 4.72,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124810",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124930",
+      "name": "MERKLINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.11,
+      "peak": 35.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124930",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00124978",
+      "name": "LANDSHUT",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.02,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00124978",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00125494",
+      "name": "LOHR/MAIN-STEINBACH",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-13",
+      "days": 13,
+      "intensity": 6.01,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00125494",
+        "from": "2003-08-01",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00125674",
+      "name": "MAISACH-GERNLINDEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.95,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00125674",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00125806",
+      "name": "HEINERSREUTH-VOLLHOF",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.81,
+      "peak": 38.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00125806",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00125914",
+      "name": "MEMMINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.19,
+      "peak": 34.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00125914",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00125974",
+      "name": "BAD-NEUNKIRCHEN MERGENTHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.64,
+      "peak": 38.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00125974",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126010",
+      "name": "METTEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.88,
+      "peak": 37.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126010",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126022",
+      "name": "METZINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 6.06,
+      "peak": 39.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126022",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126082",
+      "name": "MILTENBERG",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.9,
+      "peak": 38.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126082",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126226",
+      "name": "MUHLDORF",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.6,
+      "peak": 36.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126226",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126322",
+      "name": "MUNSINGEN-APFELSTETTEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.16,
+      "peak": 35.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126322",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126346",
+      "name": "MURRHARDT",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.78,
+      "peak": 38.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126346",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126430",
+      "name": "NEUBURG/KAMMEL-LANGENHASLACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.62,
+      "peak": 36.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126430",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126442",
+      "name": "NEUDENAU",
+      "area": "southern_germany",
+      "start": "2003-06-10",
+      "end": "2003-06-14",
+      "days": 5,
+      "intensity": 2.18,
+      "peak": 35.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126442",
+        "from": "2003-06-10",
+        "to": "2003-06-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126442",
+      "name": "NEUDENAU",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.34,
+      "peak": 38.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126442",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126514",
+      "name": "NEUHAUSEN OB ECK-UNTERSCHWANDO",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.54,
+      "peak": 33.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126514",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126670",
+      "name": "REGENSBURG-BURGWEINTING",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.07,
+      "peak": 37.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126670",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126754",
+      "name": "REIMLINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.35,
+      "peak": 36.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126754",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126838",
+      "name": "NURNBERG-NETZSTALL",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.03,
+      "peak": 38.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126838",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126898",
+      "name": "OBERNDORF/NECKAR-AISTAIG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.04,
+      "peak": 36.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126898",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00126910",
+      "name": "OBERSCHLEISSHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 4.08,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00126910",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127018",
+      "name": "OFFENBURG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 6.11,
+      "peak": 38.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127018",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127174",
+      "name": "PARSBERG/OBERPFALZ-EGLWANG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.7,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127174",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127294",
+      "name": "PFORZHEIM-EUTINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.47,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127294",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127618",
+      "name": "KR. RAVENSBURG WEINGARTEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 4.98,
+      "peak": 37.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127618",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127654",
+      "name": "BAD REICHENHALL",
+      "area": "southern_germany",
+      "start": "2003-06-10",
+      "end": "2003-06-14",
+      "days": 5,
+      "intensity": 0.88,
+      "peak": 32.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127654",
+        "from": "2003-06-10",
+        "to": "2003-06-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127654",
+      "name": "BAD REICHENHALL",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-14",
+      "days": 12,
+      "intensity": 2.94,
+      "peak": 36.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127654",
+        "from": "2003-08-03",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127750",
+      "name": "RHEINAU-MEMPRECHTSHOFEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.37,
+      "peak": 38.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127750",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127894",
+      "name": "ROSENHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-14",
+      "days": 12,
+      "intensity": 3.1,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127894",
+        "from": "2003-08-03",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127918",
+      "name": "ROTH BEI NURNBERG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.93,
+      "peak": 38.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127918",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00127954",
+      "name": "ROTHENBURG OB DER TAUBER",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.54,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00127954",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128110",
+      "name": "SACHSENHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.43,
+      "peak": 37.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128110",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128134",
+      "name": "SALDENBURG-ENTSCHENREUTH",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-14",
+      "days": 12,
+      "intensity": 2.9,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128134",
+        "from": "2003-08-03",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128206",
+      "name": "SANDBERG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.73,
+      "peak": 35.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128206",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128278",
+      "name": "SCHALLSTADT-MENGEN",
+      "area": "southern_germany",
+      "start": "2003-06-10",
+      "end": "2003-06-17",
+      "days": 8,
+      "intensity": 2.4,
+      "peak": 36.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128278",
+        "from": "2003-06-10",
+        "to": "2003-06-17",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128278",
+      "name": "SCHALLSTADT-MENGEN",
+      "area": "southern_germany",
+      "start": "2003-06-22",
+      "end": "2003-06-26",
+      "days": 5,
+      "intensity": 2.62,
+      "peak": 35.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128278",
+        "from": "2003-06-22",
+        "to": "2003-06-26",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128278",
+      "name": "SCHALLSTADT-MENGEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.31,
+      "peak": 39.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128278",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128278",
+      "name": "SCHALLSTADT-MENGEN",
+      "area": "southern_germany",
+      "start": "2003-08-21",
+      "end": "2003-08-28",
+      "days": 8,
+      "intensity": 0.91,
+      "peak": 32.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128278",
+        "from": "2003-08-21",
+        "to": "2003-08-28",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128302",
+      "name": "SCHEMMERHOFEN-INGERKINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 4.03,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128302",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128326",
+      "name": "SCHESSLITZ",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.71,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128326",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128554",
+      "name": "SCHORNDORF-KNOBLING",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.12,
+      "peak": 36.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128554",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128650",
+      "name": "SCHWANDORF",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.38,
+      "peak": 37.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128650",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128710",
+      "name": "SCHWEINFURT-GARTENSTADT",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-13",
+      "days": 13,
+      "intensity": 5.76,
+      "peak": 37.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128710",
+        "from": "2003-08-01",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128818",
+      "name": "SIGMARINGEN-LAIZ",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 4.05,
+      "peak": 35.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128818",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128830",
+      "name": "SIGMARSZELL-ZEISERTSWEILER",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.12,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128830",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128854",
+      "name": "SIMBACH/INN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 2.43,
+      "peak": 37.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128854",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128878",
+      "name": "SINSHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-06",
+      "days": 6,
+      "intensity": 5.42,
+      "peak": 37.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "missing day",
+      "trace": {
+        "station": "GME00128878",
+        "from": "2003-08-01",
+        "to": "2003-08-06",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00128878",
+      "name": "SINSHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-08",
+      "end": "2003-08-14",
+      "days": 7,
+      "intensity": 6.79,
+      "peak": 38.9,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00128878",
+        "from": "2003-08-08",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129118",
+      "name": "STUTTGART (NECKARTAL)",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.36,
+      "peak": 38.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129118",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129178",
+      "name": "TAUBERBISCHOFSHEIM-DITTIGHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.65,
+      "peak": 37.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129178",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129226",
+      "name": "TEUSCHNITZ",
+      "area": "southern_germany",
+      "start": "2003-08-07",
+      "end": "2003-08-13",
+      "days": 7,
+      "intensity": 3.11,
+      "peak": 35.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129226",
+        "from": "2003-08-07",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129262",
+      "name": "BISCHBRUNN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.85,
+      "peak": 36.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129262",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129274",
+      "name": "THUNGERSHEIM",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.86,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129274",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129382",
+      "name": "TRAUNSTEIN-AXDORF",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.75,
+      "peak": 34.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129382",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129454",
+      "name": "TROCHTELFINGEN-WILSINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.65,
+      "peak": 34.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129454",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129478",
+      "name": "TROSTBERG",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-14",
+      "days": 12,
+      "intensity": 3.9,
+      "peak": 37.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129478",
+        "from": "2003-08-03",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129502",
+      "name": "TUTTLINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.71,
+      "peak": 34.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129502",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129538",
+      "name": "UBERLINGEN/BODENSEE",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.35,
+      "peak": 33.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129538",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129586",
+      "name": "ULM",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.02,
+      "peak": 35.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129586",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129622",
+      "name": "UTTENREUTH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.03,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129622",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129634",
+      "name": "VILLINGEN-SCHWENNINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.25,
+      "peak": 35.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129634",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129670",
+      "name": "VOGTSBURG-OBERROTWEIL",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 6.09,
+      "peak": 39.3,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129670",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129718",
+      "name": "WAGHAUSEL-KIRRLACH",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.35,
+      "peak": 38.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129718",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00129970",
+      "name": "WEIGENHEIM-REUSCH",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.79,
+      "peak": 37.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00129970",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130078",
+      "name": "WEISSACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.78,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130078",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130126",
+      "name": "WEISWEIL-WALDECKHOF",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 6.07,
+      "peak": 38.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130126",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130198",
+      "name": "WERTHEIM-EICHEL",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 5.81,
+      "peak": 39.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130198",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130234",
+      "name": "WIELENBACH (DEMOLLSTR.)",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.32,
+      "peak": 35.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130234",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130462",
+      "name": "WORNITZ-BOTTENWEILER",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.98,
+      "peak": 37.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130462",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130486",
+      "name": "WOLFACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.78,
+      "peak": 37.7,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130486",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130618",
+      "name": "WUTOSCHINGEN-OFTERINGEN",
+      "area": "southern_germany",
+      "start": "2003-06-22",
+      "end": "2003-06-27",
+      "days": 6,
+      "intensity": 3.17,
+      "peak": 36.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130618",
+        "from": "2003-06-22",
+        "to": "2003-06-27",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130618",
+      "name": "WUTOSCHINGEN-OFTERINGEN",
+      "area": "southern_germany",
+      "start": "2003-07-10",
+      "end": "2003-07-16",
+      "days": 7,
+      "intensity": 2.09,
+      "peak": 34.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130618",
+        "from": "2003-07-10",
+        "to": "2003-07-16",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130618",
+      "name": "WUTOSCHINGEN-OFTERINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 5.76,
+      "peak": 38.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130618",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130678",
+      "name": "BOBLINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.99,
+      "peak": 37.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130678",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130738",
+      "name": "ZWIESEL",
+      "area": "southern_germany",
+      "start": "2003-08-08",
+      "end": "2003-08-13",
+      "days": 6,
+      "intensity": 1.75,
+      "peak": 34.0,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130738",
+        "from": "2003-08-08",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130750",
+      "name": "ZWIESELBERG",
+      "area": "southern_germany",
+      "start": "2003-08-08",
+      "end": "2003-08-14",
+      "days": 7,
+      "intensity": 1.79,
+      "peak": 33.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130750",
+        "from": "2003-08-08",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130846",
+      "name": "MAINBURG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.04,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130846",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00130918",
+      "name": "REIT IM WINKL",
+      "area": "southern_germany",
+      "start": "2003-08-08",
+      "end": "2003-08-14",
+      "days": 7,
+      "intensity": 2.11,
+      "peak": 35.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00130918",
+        "from": "2003-08-08",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131134",
+      "name": "WEIDENBACH-WEIHERSCHNEIDBACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.76,
+      "peak": 36.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131134",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131194",
+      "name": "MALLERSDORF-PFAFFENBERG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.22,
+      "peak": 37.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131194",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131314",
+      "name": "FRIEDRICHSHAFEN-UNTERRADERACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.75,
+      "peak": 36.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131314",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131338",
+      "name": "INGELFINGEN-STACHENHAUSEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.75,
+      "peak": 37.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131338",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131350",
+      "name": "SCHWABISCH GMUND-WEILER",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.68,
+      "peak": 36.4,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131350",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131446",
+      "name": "PILSACH-LITZLOHE",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.08,
+      "peak": 36.2,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131446",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131686",
+      "name": "BREITSOL",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-06",
+      "days": 6,
+      "intensity": 2.58,
+      "peak": 33.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "missing day",
+      "trace": {
+        "station": "GME00131686",
+        "from": "2003-08-01",
+        "to": "2003-08-06",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131686",
+      "name": "BREITSOL",
+      "area": "southern_germany",
+      "start": "2003-08-08",
+      "end": "2003-08-14",
+      "days": 7,
+      "intensity": 3.41,
+      "peak": 35.3,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131686",
+        "from": "2003-08-08",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131770",
+      "name": "ESCHBACH",
+      "area": "southern_germany",
+      "start": "2003-06-22",
+      "end": "2003-06-26",
+      "days": 5,
+      "intensity": 2.9,
+      "peak": 36.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131770",
+        "from": "2003-06-22",
+        "to": "2003-06-26",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131770",
+      "name": "ESCHBACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 5.98,
+      "peak": 39.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131770",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131842",
+      "name": "BRETTEN",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 6.13,
+      "peak": 38.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131842",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00131878",
+      "name": "ALBSTADT-BADKAP",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 2.66,
+      "peak": 34.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00131878",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132202",
+      "name": "ALDERSBACH-KRIESTORF",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.05,
+      "peak": 37.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132202",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132334",
+      "name": "KR. NECKAR-ODENWALD BUCHEN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.21,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132334",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132346",
+      "name": "BUCHENBACH",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 3.98,
+      "peak": 37.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132346",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132418",
+      "name": "BUHLERTAL-OBERTAL",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.59,
+      "peak": 34.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132418",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132454",
+      "name": "SCHLUSSELFELD (KLARANLAGE)",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 4.52,
+      "peak": 38.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132454",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132550",
+      "name": "CHIEMING",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-14",
+      "days": 12,
+      "intensity": 2.14,
+      "peak": 34.9,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132550",
+        "from": "2003-08-03",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132586",
+      "name": "LAUTERTAL-OBERLAUTER",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-13",
+      "days": 13,
+      "intensity": 5.0,
+      "peak": 37.3,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132586",
+        "from": "2003-08-01",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132610",
+      "name": "CRAILSHEIM-ALEXANDERSREUT",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.6,
+      "peak": 37.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132610",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132694",
+      "name": "DEGGENHAUSERTAL-AZENWEILER",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 3.66,
+      "peak": 34.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132694",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GME00132802",
+      "name": "DILLINGEN/DONAU",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.65,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GME00132802",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010658",
+      "name": "BAD KISSINGEN",
+      "area": "southern_germany",
+      "start": "2003-08-10",
+      "end": "2003-08-14",
+      "days": 5,
+      "intensity": 5.6,
+      "peak": 37.5,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010658",
+        "from": "2003-08-10",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010671",
+      "name": "COBURG",
+      "area": "southern_germany",
+      "start": "2003-08-10",
+      "end": "2003-08-14",
+      "days": 5,
+      "intensity": 5.18,
+      "peak": 37.3,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010671",
+        "from": "2003-08-10",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010736",
+      "name": "MUHLACKER",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-06",
+      "days": 6,
+      "intensity": 4.6,
+      "peak": 36.6,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "missing day",
+      "trace": {
+        "station": "GMM00010736",
+        "from": "2003-08-01",
+        "to": "2003-08-06",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010736",
+      "name": "MUHLACKER",
+      "area": "southern_germany",
+      "start": "2003-08-08",
+      "end": "2003-08-14",
+      "days": 7,
+      "intensity": 5.96,
+      "peak": 37.7,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010736",
+        "from": "2003-08-08",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010761",
+      "name": "WEISSENBURG",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-14",
+      "days": 13,
+      "intensity": 4.86,
+      "peak": 37.8,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010761",
+        "from": "2003-08-02",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010803",
+      "name": "FREIBURG (CIV/FAFB)",
+      "area": "southern_germany",
+      "start": "2003-06-10",
+      "end": "2003-06-15",
+      "days": 6,
+      "intensity": 2.55,
+      "peak": 36.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010803",
+        "from": "2003-06-10",
+        "to": "2003-06-15",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010803",
+      "name": "FREIBURG (CIV/FAFB)",
+      "area": "southern_germany",
+      "start": "2003-06-22",
+      "end": "2003-06-26",
+      "days": 5,
+      "intensity": 3.0,
+      "peak": 36.3,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010803",
+        "from": "2003-06-22",
+        "to": "2003-06-26",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010863",
+      "name": "WEIHENSTEPHAN-DURNAST",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.38,
+      "peak": 36.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010863",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010870",
+      "name": "SCHWAIGERMOOS",
+      "area": "southern_germany",
+      "start": "2003-08-02",
+      "end": "2003-08-13",
+      "days": 12,
+      "intensity": 3.63,
+      "peak": 37.1,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010870",
+        "from": "2003-08-02",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010875",
+      "name": "MUHLDORF",
+      "area": "southern_germany",
+      "start": "2003-08-10",
+      "end": "2003-08-14",
+      "days": 5,
+      "intensity": 3.64,
+      "peak": 36.6,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010875",
+        "from": "2003-08-10",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010963",
+      "name": "GARMISCH-PARTENKIRCHEN",
+      "area": "southern_germany",
+      "start": "2003-08-03",
+      "end": "2003-08-13",
+      "days": 11,
+      "intensity": 2.16,
+      "peak": 35.5,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010963",
+        "from": "2003-08-03",
+        "to": "2003-08-13",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMM00010982",
+      "name": "CHIEMING (AUT)",
+      "area": "southern_germany",
+      "start": "2003-08-10",
+      "end": "2003-08-14",
+      "days": 5,
+      "intensity": 2.52,
+      "peak": 34.9,
+      "threshold": 30.0,
+      "starts_after": "missing day",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMM00010982",
+        "from": "2003-08-10",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    },
+    {
+      "station": "GMW00034068",
+      "name": "COLEMAN",
+      "area": "southern_germany",
+      "start": "2003-08-01",
+      "end": "2003-08-14",
+      "days": 14,
+      "intensity": 6.54,
+      "peak": 39.0,
+      "threshold": 30.0,
+      "starts_after": "rule not met",
+      "ends_before": "rule not met",
+      "trace": {
+        "station": "GMW00034068",
+        "from": "2003-08-01",
+        "to": "2003-08-14",
+        "element": "TMAX"
+      }
+    }
+  ],
+  "complete": true,
+  "display_top": 20
+}

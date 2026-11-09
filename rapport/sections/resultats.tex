@@ -29,6 +29,9 @@ La station de Grosse Pointe Farms (\texttt{USC00203477}) est à 3,7~km de Grosse
   \label{fig:hivers-detroit}
 \end{figure}
 
+\paragraph{Et aujourd'hui~?}
+Les hivers 2020--21 à 2024--25, importés après coup par F5, prolongent la courbe. À Detroit Metro, ils comptent 34 jours de neige au sol en moyenne, contre 46 pendant les hivers d'enfance~; 2023--24 n'en a que 16. Et pour la première fois, la neige tombée passe elle aussi sous la normale~: 682~mm contre 775. Cinq hivers ne font pas une tendance, mais ils suggèrent la suite~: après une neige qui ne tient plus, une neige qui tombe moins.
+
 \paragraph{Autant de neige, mais elle tient moins.}
 Une station ne fait pas une région. Sur les 38 stations du Michigan qui mesurent à la fois la neige tombée et la neige au sol sur les deux périodes, la neige tombée ne bouge pas (1\,545 puis 1\,554~mm par hiver). Le nombre de jours de neige au sol passe pourtant de 73 à 67, soit 4,75 jours par 10~cm de neige au lieu de 5,28~: une baisse de 10~\%, observée à 27 stations sur 38. Les fortes chutes, elles, augmentent~: sur 64 stations, F2 compte 11~\% de jours de plus de 15~cm par an. L'hiver du Michigan n'est pas moins neigeux, il est moins durable.
 
@@ -39,5 +42,7 @@ Une station ne fait pas une région. Sur les 38 stations du Michigan qui mesuren
 La réponse tient au point de départ. Sur 66 stations de chaque zone, la journée d'hiver moyenne du Michigan passe de $-5,7$ à $-4,6$~°C~: plus chaude, mais encore loin du dégel, avec 63~\% des jours sous $-2$~°C. Celle du sud de l'Allemagne passe de $-0,5$ à $+0,7$~°C~: elle a franchi le point de fusion, et la part des jours au-dessus de $+2$~°C est montée de 31 à 40~\%. Le même réchauffement fond plus de neige là où l'hiver était déjà au bord du zéro.
 
 \paragraph{Ce qui pourrait nous tromper.}
-L'objection la plus sérieuse est l'arrivée massive de stations bénévoles au Michigan après 2008~: comparer des moyennes sur toutes les stations reviendrait à comparer deux réseaux différents. Tous les chiffres de cette section portent donc sur les mêmes stations aux deux périodes. Restent deux limites que nous ne levons pas~: la façon de mesurer la neige a pu changer d'un observateur à l'autre, et aucun test de significativité n'a encore été fait.
-% TODO : test statistique (par exemple Mann-Whitney sur les hivers des deux périodes) et vérification indépendante sur les fichiers NOAA.
+L'objection la plus sérieuse est l'arrivée massive de stations bénévoles au Michigan après 2008~: comparer des moyennes sur toutes les stations reviendrait à comparer deux réseaux différents. Tous les chiffres de cette section portent donc sur les mêmes stations aux deux périodes. Nos propres choix de paramètres ne changent pas non plus la conclusion~: avec un seuil d'altitude à 600~m, des cases de 0,5° ou de 2°, ou 20 à 27 années exigées pour une normale, le sud de l'Allemagne perd toujours entre 27 et 31~\% de ses jours de neige au sol, le Michigan entre 7 et 8~\% (annexe~\ref{annexe:sensibilite}). Garder seulement les stations allemandes sous 600~m, plus proches de zéro, accentue même la perte. Restent deux limites que nous ne levons pas~: la façon de mesurer la neige a pu changer d'un observateur à l'autre, et aucun test de significativité n'a encore été fait.
+
+\paragraph{Vérifié sans notre système.} Un script séparé (\texttt{scripts/verify\_independent.py}) relit les fichiers NOAA d'origine avec pandas, sans MongoDB ni notre code, et réapplique les règles à partir de leur définition. Il retrouve les 181 épisodes de chaleur de l'été 2003 que donne F2, identiques station par station et jour par jour, et les 180 mois d'hiver de F3 à 0,005 près, l'écart venant de nos arrondis~: $-7,9$~\% de jours de neige au sol au Michigan, $-27,0$~\% dans le sud de l'Allemagne, comme dans la section~\ref{sec:resultats}.
+% TODO : test statistique (par exemple Mann-Whitney sur les hivers des deux périodes).

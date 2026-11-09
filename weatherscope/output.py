@@ -93,6 +93,34 @@ def print_result(result: dict) -> None:
             print(f"\n{area}")
             print(table([{**r, "strongest_station": f"{r['evidence'][0]['station']} ({r['evidence'][0]['z']:+})"
                           if r["evidence"] and r["evidence"][0]["z"] is not None else "-"} for r in rows], cols))
+    elif svc == "F4":
+        q = result["query"]
+        rule = next(f"{k.replace('_', '-')} {v:g}" for k, v in q["rule"].items() if v is not None)
+        print(f"F4 {q['element']} {rule}, {q['start']} to {q['end']}: regional = at least "
+              f"{q['min_share']:.0%} of reporting {q['grid_deg']:g} degree cells and {q['min_cells']} cells, "
+              f"+/-{q['tolerance_days']} day")
+        print(f"{result['stations_used']} stations, {result['days_with_data']} days with data; events: "
+              + ", ".join(f"{n} {k}" for k, n in sorted(result["count_by_scope"].items())))
+        by_start = {(e["start"], e["scope"]): e for e in result["events"]}
+        for scope, starts in result["ranking"].items():
+            rows = [{**by_start[(s, scope)], "top_stations": ", ".join(
+                        f"{x['name']} ({x['max_excess']:+g})" for x in by_start[(s, scope)]["evidence"][:2])}
+                    for s in starts]
+            print(f"\n{scope.capitalize()} events, most severe first")
+            print(table(rows, ["start", "end", "days", "peak_day", "peak_share", "peak_cells", "reporting_cells",
+                               "stations", "severity", "extreme_value", "top_stations"]))
+    elif svc == "F5":
+        c = result["counts"]
+        print(f"batch {result['batch']} ({result['status']}): {result['files']} files, "
+              f"{result['start']} to {result['end']}, {result['elapsed_s']:.0f}s")
+        print(f"inserted {c['inserted']:,}  unchanged {c['unchanged']:,}  revised {c['revised']:,}  "
+              f"rejected {c['rejected']:,}")
+        print(f"stations with rows: {result['stations_with_rows']}, rows by period: {result['rows_by_period']}")
+        if result.get("read_model_months_refreshed") is not None:
+            print(f"monthly read model: {result['read_model_months_refreshed']:,} station-months rebuilt "
+                  f"in {result['read_model_refresh_s']} s")
+        for k, v in result["notes"].items():
+            print(f"  {k}: {v:,}")
     elif svc == "trace":
         print(f"{result['count']} records" + (" (truncated)" if result["truncated"] else ""))
         print(table(result["records"], ["station", "date", "element", "raw", "value", "mflag", "qflag",
