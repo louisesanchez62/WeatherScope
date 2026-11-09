@@ -1,0 +1,41 @@
+\section{Déploiement distribué}
+\label{annexe:distribue}
+
+\begin{table}[h!]
+  \centering\small
+  \begin{tabularx}{\linewidth}{@{}l c >{\raggedright\arraybackslash}X l l@{}}
+    \toprule
+    Processus & Port & Rôle & Dossier & Cache \\
+    \midrule
+    \cd{mongod} local     & 27017 & serveur de la partie~I, référence                 & \cd{data/db/local}  & 3 Go \\
+    config server         & 27200 & métadonnées : shards, clés, chunks, zones         & \cd{cluster\_data/config} & 0,25 Go \\
+    \cd{shard1RS}         & 27301 & données ; primary shard (petites collections)     & \cd{cluster\_data/shard1} & 3/N Go \\
+    \cd{shard2RS}         & 27302 & données                                           & \cd{cluster\_data/shard2} & 3/N Go \\
+    \cd{shard3RS}         & 27303 & données (configuration à trois shards)            & \cd{cluster\_data/shard3} & 3/N Go \\
+    \cd{mongos}           & 27400 & routeur, seul point d'entrée des profils distribués & -- & -- \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Processus du déploiement distribué (N shards, $N \in \{2, 3\}$), lancés par \cd{cluster.py}.}
+\end{table}
+
+\begin{table}[h!]
+  \centering\small
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.3cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+    \toprule
+    & \cd{hashed} & \cd{zoned} \\
+    \midrule
+    Clé de shard            & \cd{\{station: "hashed"\}}               & \cd{\{area: 1, station: 1\}} \\
+    Placement décidé par    & hachage, puis balancer                  & zones : allocation explicite \\
+    Requête sur une zone    & diffusée à tous les shards              & ciblée sur le shard de la zone \\
+    Écritures (F5)          & réparties par station                   & dirigées vers le shard de chaque zone \\
+    Équilibre des données   & indépendant des zones                   & dépend du volume de chaque zone \\
+    Un shard éteint         & toute requête de zone est refusée       & seule la zone touchée est refusée \\
+    Troisième shard         & reçoit des chunks migrés                & reste vide \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Les deux politiques de placement.}
+\end{table}
+
+\paragraph{Préparation et alimentation.} \cd{setup\_db.py} active le sharding avec \cd{shard1RS} comme primary shard, crée collections, validateurs et index, puis sharde \cd{observations} et \cd{obs\_months} avec la clé du profil~; en \cd{zoned}, il déclare les zones sur tout l'espace de la clé. Les données arrivent soit par F5 à travers \cd{mongos} (\cd{python3 -m weatherscope f5 -{}-profile hashed}), comme pour le serveur local, soit par \cd{sync\_from\_local.py}, qui recopie les cinq collections de façon idempotente. L'historique (sur le primary shard) et l'observation révisée (souvent sur un autre shard) sont écrits sans transaction distribuée~: un arrêt entre les deux se rattrape en relançant l'import, au prix d'une entrée d'historique en double.
+
+\paragraph{Limites.} Aucune réplication~; un seul \cd{mongos}, un config server d'un membre et un primary shard qui porte \cd{stations}, \cd{history} et \cd{batches} sont autant de points uniques de défaillance~; tous les processus partagent un seul poste.

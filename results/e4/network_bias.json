@@ -1,0 +1,396 @@
+{
+  "all_stations": {
+    "stations_used": 981,
+    "elapsed_s": 22.8,
+    "events_by_scope": {
+      "regional": 220,
+      "isolated": 63,
+      "local": 150
+    },
+    "per_season_before_2008": {
+      "regional": 7.41,
+      "local": 5.29,
+      "isolated": 1.94
+    },
+    "per_season_from_2008": {
+      "regional": 7.83,
+      "local": 5.0,
+      "isolated": 2.5
+    },
+    "stations_reporting_before_2008": 170.4,
+    "stations_reporting_from_2008": 481.7,
+    "per_season": {
+      "1991": {
+        "regional": 10,
+        "isolated": 2,
+        "local": 2
+      },
+      "1992": {
+        "local": 7,
+        "isolated": 3,
+        "regional": 8
+      },
+      "1993": {
+        "local": 8,
+        "regional": 7,
+        "isolated": 1
+      },
+      "1994": {
+        "local": 3,
+        "regional": 6,
+        "isolated": 5
+      },
+      "1995": {
+        "isolated": 3,
+        "local": 7,
+        "regional": 10
+      },
+      "1996": {
+        "local": 5,
+        "regional": 11
+      },
+      "1997": {
+        "isolated": 2,
+        "local": 8,
+        "regional": 5
+      },
+      "1998": {
+        "local": 2,
+        "regional": 6,
+        "isolated": 1
+      },
+      "1999": {
+        "local": 7,
+        "regional": 5,
+        "isolated": 1
+      },
+      "2000": {
+        "isolated": 3,
+        "local": 9,
+        "regional": 4
+      },
+      "2001": {
+        "local": 6,
+        "regional": 6,
+        "isolated": 2
+      },
+      "2002": {
+        "local": 5,
+        "isolated": 4,
+        "regional": 7
+      },
+      "2003": {
+        "isolated": 2,
+        "local": 4,
+        "regional": 7
+      },
+      "2004": {
+        "local": 5,
+        "regional": 6,
+        "isolated": 1
+      },
+      "2005": {
+        "regional": 10,
+        "local": 3,
+        "isolated": 1
+      },
+      "2006": {
+        "regional": 7,
+        "local": 4,
+        "isolated": 1
+      },
+      "2007": {
+        "local": 5,
+        "regional": 11,
+        "isolated": 1
+      },
+      "2008": {
+        "local": 5,
+        "regional": 10,
+        "isolated": 2
+      },
+      "2009": {
+        "isolated": 3,
+        "regional": 5,
+        "local": 3
+      },
+      "2010": {
+        "local": 6,
+        "regional": 7,
+        "isolated": 3
+      },
+      "2011": {
+        "local": 5,
+        "isolated": 4,
+        "regional": 6
+      },
+      "2012": {
+        "isolated": 3,
+        "local": 8,
+        "regional": 8
+      },
+      "2013": {
+        "isolated": 2,
+        "local": 4,
+        "regional": 11
+      },
+      "2014": {
+        "isolated": 6,
+        "regional": 7,
+        "local": 3
+      },
+      "2015": {
+        "local": 4,
+        "regional": 11
+      },
+      "2016": {
+        "local": 7,
+        "regional": 5,
+        "isolated": 1
+      },
+      "2017": {
+        "local": 4,
+        "regional": 11,
+        "isolated": 1
+      },
+      "2018": {
+        "regional": 7,
+        "local": 6,
+        "isolated": 2
+      },
+      "2019": {
+        "regional": 6,
+        "isolated": 3,
+        "local": 5
+      }
+    },
+    "stations_reporting": {
+      "1991": 143,
+      "1992": 143,
+      "1993": 148,
+      "1994": 152,
+      "1995": 144,
+      "1996": 145,
+      "1997": 167,
+      "1998": 164,
+      "1999": 161,
+      "2000": 165,
+      "2001": 175,
+      "2002": 184,
+      "2003": 183,
+      "2004": 192,
+      "2005": 192,
+      "2006": 200,
+      "2007": 239,
+      "2008": 432,
+      "2009": 475,
+      "2010": 471,
+      "2011": 490,
+      "2012": 507,
+      "2013": 490,
+      "2014": 489,
+      "2015": 493,
+      "2016": 493,
+      "2017": 495,
+      "2018": 475,
+      "2019": 470
+    }
+  },
+  "stable_network": {
+    "stations_used": 119,
+    "elapsed_s": 3.8,
+    "events_by_scope": {
+      "local": 173,
+      "regional": 171,
+      "isolated": 65
+    },
+    "per_season_before_2008": {
+      "regional": 6.35,
+      "local": 5.82,
+      "isolated": 2.53
+    },
+    "per_season_from_2008": {
+      "regional": 5.25,
+      "local": 6.17,
+      "isolated": 1.83
+    },
+    "stations_reporting_before_2008": 101.4,
+    "stations_reporting_from_2008": 103.5,
+    "per_season": {
+      "1991": {
+        "local": 5,
+        "regional": 6,
+        "isolated": 2
+      },
+      "1992": {
+        "local": 10,
+        "isolated": 2,
+        "regional": 5
+      },
+      "1993": {
+        "local": 7,
+        "regional": 7,
+        "isolated": 3
+      },
+      "1994": {
+        "local": 3,
+        "regional": 6,
+        "isolated": 5
+      },
+      "1995": {
+        "isolated": 4,
+        "local": 7,
+        "regional": 8
+      },
+      "1996": {
+        "local": 5,
+        "regional": 11,
+        "isolated": 2
+      },
+      "1997": {
+        "isolated": 3,
+        "local": 7,
+        "regional": 5
+      },
+      "1998": {
+        "local": 4,
+        "regional": 5,
+        "isolated": 1
+      },
+      "1999": {
+        "local": 9,
+        "regional": 3,
+        "isolated": 1
+      },
+      "2000": {
+        "isolated": 6,
+        "local": 7,
+        "regional": 5
+      },
+      "2001": {
+        "local": 7,
+        "regional": 5,
+        "isolated": 2
+      },
+      "2002": {
+        "local": 4,
+        "isolated": 3,
+        "regional": 8
+      },
+      "2003": {
+        "isolated": 3,
+        "local": 4,
+        "regional": 6
+      },
+      "2004": {
+        "local": 6,
+        "regional": 5,
+        "isolated": 1
+      },
+      "2005": {
+        "regional": 9,
+        "local": 3,
+        "isolated": 1
+      },
+      "2006": {
+        "local": 6,
+        "regional": 6,
+        "isolated": 2
+      },
+      "2007": {
+        "local": 5,
+        "regional": 8,
+        "isolated": 2
+      },
+      "2008": {
+        "local": 6,
+        "regional": 9,
+        "isolated": 1
+      },
+      "2009": {
+        "isolated": 2,
+        "regional": 3,
+        "local": 6
+      },
+      "2010": {
+        "isolated": 2,
+        "regional": 5,
+        "local": 3
+      },
+      "2011": {
+        "local": 6,
+        "isolated": 3,
+        "regional": 5
+      },
+      "2012": {
+        "local": 5,
+        "isolated": 3,
+        "regional": 5
+      },
+      "2013": {
+        "regional": 6,
+        "local": 6,
+        "isolated": 2
+      },
+      "2014": {
+        "regional": 5,
+        "isolated": 3,
+        "local": 6
+      },
+      "2015": {
+        "local": 6,
+        "regional": 7
+      },
+      "2016": {
+        "local": 9,
+        "isolated": 2,
+        "regional": 2
+      },
+      "2017": {
+        "local": 7,
+        "regional": 5,
+        "isolated": 1
+      },
+      "2018": {
+        "regional": 6,
+        "isolated": 3,
+        "local": 5
+      },
+      "2019": {
+        "regional": 5,
+        "local": 9
+      }
+    },
+    "stations_reporting": {
+      "1991": 103,
+      "1992": 103,
+      "1993": 103,
+      "1994": 107,
+      "1995": 104,
+      "1996": 100,
+      "1997": 98,
+      "1998": 99,
+      "1999": 99,
+      "2000": 99,
+      "2001": 99,
+      "2002": 101,
+      "2003": 101,
+      "2004": 102,
+      "2005": 99,
+      "2006": 102,
+      "2007": 105,
+      "2008": 106,
+      "2009": 105,
+      "2010": 102,
+      "2011": 103,
+      "2012": 104,
+      "2013": 104,
+      "2014": 103,
+      "2015": 104,
+      "2016": 102,
+      "2017": 102,
+      "2018": 102,
+      "2019": 105
+    }
+  }
+}

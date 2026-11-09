@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.10)  9 NOV 2026 09:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.5.10)  9 NOV 2026 09:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -575,12 +575,12 @@ Package caption Info: End \AtBeginDocument code.
 * \topmargin=-41.1381pt
 * \headheight=15.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=44.0pt
+* \marginparwidth=59.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -609,164 +609,125 @@ File: t1qpl.fd 2009/09/25 v1.2 font definition file for T1/qpl
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./assets/logo-ligne-simple
--couleur-master.png> <./assets/univ.jpg>] (./sections/resume.tex) (./sections/a
-bstract.tex [1]) [2]
-(./main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@toc=\write5
-\openout5 = `main.toc'.
-
- [3]
-(./sections/introduction.tex) (./sections/section01.tex
+-couleur-master.png> <./assets/univ.jpg>] (./sections/introduction.tex) (./sect
+ions/section01.tex
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
+Overfull \hbox (57.99985pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/10.95 fichier sont dans \T1/cmtt/m/n/10.95 data/raw/metadata/MANIFE
+ST.json\T1/cmr/m/n/10.95 . La sélec-tion se re-fait avec \T1/cmtt/m/n/10.95 scr
+ipts/select_stations.py\T1/cmr/m/n/10.95 . 
+ []
 
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 29.11858pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.11858pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 
-(fancyhdr)                \addtolength{\topmargin}{-14.11858pt}.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
 
-[4]
-<assets/carte_zones.pdf, id=35, 631.49353pt x 510.68918pt>
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1]
+<assets/carte_zones.pdf, id=25, 631.49353pt x 510.68918pt>
 File: assets/carte_zones.pdf Graphic file (type pdf)
 <use assets/carte_zones.pdf>
 Package pdftex.def Info: assets/carte_zones.pdf  used on input line 46.
 (pdftex.def)             Requested size: 377.62642pt x 305.39505pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (61.30467pt too wide) in paragraph at lines 54--55
-\T1/cmr/m/n/12 d'observation, le fichier source et le lot d'import qui l'a écri
-te. Son iden-ti-fi-ant est \T1/cmtt/m/n/12 station:date:élément \T1/cmr/m/n/12 
-:
+Overfull \hbox (0.97295pt too wide) in paragraph at lines 54--55
+ \T1/cmr/bx/n/10.95 Traça-bil-ité.[] \T1/cmr/m/n/10.95 Chaque ob-ser-va-tion ga
+rde sa valeur brute, ses trois dra-peaux, son heure d'observation,
  []
 
-
-Package fancyhdr Warning: \headheight is too small (15.0pt): 
-(fancyhdr)                Make it at least 29.11858pt, for example:
-(fancyhdr)                \setlength{\headheight}{29.11858pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-14.11858pt}.
-
-[5]) (./sections/section02.tex [6 <./assets/carte_zones.pdf>]
-Overfull \hbox (141.10751pt too wide) in paragraph at lines 14--24
+[2 <./assets/carte_zones.pdf>]) (./sections/section02.tex [3]
+Overfull \hbox (93.97823pt too wide) in paragraph at lines 14--24
  [][] 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 24--24
-[]\T1/cmr/m/n/12 Tableau 2: |Com-para-i-son des deux mod-èles sur les mêmes don
--nées
+[]\T1/cmr/m/n/10.95 Tableau 2: |Com-para-i-son des deux mod-èles sur les mêmes 
+don-nées
  []
 
-[7]) (./sections/distributed_prototype.tex [8] [9]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 53.
- [10]
-Overfull \hbox (4.32607pt too wide) in paragraph at lines 84--85
-[]\T1/cmr/m/n/12 Pour F5, \T1/cmtt/m/n/12 python3 -m weatherscope f5 --profile 
-hashed \T1/cmr/m/n/12 (ou \T1/cmtt/m/n/12 zoned\T1/cmr/m/n/12 ) passe par \T1/c
-mtt/m/n/12 mongos
- []
-
-[11] [12]) (./sections/resultats.tex
-Overfull \hbox (8.34026pt too wide) in paragraph at lines 7--8
- \T1/cmr/bx/n/12 Des hivers d'enfance vrai-ment blancs.[] \T1/cmr/m/n/12 La sta
--tion de Grosse Pointe Farms (\T1/cmtt/m/n/12 USC00203477\T1/cmr/m/n/12 )
- []
-
-<assets/hivers_USW00094847.pdf, id=135, 487.73468pt x 356.48996pt>
+[4]) (./sections/distributed_prototype.tex [5]) (./sections/experiences.tex
+[6]) (./sections/resultats.tex [7]
+<assets/hivers_USW00094847.pdf, id=117, 487.73468pt x 356.48996pt>
 File: assets/hivers_USW00094847.pdf Graphic file (type pdf)
 <use assets/hivers_USW00094847.pdf>
 Package pdftex.def Info: assets/hivers_USW00094847.pdf  used on input line 27.
 (pdftex.def)             Requested size: 377.62642pt x 276.01575pt.
+ [8 <./assets/hivers_USW00094847.pdf>])
+(./sections/conclusion.tex
+Overfull \hbox (4.35547pt too wide) in paragraph at lines 47--1
+ \T1/cmr/bx/n/10.95 Véri-fié sans notre sys-tème.[] \T1/cmr/m/n/10.95 Un script
+ sé-paré (\T1/cmtt/m/n/10.95 scripts/verify_independent.py\T1/cmr/m/n/10.95 ) r
+e-lit les fichiers
+ []
+
+) [9] [10] (./sections/annexe_anomalies.tex
+Overfull \hbox (116.59726pt too wide) in paragraph at lines 4--5
+\T1/cmr/m/n/10.95 ex-em-ples sont des lignes réelles des fichiers \T1/cmtt/m/n/
+10.95 by_station \T1/cmr/m/n/10.95 de la NOAA, au for-mat \T1/cmtt/m/n/10.95 st
+ation,date,élément,valeur,M,Q,S,heure
+ []
+
+
+Overfull \hbox (5.5269pt too wide) in paragraph at lines 4--5
+\T1/cmr/m/n/10.95 ; elles ont été re-lues dans les fichiers d'origine. Comp-tag
+es pro-duits par \T1/cmtt/m/n/10.95 scripts/coverage_report.py
+ []
+
+[11]) (./sections/annexe_services.tex
+Overfull \hbox (15.79778pt too wide) in paragraph at lines 36--1
+\T1/cmr/m/n/10.95 L'inventaire peut mas-quer ces trous : il an-nonce TMIN de 19
+43 à 2026 pour Michigamme (\T1/cmtt/m/n/10.95 USC00205403\T1/cmr/m/n/10.95 ),
+ []
+
+[12] [13]) (./sections/annexe_sensibilite.tex [14])
+(./sections/annexe_distribue.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13] [14 <./assets/hivers_USW00094847.pdf>]) (./sections/conclusion.tex)
-[15] (./sections/annexe_anomalies.tex
-Overfull \hbox (19.32239pt too wide) in paragraph at lines 4--5
-\T1/cmr/m/n/12 Comp-tages pro-duits par \T1/cmtt/m/n/12 scripts/coverage_report
-.py \T1/cmr/m/n/12 (\T1/cmtt/m/n/12 results/coverage/anomalies.json\T1/cmr/m/n/
-12 ). 
- []
-
-[16]) (./sections/annexe_services.tex [17]
-Overfull \hbox (1.26006pt too wide) in paragraph at lines 15--24
- [][] 
- []
-
-
-Overfull \hbox (37.6716pt too wide) in paragraph at lines 31--32
-\OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 255$\T1/cmr/m/n/12 , au-cun dra-peau, sourc
-e \T1/cmtt/m/n/12 W\T1/cmr/m/n/12 , relevé à 24 h, fichier \T1/cmtt/m/n/12 USW0
-0094847.csv.gz\T1/cmr/m/n/12 , lot \T1/cmtt/m/n/12 2026-11-08-initial\T1/cmr/m/
-n/12 .
- []
-
-[18]
-Overfull \hbox (4.28041pt too wide) in paragraph at lines 39--40
- \T1/cmr/bx/n/12 En-trées.[] \T1/cmr/m/n/12 Un élé-ment, une ou deux zones, les
- an-nées étudiées (dé-faut 1991--2020), la référence
- []
-
-[19]) (./sections/annexe_sensibilite.tex
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [20] [21] (./main.aux) ) 
+[15]) [16] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 12594 strings out of 480171
- 221069 string characters out of 5894489
- 582143 words of memory out of 5000000
- 30298 multiletter control sequences out of 15000+600000
- 490274 words of font info for 71 fonts, out of 8000000 for 9000
+ 12581 strings out of 480171
+ 220923 string characters out of 5894489
+ 587078 words of memory out of 5000000
+ 30288 multiletter control sequences out of 15000+600000
+ 489638 words of font info for 72 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 74i,12n,77p,1146b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jk
-nappen/ec/tcrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jkn
-appen/ec/ectt1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jkna
-ppen/ec/ecti1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknapp
-en/ec/tcrm1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecrm0800.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen
-/ec/ectt1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecbx1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecti1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
+ 74i,12n,77p,1361b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/tcrm1000.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ectt1000.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ecti1000.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecrm1000.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/tcrm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen
+/ec/ecrm0800.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ectt1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecbx1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec
 /ecbx1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecbx1728.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-bx1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
-i1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
-1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2
-074.600pk>{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texli
+ecti1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+cbx1440.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+rm1095.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ect
+i1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
+1200.600pk> </home/viz/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1
+728.600pk>{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qpl
-r.pfb>
-Output written on main.pdf (22 pages, 951732 bytes).
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public
+/tex-gyre/qplr.pfb>
+Output written on main.pdf (17 pages, 906157 bytes).
 PDF statistics:
- 927 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 847 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

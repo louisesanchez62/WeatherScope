@@ -56,7 +56,7 @@ def _thresholds(db, stations, element, pct, direction):
 
 
 def select_days(db, element, start, end, area=None, bbox=None, near=None, stations=None,
-                above=None, below=None, pct_above=None, pct_below=None) -> dict:
+                above=None, below=None, pct_above=None, pct_below=None, stable=False) -> dict:
     """Usable days meeting the rule, per station. Shared by F2 and F4."""
     rules = [r for r in (above, below, pct_above, pct_below) if r is not None]
     if len(rules) != 1:
@@ -67,6 +67,8 @@ def select_days(db, element, start, end, area=None, bbox=None, near=None, statio
         raise ValueError("percentile must be between 50 and 100")
 
     sq = station_filter(area, bbox, near)
+    if stable:  # only stations whose record spans 1991-2020: the network does not change over time
+        sq["long_record"] = True
     if stations:
         sq["_id"] = {"$in": list(stations)}
     if not sq:

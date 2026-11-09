@@ -109,6 +109,8 @@ def build_parser() -> argparse.ArgumentParser:
     r.add_argument("--min-share", type=float, default=0.25, help="share of reporting cells affected (default 0.25)")
     r.add_argument("--min-cells", type=int, default=2, help="affected cells needed (default 2)")
     r.add_argument("--top", type=int, default=10)
+    r.add_argument("--stable-network", action="store_true",
+                   help="only stations whose record spans 1991-2020, so the network is the same every year")
 
     u = sub.add_parser("f5", parents=[common], help="F5: import a batch of NOAA observations")
     u.add_argument("--label", required=True, help="batch label (lowercase, digits, dashes)")
@@ -156,7 +158,8 @@ def run_command(db, args) -> dict:
     if args.command == "f4":
         return regional_events(db, args.element, args.start, args.end, args.area, args.bbox, args.near,
                                args.stations, args.above, args.below, args.pct_above, args.pct_below,
-                               args.tolerance, args.grid, args.min_share, args.min_cells, args.top)
+                               args.tolerance, args.grid, args.min_share, args.min_cells, args.top,
+                               args.stable_network)
     if args.command == "f5":
         return import_batch(db, args.label, args.files, args.stations, args.long_only, args.start, args.end,
                             args.include_unselected, log=lambda m: print(m, file=sys.stderr))

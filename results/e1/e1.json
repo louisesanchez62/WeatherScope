@@ -1,0 +1,232 @@
+{
+  "generated_utc": "2026-11-09T08:35:59+00:00",
+  "machine": {
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "cpus": "8",
+    "ram_gb": 7.7,
+    "mongodb": "8.0.32",
+    "wiredtiger_cache_gb": 3.0
+  },
+  "subsets": {
+    "S1 2011-2020": {
+      "database": "e1_s1",
+      "load": {
+        "f5_s": 516.79,
+        "read_model_s": 55.5,
+        "inserted": 6617878
+      },
+      "observations": {
+        "TMAX": 1228582,
+        "TMIN": 1226391,
+        "PRCP": 2071440,
+        "SNOW": 925499,
+        "SNWD": 1165966,
+        "core_TMAX_TMIN_PRCP": 4526413,
+        "total": 6617878
+      },
+      "storage": {
+        "observations": {
+          "documents": 6617878,
+          "data_mb": 1638.1,
+          "storage_mb": 194.9,
+          "index_mb": 365.3
+        },
+        "obs_months": {
+          "documents": 249106,
+          "data_mb": 403.0,
+          "storage_mb": 62.4,
+          "index_mb": 9.3
+        }
+      },
+      "data_plus_indexes_mb": 2416,
+      "fits_in_3gb_cache": true,
+      "requests": {
+        "F1 Detroit 2011-2020 by month": {
+          "warmup_s": 0.117,
+          "runs_s": [
+            0.115,
+            0.121,
+            0.111,
+            0.101,
+            0.098
+          ],
+          "median_s": 0.111,
+          "min_s": 0.098,
+          "max_s": 0.121,
+          "complete": true,
+          "fingerprint": "68fdaa86779d148a"
+        },
+        "F2 heat Germany 2011-2020": {
+          "warmup_s": 1.047,
+          "runs_s": [
+            0.932,
+            0.821,
+            0.897,
+            0.849,
+            0.914
+          ],
+          "median_s": 0.897,
+          "min_s": 0.821,
+          "max_s": 0.932,
+          "complete": true,
+          "fingerprint": "95fe88478c29258a"
+        },
+        "F3 TMAX 2016-2020 vs 2011-2015": {
+          "warmup_s": 2.283,
+          "runs_s": [
+            2.197,
+            2.024,
+            2.23,
+            2.015,
+            2.036
+          ],
+          "median_s": 2.036,
+          "min_s": 2.015,
+          "max_s": 2.23,
+          "complete": true,
+          "fingerprint": "a661c4c56e503a16"
+        },
+        "F4 heavy snow Michigan 2011-2020": {
+          "warmup_s": 5.453,
+          "runs_s": [
+            6.144,
+            5.419,
+            4.714,
+            4.58,
+            4.558
+          ],
+          "median_s": 4.714,
+          "min_s": 4.558,
+          "max_s": 6.144,
+          "complete": true,
+          "fingerprint": "783e2943b726dbf5"
+        },
+        "trace Detroit January 2014": {
+          "warmup_s": 0.012,
+          "runs_s": [
+            0.012,
+            0.01,
+            0.01,
+            0.01,
+            0.01
+          ],
+          "median_s": 0.01,
+          "min_s": 0.01,
+          "max_s": 0.012,
+          "complete": true,
+          "fingerprint": "ea3575c731bde486"
+        }
+      }
+    },
+    "S3 1961-2025": {
+      "database": "weatherscope",
+      "load": {
+        "f5_s": 4552.7,
+        "read_model_s": 612.0,
+        "inserted": 34830359,
+        "note": "initial load 1961-2020 + F5 2021-2025, measured earlier"
+      },
+      "observations": {
+        "TMAX": 6932863,
+        "TMIN": 6929858,
+        "PRCP": 9343830,
+        "SNOW": 4096647,
+        "SNWD": 7527161,
+        "core_TMAX_TMIN_PRCP": 23206551,
+        "total": 34830359
+      },
+      "storage": {
+        "observations": {
+          "documents": 34830359,
+          "data_mb": 8595.1,
+          "storage_mb": 1053.5,
+          "index_mb": 1845.6
+        },
+        "obs_months": {
+          "documents": 1204021,
+          "data_mb": 2069.9,
+          "storage_mb": 306.0,
+          "index_mb": 46.9
+        }
+      },
+      "data_plus_indexes_mb": 12558,
+      "fits_in_3gb_cache": false,
+      "requests": {
+        "F1 Detroit 2011-2020 by month": {
+          "warmup_s": 0.107,
+          "runs_s": [
+            0.111,
+            0.09,
+            0.09
+          ],
+          "median_s": 0.09,
+          "min_s": 0.09,
+          "max_s": 0.111,
+          "complete": true,
+          "fingerprint": "68fdaa86779d148a"
+        },
+        "F2 heat Germany 2011-2020": {
+          "warmup_s": 1.797,
+          "runs_s": [
+            0.864,
+            0.842,
+            0.801
+          ],
+          "median_s": 0.842,
+          "min_s": 0.801,
+          "max_s": 0.864,
+          "complete": true,
+          "fingerprint": "a2533d8f4e6a2313"
+        },
+        "F3 TMAX 2016-2020 vs 2011-2015": {
+          "warmup_s": 2.458,
+          "runs_s": [
+            1.895,
+            1.886,
+            1.908
+          ],
+          "median_s": 1.895,
+          "min_s": 1.886,
+          "max_s": 1.908,
+          "complete": true,
+          "fingerprint": "a661c4c56e503a16"
+        },
+        "F4 heavy snow Michigan 2011-2020": {
+          "warmup_s": 5.387,
+          "runs_s": [
+            4.917,
+            5.051,
+            5.149
+          ],
+          "median_s": 5.051,
+          "min_s": 4.917,
+          "max_s": 5.149,
+          "complete": true,
+          "fingerprint": "b114e27ae1619bce"
+        },
+        "trace Detroit January 2014": {
+          "warmup_s": 0.012,
+          "runs_s": [
+            0.01,
+            0.011,
+            0.011
+          ],
+          "median_s": 0.011,
+          "min_s": 0.01,
+          "max_s": 0.011,
+          "complete": true,
+          "fingerprint": "7e4e6b5d81bd6087"
+        }
+      }
+    }
+  },
+  "same_answers_across_sizes": {
+    "F1 Detroit 2011-2020 by month": true,
+    "F2 heat Germany 2011-2020": false,
+    "F3 TMAX 2016-2020 vs 2011-2015": true,
+    "F4 heavy snow Michigan 2011-2020": false,
+    "trace Detroit January 2014": false
+  },
+  "note": "S2 (1991-2020) not run for lack of time"
+}

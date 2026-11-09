@@ -39,8 +39,9 @@ ONE_DAY = dt.timedelta(days=1)
 
 def regional_events(db, element, start, end, area=None, bbox=None, near=None, stations=None,
                     above=None, below=None, pct_above=None, pct_below=None,
-                    tolerance=1, grid=1.0, min_share=0.25, min_cells=2, top=10) -> dict:
-    sel = select_days(db, element, start, end, area, bbox, near, stations, above, below, pct_above, pct_below)
+                    tolerance=1, grid=1.0, min_share=0.25, min_cells=2, top=10, stable=False) -> dict:
+    sel = select_days(db, element, start, end, area, bbox, near, stations, above, below, pct_above, pct_below,
+                      stable)
     ids, days, d0, d1 = sel["ids"], sel["days"], sel["d0"], sel["d1"]
     direction, thresholds, fixed = sel["direction"], sel["thresholds"], sel["fixed"]
 
@@ -173,7 +174,8 @@ def regional_events(db, element, start, end, area=None, bbox=None, near=None, st
         "query": {"element": element, "start": start, "end": end, "area": area, "bbox": bbox, "near": near,
                   "stations": stations, "rule": {"above": above, "below": below, "pct_above": pct_above,
                                                  "pct_below": pct_below},
-                  "tolerance_days": tolerance, "grid_deg": grid, "min_share": min_share, "min_cells": min_cells},
+                  "tolerance_days": tolerance, "grid_deg": grid, "min_share": min_share, "min_cells": min_cells,
+                  "stable_network": stable},
         "stations_used": len(kept), "colocated_merged": merged,
         "stations_without_reference": sel["skipped"],
         "days_with_data": len(reporting),

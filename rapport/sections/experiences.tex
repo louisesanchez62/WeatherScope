@@ -1,0 +1,32 @@
+\section{Expériences}
+\label{sec:experiences}
+
+Machine~: un poste Linux (WSL2), 8 cœurs, 7,7~Go de RAM, MongoDB 8.0, cache WiredTiger de 3~Go. Chaque requête est lancée une fois pour chauffer le cache, puis répétée~; nous donnons la médiane (mesures brutes dans \cd{results/}).
+
+\paragraph{E1, volume croissant.} Nous avons chargé la période 2011--2020 seule (S1) et l'archive complète 1961--2025 (S3), et lancé sur les deux les mêmes requêtes, toutes situées dans 2011--2020. Faute de temps, le sous-ensemble intermédiaire 1991--2020 n'a pas été mesuré.
+
+\begin{table}[h!]
+  \centering\small
+  \begin{tabular}{lrr}
+    \toprule
+     & S1~: 2011--2020 & S3~: 1961--2025 \\
+    \midrule
+    Observations (dont TMAX, TMIN, PRCP) & 6,6~M (4,5~M) & 34,8~M (23,2~M) \\
+    Chargement F5 / modèle de lecture & 517~s / 56~s & 4\,553~s / 612~s \\
+    Données et index (non compressés) & 2,4~Go, tient dans le cache & 12,6~Go, ne tient pas \\
+    F1, Détroit, 10 ans par mois & 0,11~s & 0,09~s \\
+    F2, chaleur, Allemagne, 10 ans & 0,90~s & 0,84~s \\
+    F3, TMAX 2016--2020 contre 2011--2015 & 2,0~s & 1,9~s \\
+    F4, fortes neiges, Michigan, 10 ans & 4,7~s & 5,1~s \\
+    \bottomrule
+  \end{tabular}
+  \caption{Même requêtes sur deux volumes (\cd{results/e1/e1.json}).}
+\end{table}
+
+Multiplier l'archive par cinq ne ralentit pas les requêtes~: les index (station, élément, date) et (zone, élément, date) ne lisent que la période demandée. C'est le chargement qui souffre~: 12\,800 observations par seconde tant que tout tient dans le cache, 7\,600 en moyenne sur l'archive complète, et moins de 5\,000 en fin de chargement.
+
+\paragraph{E2, local contre distribué.} Faute de temps, nous n'avons pas chargé l'archive complète dans le cluster pour y chronométrer les requêtes. Nous disposons du chargement des mêmes 31,6~M observations à travers \cd{mongos} (deux shards, profil \cd{hashed})~: 1\,280~s, contre 4\,009~s sur le serveur local, mais mesuré sur la machine de l'autre membre du groupe, donc sans comparaison directe. Sur un jeu de 14 stations, nous avons vérifié que sept requêtes donnent des réponses identiques sur les trois déploiements et que la perte d'un shard est signalée (section~\ref{sec:distribue}).
+
+\paragraph{E3, charge variable.} Non réalisée, faute de temps~: nous n'avons pas pu déposer de prédiction avant de mesurer.
+
+\paragraph{E4, une limite de notre conception.} F4 compte un événement dès qu'une station d'une case dépasse le seuil. Or le réseau du Michigan passe de 170 à 482 stations transmettant des chutes de neige après 2008. Sur toutes les stations, les événements régionaux de fortes neiges ($\geq 15$~cm) semblent augmenter après 2008 ($+6$~\% par saison)~; sur les 119 stations présentes toute la période (option \cd{-{}-stable-network}), ils diminuent ($-17$~\%). La tendance change de signe~: elle venait du réseau, pas du climat. Le réseau stable rend aussi la requête six fois plus rapide (3,8~s contre 22,8~s), au prix d'un maillage plus grossier qui voit moins d'événements locaux (\cd{results/e4/network\_bias.json}).

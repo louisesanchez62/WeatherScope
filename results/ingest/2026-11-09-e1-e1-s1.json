@@ -1,0 +1,25 @@
+{
+  "service": "F5",
+  "batch": "2026-11-09-e1-e1-s1",
+  "status": "done",
+  "db": "e1_s1",
+  "start": "2011-01-01",
+  "end": "2020-12-31",
+  "files": 1353,
+  "stations_with_rows": 1117,
+  "stations_upserted": 1117,
+  "elapsed_s": 516.79,
+  "counts": {
+    "inserted": 6617878,
+    "unchanged": 0,
+    "revised": 0,
+    "rejected": 0
+  },
+  "read_model_months_refreshed": null,
+  "read_model_refresh_s": 0.0,
+  "rows_by_period": {
+    "study_1991_2020": 6617878
+  },
+  "notes": {},
+  "complete": true
+}

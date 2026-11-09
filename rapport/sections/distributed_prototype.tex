@@ -1,143 +1,30 @@
 \section{Prototype distribué}
 \label{sec:distribue}
 
-La partie~II conserve le modèle de données et le code des services de la partie~I, mais 
-répartit les deux collections volumineuses, \cd{observations} et le modèle de lecture \cd{obs\_months}, entre plusieurs serveurs 
-MongoDB (\emph{shards}) réunis en un cluster. L'application ne voit qu'un seul point d'entrée et les requetes sont acheminées automatiquement vers les shards appropriés. 
-Deux politiques de placement sont implémentées et comparées, les profils \cd{hashed} et \cd{zoned}.
+La partie~II garde le modèle et les services de la partie~I, mais répartit les deux collections volumineuses, \cd{observations} et \cd{obs\_months}, entre plusieurs serveurs MongoDB (\emph{shards}). L'application ne voit qu'un point d'entrée, \cd{mongos}, qui achemine chaque requête vers les shards concernés.
 
-\subsection{Déploiement : processus, ports et mémoire}
-\label{sec:dist-deploiement}
+\paragraph{Déploiement.} Le script \cd{cluster.py} lance un config server, deux ou trois shards et \cd{mongos}, chacun avec son port et son dossier (annexe~\ref{annexe:distribue}), et ne relance que ce qui est tombé. Chaque shard est un replica set d'un seul membre, comme au lab~5 : MongoDB l'exige, mais aucune copie n'existe. Le cache total est le même que pour le serveur local, 3~Go, réparti entre les shards (1,5~Go chacun avec deux). Ce budget égal ne rend pas les déploiements équivalents~: tous les processus partagent les mêmes cœurs, le même disque et le même cache du système, sans latence réseau ni pannes indépendantes.
 
-Le script \cd{cluster.py} lance et surveille tous les 
-processus (tableau~\ref{tab:processus}). La commande \cd{start -{}-shards N} 
-démarre le config server et N shards ; chacun est initialisé comme un replica set 
-d'un seul membre (\cd{replSetInitiate}), puis le script attend qu'il soit primaire. 
-Il lance ensuite \cd{mongos}, relié au config server, et enregistre chaque shard 
-avec \cd{addShard}. La commande ne relance que les processus qui ne répondent pas, 
-ce qui nous permet d'avoir une restauration après une panne.
+\paragraph{Placement.} Les deux collections utilisent la même clé, donc les observations d'une station et ses mois sont sur le même shard~; les petites collections restent sur le primary shard. Comme l'identifiant \cd{station:date:élément} contient la station, une observation n'a qu'une destination possible et ne peut pas exister en double sur deux shards. Nous comparons deux politiques. \cd{hashed} hache la station~: les données et les écritures sont réparties quelle que soit la zone, F1 touche un shard, mais toute requête par zone est diffusée à tous. \cd{zoned} utilise la clé (zone, station) et place le Michigan sur un shard, l'Allemagne sur l'autre~: une requête régionale ne touche que son shard et une panne reste confinée à sa zone, mais l'équilibre dépend du volume de chaque zone, et un troisième shard resterait vide.
+
+\paragraph{Routage.} Les services placent la zone dans leurs filtres dès qu'ils connaissent la station, ce qui fixe le préfixe de la clé \cd{zoned}. Le script \cd{route.py} demande à \cd{mongos} le plan de ces filtres (tableau~\ref{tab:routage}). Notre premier découpage en zones s'arrêtait à la dernière station de chaque zone~: une requête sur l'Allemagne touchait encore le shard du Michigan. Les zones couvrent maintenant tout l'espace de la clé.
 
 \begin{table}[ht]
   \centering\small
-  \caption{Processus du déploiement distribué (N shards, $N \in \{2, 3\}$).}
-  \label{tab:processus}
-  \begin{tabularx}{\linewidth}{@{}l c >{\raggedright\arraybackslash}X l l@{}}
+  \begin{tabular}{lcc}
     \toprule
-    Processus & Port & Rôle & Dossier & Cache \\
+    Requête & \cd{hashed} & \cd{zoned} \\
     \midrule
-    \cd{mongod} local     & 27017 & serveur autonome de la partie~I, référence     & \cd{data/db/local}  & 3 Go \\
-    config server         & 27200 & métadonnées : shards, clés, chunks, zones       & \cd{cluster\_data/config} & 0,25 Go \\
-    \cd{shard1RS}         & 27301 & observations ; primary shard (métadonnées)      & \cd{cluster\_data/shard1} & 3/N Go \\
-    \cd{shard2RS}         & 27302 & observations                                    & \cd{cluster\_data/shard2} & 3/N Go \\
-    \cd{shard3RS}         & 27303 & observations (configuration à trois shards)    & \cd{cluster\_data/shard3} & 3/N Go \\
-    \cd{mongos}           & 27400 & routeur, seul point d'entrée des profils distribués & -- & -- \\
+    F1, une station, un an & 1 & 1 \\
+    F2, sud de l'Allemagne, un été & 2 (tous) & 1 \\
+    F3, Michigan, mois 1961--2020 (\cd{obs\_months}) & 2 (tous) & 1 \\
+    F3, deux zones, mois 1961--2020 & 2 (tous) & 2 \\
     \bottomrule
-  \end{tabularx}
-\end{table}
-
-Les instances de données au sens du sujet sont les shards : ni \cd{mongos} ni le 
-config server ne stockent d'observation. Les replica sets d'un membre reprennent 
-la simplification du lab~5 ; MongoDB les exige pour les shards et le config server, 
-mais ils ne fournissent aucune copie des données.
-
-Le cache WiredTiger total est fixé par \cd{WS\_CACHE\_TOTAL\_GB} (3~Go par défaut, comme pour les mesures de la partie~I) et 
-réparti entre les shards : 1,5~Go chacun avec deux shards, 1~Go avec trois. Le serveur 
-local reçoit le même total, pour comparer les déploiements à budget de cache égal. Ce budget ne couvre pas tout : le config server et \cd{mongos} consomment leur propre mémoire, et tous les processus partagent les mêmes cœurs, le même disque et le même cache de fichiers du système. Ce déploiement n'est donc pas équivalent à un cluster de machines indépendantes : il n'y a ni latence réseau ni pannes indépendantes.
-
-\subsection{Placement des observations}
-\label{sec:dist-placement}
-
-Les collections \cd{observations} et \cd{obs\_months} sont partitionnées avec la même clé, si bien que les observations d'une station et ses mois sont sur le même shard ; \cd{stations}, \cd{history} et \cd{batches}, petites, restent entières sur le primary shard \cd{shard1RS}. Chaque document est stocké entier sur un seul shard, et les chunks couvrent tout l'espace de la clé sans se chevaucher : la fragmentation est horizontale, complète et disjointe. Comme \cd{\_id = station:date:élément} contient la station et que la clé de shard en dérive, une observation n'a qu'une destination possible. Il ne peut donc pas y avoir de doublon entre shards, alors que MongoDB ne garantit l'unicité de \cd{\_id} que shard par shard.
-
-\paragraph{Profil \cd{hashed}.}
-La clé est \cd{\{station: "hashed"\}}, avec 12 chunks initiaux répartis par le balancer. F1 reste ciblé sur un shard, et les écritures sont réparties quelle que soit la zone, alors qu'une clé sur la date concentrerait chaque import F5 sur le dernier chunk. En contrepartie, toute requête par zone ou par période est diffusée à tous les shards.
-
-\paragraph{Profil \cd{zoned}.}
-La clé est \cd{\{area: 1, station: 1\}} : la zone \cd{michigan} est placée sur \cd{shard1RS}, \cd{southern\_germany} sur \cd{shard2RS}. Les deux zones couvrent tout l'espace de la clé : une zone arrêtée à \cd{\{area: X, station: MaxKey\}} laisserait un chunk sur l'autre shard, et une requête sur une seule zone en contacterait deux. Le champ \cd{area}, recopié de la station au chargement, réalise une fragmentation dérivée. La station complète la clé, car \cd{area} seule, avec deux valeurs, donnerait des chunks indivisibles. Les requêtes régionales sont ciblées et une panne reste confinée à sa zone. En revanche, l'équilibre dépend du volume de chaque zone (à vérifier avec \cd{getShardDistribution}), et un troisième shard reste vide. Le tableau~\ref{tab:placements} résume les deux politiques.
-
-\begin{table}[ht]
-  \centering\small
-  \caption{Comparaison des deux politiques de placement.}
-  \label{tab:placements}
-  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.3cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
-    \toprule
-    & \cd{hashed} & \cd{zoned} \\
-    \midrule
-    Clé de shard            & \cd{\{station: "hashed"\}}               & \cd{\{area: 1, station: 1\}} \\
-    Placement décidé par    & hachage, puis balancer                  & zones : allocation explicite \\
-    Requête sur une zone    & diffusée à tous les shards              & ciblée sur le shard de la zone \\
-    Écritures (F5)          & réparties par station                   & dirigées vers le shard de chaque zone \\
-    Équilibre des données   & indépendant des zones                   & dépend du volume de chaque zone \\
-    Un shard éteint         & toute requête de zone est refusée       & seule la zone touchée est refusée \\
-    Troisième shard         & reçoit des chunks migrés                & reste vide \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
-
-\subsection{Préparation et alimentation des bases distribuées}
-\label{sec:dist-alimentation}
-
-Avant tout chargement, \cd{setup\_db.py} prépare le profil : il supprime sa base sur le cluster si \cd{-{}-reset} est passé, active le sharding avec \cd{shard1RS} comme primary shard, crée collections, validateurs et index, puis sharde \cd{observations}. En profil \cd{zoned}, il déclare aussi les zones.
-
-Les données arrivent par deux voies. \cd{sync\_from\_local.py} recopie les cinq collections du serveur local, modèle de lecture compris, vers \cd{mongos}. Il remplace chaque document ou l'insère s'il est absent : la copie est idempotente et le cluster contient exactement la référence locale. C'est un outil de migration, pas une mesure d'ingestion. Son option \cd{-{}-clear} vide les collections avec \cd{delete\_many}, ce qui conserve la configuration de sharding.
-
-Pour F5, \cd{python3 -m weatherscope f5 -{}-profile hashed} (ou \cd{zoned}) passe par \cd{mongos} ; il reconstruit ensuite les mois touchés dans \cd{obs\_months}, lui aussi partitionné. Chaque document porte la clé de shard complète et n'est envoyé qu'à un shard ; le même import est appliqué aux deux déploiements pour qu'ils restent identiques. L'historique (sur \cd{shard1RS}) et l'observation (souvent sur un autre shard) sont écrits sans transaction distribuée. Un crash entre les deux se rattrape en relançant l'import, au prix d'une entrée d'historique en double.
-
-\subsection{Accès aux données et routage des requêtes}
-\label{sec:dist-routage}
-
-Les services sont exactement ceux de la partie~I. L'option \cd{-{}-profile local|hashed|zoned} de \cd{python3 -m weatherscope} choisit le point d'entrée : le serveur local (port 27017) ou \cd{mongos} (port 27400). L'application n'ouvre qu'un client et ne se connecte jamais directement à un shard pour lire des données, ce qui assure la transparence de requête pour F1 à F5 et \cd{trace}. Le client écrit avec \cd{w="majority"} ; avec des replica sets d'un membre, cela revient à attendre la journalisation, mais le code est prêt pour de vrais réplicas.
-
-Chaque service place la zone dans ses filtres dès qu'il connaît la station (F1, F2, F4, \cd{trace}) : le champ \cd{area}, recopié dans chaque observation, fixe le préfixe de la clé et permet au profil \cd{zoned} de cibler un shard. Le script \cd{route.py} rend le routage observable : il demande à \cd{mongos} le plan d'exécution des filtres construits par les services et liste les shards contactés. Le tableau~\ref{tab:routage} donne le résultat pour trois requêtes représentatives.
-
-\begin{table}[ht]
-  \centering\small
-  \caption{Shards contactés par des requêtes représentatives (deux shards).}
+  \end{tabular}
+  \caption{Shards contactés, d'après les plans d'exécution de \cd{mongos} (deux shards).}
   \label{tab:routage}
-  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.4cm} >{\raggedright\arraybackslash}X c c@{}}
-    \toprule
-    Requête & Filtre construit par \cd{scope()} & \cd{hashed} & \cd{zoned} \\
-    \midrule
-    F1, une station, un an           & \cd{area}, \cd{station}, \cd{element}, \cd{date}            & 1        & 1 \\
-    F2, sud de l'Allemagne, un été   & \cd{area}, \cd{element}, \cd{qflag: null}, \cd{date}         & 2 (tous) & 1 \\
-    F3, Michigan, mois 1961--2020    & \cd{obs\_months} : \cd{area}, \cd{element}, \cd{year}       & 2 (tous) & 1 \\
-    F3, deux zones, mois 1961--2020  & \cd{obs\_months} : \cd{area} parmi les deux zones            & 2 (tous) & 2 \\
-    \bottomrule
-  \end{tabularx}
 \end{table}
 
-Les filtres sont les mêmes dans tous les profils : seule la clé de shard change le routage. Pour F1, un seul shard répond et \cd{mongos} relaie sa réponse. Pour F3, chaque shard contacté lit ses mois dans \cd{obs\_months} et calcule ses valeurs mensuelles ; \cd{mongos} rassemble les résultats partiels et l'application calcule normales, anomalies, cases et classement.
+\paragraph{Mêmes réponses partout.} Les sommes portent sur les valeurs brutes entières et les services parcourent leurs résultats dans un ordre fixé~: les réponses ne dépendent pas de l'ordre dans lequel les shards répondent. Le script \cd{compare.py} le vérifie automatiquement sur sept requêtes (recherche de stations, F1, F2, F3 sur les mois et sur les observations, F4, \cd{trace}), dont plusieurs touchent les deux shards~: les réponses JSON canoniques sont identiques sur les trois déploiements.
 
-Les résultats sont identiques par construction : les sommes portent sur les valeurs brutes entières, exactes dans n'importe quel ordre, et les services parcourent leurs résultats dans un ordre fixé. Le script \cd{scripts.distributed.compare} vérifie automatiquement sept requêtes entre les profils local, \cd{hashed} et \cd{zoned} : recherche de stations, F1, F2, F3 (sur le modèle de lecture et sur les observations), F4 et \cd{trace}, dont plusieurs touchent les deux shards. Les réponses JSON, aux clés triées et aux listes déjà dans l'ordre canonique de chaque service, sont toutes identiques.
-
-\subsection{Perte d'une instance}
-\label{sec:dist-panne}
-
-Chaque requête passe par la fonction \cd{guard()} de \cd{weatherscope/deploy.py} avant d'atteindre les données. Elle détermine d'abord le shard qui possède chaque station nécessaire, sans lire les observations : elle compare le hash de la station (profil \cd{hashed}) ou le couple zone, station (profil \cd{zoned}) aux plages de \cd{config.chunks}. Elle contacte ensuite directement chaque shard avec un ping de 800~ms ; c'est la seule connexion qui contourne \cd{mongos}. Si un shard requis est éteint, le service n'est pas exécuté et l'utilisateur reçoit une enveloppe qui refuse le résultat et décrit ce qui manque :
-
-\begin{small}
-\begin{verbatim}
-{"status": "UNAVAILABLE", "complete": false,
- "missing": {"shards": [...], "n_stations": ...,
-             "examples": [...], "areas": [...]},
- "message": "Résultat refusé: des observations requises
-             sont injoignables."}
-\end{verbatim}
-\end{small}
-
-Si un shard tombe pendant l'exécution, l'erreur de MongoDB est rattrapée et la réponse porte le statut \cd{ERROR}, toujours avec \cd{complete: false}. Un résultat partiel n'est jamais présenté comme complet.
-
-Le script \cd{failure\_demo.py} réalise la démonstration demandée. Après \cd{cluster.py kill shard2}, il choisit une station stockée sur \cd{shard2RS}, lance F1 sur cette station puis F3 sur les deux zones et sur chacune séparément. En profil \cd{hashed}, toutes ces requêtes sont refusées, puisque chaque zone est répartie sur les deux shards. En profil \cd{zoned}, F3 limitée au Michigan reste servie et complète (90 mois) quand \cd{shard2RS} est éteint ; les autres sont refusées. La commande \cd{cluster.py start -{}-shards 2} relance ensuite le shard.
-
-Pendant la panne, notre prototype ne récupère rien : les observations du shard éteint sont inaccessibles jusqu'à son redémarrage. Au redémarrage, MongoDB rejoue son journal, et les écritures déjà acquittées ne sont pas perdues. Un déploiement de production ferait de chaque shard un replica set de trois membres. Les deux membres restants formeraient une majorité et éliraient un nouveau primaire en quelques secondes ; F1 et F3 resteraient complets, et une écriture acquittée par la majorité survivrait à la perte du primaire. Il faudrait aussi répliquer le config server et lancer plusieurs \cd{mongos}. Trois shards représenteraient alors neuf nœuds de données. Notre déploiement sur un poste ne peut démontrer ni élection, ni partition réseau.
-
-Si les métadonnées elles-mêmes sont injoignables (\cd{shard1RS}, qui porte \cd{stations}, ou le config server éteint), \cd{guard()} renvoie aussi \cd{UNAVAILABLE}, avec le motif « métadonnées injoignables ».
-
-\subsection{Limites du prototype distribué}
-\label{sec:dist-limites}
-
-\begin{itemize}
-  \item Aucune réplication : chaque shard est un replica set d'un membre, et la perte d'un shard rend ses observations indisponibles.
-  \item Points uniques de défaillance : un seul \cd{mongos}, un config server d'un membre, et un primary shard qui porte \cd{stations}, \cd{history} et \cd{batches}.
-  \item Tous les processus partagent un seul poste : les gains ou pertes mesurés ne se transposent pas directement à un cluster de machines.
-\end{itemize}
+\paragraph{Perte d'une instance.} Avant d'exécuter un service, \cd{guard()} détermine, à partir des plages de \cd{config.chunks} et sans lire les observations, le shard de chaque station nécessaire, puis teste ces shards. S'il en manque un, le service n'est pas lancé et l'utilisateur reçoit \cd{UNAVAILABLE}, \cd{complete: false}, avec les shards, stations et zones manquants~; une panne en cours de requête donne \cd{ERROR}, jamais un résultat partiel. Si les métadonnées elles-mêmes sont injoignables, la réponse est aussi \cd{UNAVAILABLE}. Avec \cd{shard2RS} arrêté, F1 sur une station allemande et F3 sur les deux zones sont refusées dans les deux profils~; F3 sur le Michigan seul est refusée en \cd{hashed}, où le Michigan est réparti sur les deux shards, mais servie complète en \cd{zoned} (90 mois). Notre prototype ne récupère rien pendant la panne~: les données du shard arrêté reviennent à son redémarrage, qui rejoue le journal sans perdre d'écriture acquittée. En production, chaque shard serait un replica set de trois membres, qui élirait un nouveau primaire en quelques secondes~; il faudrait aussi répliquer le config server et multiplier les \cd{mongos}. Un poste unique ne permet de démontrer ni élection, ni partition réseau.
